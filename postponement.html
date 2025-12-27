@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>postponement</title>
+
+ <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Column layout (used everywhere) */
+    .columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Desktop-only offset for Google Sites left navigation */
+    @media (min-width: 601px) {
+      .poem .columns {
+        margin-left: 220px;
+      }
+    }
+
+    .columns > div {
+      max-width: 400px;
+      flex: 1 1 300px;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns p {
+      white-space: pre-wrap;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none;
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile fixes */
+    @media (max-width: 600px) {
+      .columns {
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+  <!-- Poem -->
+  <div class="content-wrapper poem">
+    <div class="columns">
+      <div>
+        <p class="title">Report</p>
+        <p>
+Le clignotement rapide 
+du répondeur
+annonçait le caractère inattendu 
+de ton message,
+me laissant dans un brouillard 
+de souci, de remords, et de culpabilité.
+
+J’ai décroché le combiné 
+et composé ton numéro,
+m’imaginant désespérément 
+que j’avais mal entendu ta voix.
+Mais ton tout premier « allô » 
+a balayé d’un coup
+le moindre espoir – 
+j’ai su alors
+que cette soirée n’aurait pas lieu.
+
+De retour dans le brouillard des émotions,
+je me suis appuyé 
+sur la pensée rassurante
+qu’il valait mieux que tu te reposes.
+j’ai senti fondre en moi 
+cette pointe de douleur,
+née d’un égoïsme discret 
+qui s’était emparé de mon cœur,
+allourdi par ce simple rhume 
+qui nous aura séparés.
+
+Maintenant, seul, 
+à ma fenêtre,
+j’apprends 
+à apprivoiser la déception.
+Le téléphone sonne à nouveau – 
+c’est toi.
+
+Nous nous parlons 
+Pendant quelques instants
+surtout des films, et des anges.
+Mais cet appel résonne 
+d’autre chose 
+que de simples mots.
+— peut-être du précurseur
+de ce qui nous attend 
+dans les jours à venir.
+        </p>
+      </div>
+      <div>
+        <p class="title">Postponement</p>
+        <p>
+The rapid blinking 
+of the answering machine
+announced the unexpected nature 
+of your message
+leaving me in a fog 
+of concern, remorse and guilt.
+
+I picked up the receiver 
+and dialed your number
+desperately imagining 
+that I had misread your voice
+But your very first “hello” 
+deftly destroyed
+the faintest of hopes – 
+I knew then 
+this evening was not to be.
+
+Back in the fog of sentiments
+I steadied myself 
+with the strength of thought 
+it was best for you to rest.
+I found melting away 
+the twinge of pain
+born of a self-centred strain 
+that had clawed my heart
+burdened by a measly cold 
+that has managed to keep us apart.
+
+Now as I sit here 
+all alone by my window
+Learning to contend 
+with disappointment,
+the phone rings yet again – 
+And it is You.
+
+We talk 
+for a few brief moments
+mostly of films and angels
+But the call rings 
+with something more 
+than mere chatter
+-- A harbinger perhaps 
+of what awaits us 
+in the days to come.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location / Dates -->
+  <div class="lieu-date">
+    <p>Chicago</p>
+    <p>août 1999| 20 March 2025</p>
+  </div>
+
+  <!-- Button to toggle reflection -->
+  <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Reflection -->
+  <div class="content-wrapper reflection">
+    <div id="reflection" class="columns">
+      <div>
+        <p>
+<em>Report</em> retrace l'arc émotionnel d'une soirée annulée — du répondeur clignotant à la déception jusqu'à une consolation inattendue. Le poème saisit comment l'anticipation se transforme en inquiétude, puis en acceptation. Les vers conclusifs suggèrent que l'annulation n'est qu'un report, et non une fin définitive — un présage de ce qui reste à venir dans les jours suivants.
+      </div>
+      <div>
+        <p>
+<em>Postponement</em> traces the emotional arc of a cancelled evening—from the blinking answering machine through disappointment to unexpected consolation. The poem captures how anticipation transforms into concern, then acceptance. The closing lines suggest that cancellation is a mere postponement, and not an end—a harbinger of what may yet unfold in the days to come.        </p>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disqus comments -->
+  <div id="disqus_thread"></div>
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    // Disqus configuration
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/postponement';
+      this.page.identifier = 'postponement';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+
+</body>
+</html>

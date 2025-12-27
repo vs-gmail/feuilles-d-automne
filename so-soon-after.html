@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>so-soon-after</title>
+
+ <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    .columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 601px) {
+      .poem .columns { margin-left: 220px; }
+    }
+
+    .columns > div { max-width: 400px; flex: 1 1 300px; }
+
+    .title { font-family: 'Bree Serif', serif; font-weight: normal; margin-bottom: 0.5rem; }
+
+    .columns p { white-space: pre-wrap; }
+
+    .lieu-date { text-align: center; font-style: italic; margin: 2rem 0; }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover { background-color: #a0613c; }
+
+    #reflection { display: none; }
+    #reflection p { text-align: justify; }
+
+    hr { margin: 2rem 0 1rem; border: 0; border-top: 1px solid #ccc; }
+
+    #disqus_thread { max-width: 700px; margin: 2rem auto; border-top: 1px solid #ccc; padding-top: 1rem; }
+
+    .lang-toggle { display: none; }
+
+    @media (max-width: 600px) {
+      .columns { margin-left: 0; padding: 0; }
+      .lang-toggle { display: block; margin: 1.5rem auto; }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="content-wrapper">
+
+  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+  <!-- Poems -->
+  <div class="poem columns">
+    <div id="poem-fr">
+      <p class="title">Si peu après</p>
+      <p>
+Tu es partie 
+Si peu après Gérard, Mia,
+Si peu après tes toutes dernières vacances en Provence. 
+Tu as disparu si peu après notre dernière rencontre 
+Si peu après notre dernier repas ensemble. 
+
+Dans mon esprit, tout reste limpide :
+La table que tu as dressée
+Les plats que tu as chauffés
+ton regard attentionné
+Tout reste vif
+Surtout les mots échangés, 
+Porteurs éphémères d’une longue amitié.
+
+C’est comme si tu n’a pas voulu tarder.
+Peu de réconfort pour celleux qui t’aiment
+Peu de consolation pour celleux que tu quittes
+Mais tu devais partir, si peu après.
+
+Laisse-nous ta sagesse
+Laisse-nous ta tendresse
+Pour qu’on devienne des sentinelles 
+De ton souvenir 
+Pendant longtemps après.
+      </p>
+    </div>
+
+    <div id="poem-en">
+      <p class="title">So Soon After</p>
+      <p>
+You’re gone
+So soon after Gérard, Mia,
+So soon after your very last holiday in Provence.
+You disappeared too soon after we last met
+Too soon after our last meal together.
+
+The memory’s crystal clear:
+The table you laid
+The dishes you prepared
+your attentive gaze
+All’s sharp in the mind’s eye
+And even more, the words exchanged,
+Ephemeral witnesses to a long friendship.
+
+It’s like you didn’t want to delay.
+Little comfort for those who love you
+Little consolation for those you left behind
+But you had to leave, so soon after.
+
+Leave us your wisdom
+Leave us your tenderness
+Let us become sentinels
+Of your memory
+For a long time to come.
+      </p>
+    </div>
+  </div>
+
+  <!-- Location / Date -->
+  <div class="lieu-date">
+    <p>Paris</p>
+    <p>le 23 juillet 2023 | 23 July 2023</p>
+  </div>
+
+  <button onclick="toggleReflection()">Réflexions / Reflections</button>
+  <hr>
+
+  <!-- Reflections -->
+  <div id="reflection" class="columns">
+    <div id="reflection-fr">
+      <p>
+<em>Si peu après</em> affronte la compression du deuil — comment « si peu après » une perte, une autre survient avant que la première n'ait été absorbée. Même à distance en espace-temps, la mémoire reste vive — la table, les plats, les mots — et cette clarté intense appelle à porter ce qui a été perdu, en devenant sentinelles de la mémoire.
+      </p>
+    </div>
+    <div id="reflection-en">
+      <p>
+<em>So Soon After</em> confronts the compression of grief—how "so soon after" one loss, another follows before the first has been absorbed. Even with spatio-temporal distance, memory remains vivid—the table, the dishes, the words—and this intense clarity calls for carrying forward what has been lost by becoming sentinels of memory.
+      </p>
+    </div>
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+</div>
+
+<script>
+  let showingEnglish = true;
+
+  function toggleLanguage() {
+    if (window.innerWidth > 600) return;
+
+    const fr = document.getElementById("poem-fr");
+    const en = document.getElementById("poem-en");
+    const reflFr = document.getElementById("reflection-fr");
+    const reflEn = document.getElementById("reflection-en");
+    const buttons = document.querySelectorAll(".lang-toggle");
+
+    if (showingEnglish) {
+      en.style.display = "none";
+      fr.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflEn.style.display = "none";
+        reflFr.style.display = "block";
+      }
+      buttons.forEach(btn => btn.textContent = "Read in English");
+    } else {
+      fr.style.display = "none";
+      en.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflFr.style.display = "none";
+        reflEn.style.display = "block";
+      }
+      buttons.forEach(btn => btn.textContent = "Lire en français");
+    }
+
+    showingEnglish = !showingEnglish;
+  }
+
+  function toggleReflection() {
+    const r = document.getElementById('reflection');
+
+    if (r.style.display === 'none' || r.style.display === '') {
+      r.style.display = 'flex';
+      if (window.innerWidth <= 600) {
+        if (showingEnglish) {
+          document.getElementById('reflection-fr').style.display = 'none';
+          document.getElementById('reflection-en').style.display = 'block';
+        } else {
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'none';
+        }
+      } else {
+        document.getElementById('reflection-fr').style.display = 'block';
+        document.getElementById('reflection-en').style.display = 'block';
+      }
+    } else {
+      r.style.display = 'none';
+    }
+  }
+
+  window.addEventListener("load", () => {
+    if (window.innerWidth <= 600) {
+      document.getElementById("poem-fr").style.display = "none";
+      document.getElementById("poem-en").style.display = "block";
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+      showingEnglish = true;
+      document.querySelectorAll(".lang-toggle").forEach(btn => {
+        btn.textContent = "Lire en français";
+      });
+    } else {
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+    }
+  });
+
+  var disqus_config = function () {
+    this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/so-soon-after';
+    this.page.identifier = 'so-soon-after';
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://autumn-leaves.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+
+</body>
+</html>

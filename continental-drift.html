@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>continental-drift</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">La dérive continentale</p>
+        <p>
+Est-ce Uptown,
+pas si loin
+de la foule grouillante,
+avec ses collines,
+où le fleuve
+lèche les falaises
+et fleurissent
+les tilleuls
+sur la haute terrasse
+en juin ?
+
+Serait-ce
+cet havre de paix
+aux sentiers sinueux
+autour
+des Cloîtres
+jamais vécus,
+d’où contempler
+le vif
+coucher de soleil
+sur les arbres
+nus et immobiles
+de la rive lointaine ?
+
+Ou bien, est-ce plutôt,
+à l’autre bout de l’océan —
+une courte promenade
+depuis le canal,
+à quelques pas
+du boulevard passé,
+au-delà du portillon
+où, comme par magie,
+se déploient à nos pieds
+les plaines lointaines ?
+
+Ô mon foyer,
+chimère tenace,
+tu joues
+à cache-cache
+alors que la vie
+s’écoule entre mes doigts.
+Mais ta voix
+résonne
+en baryton,
+dans cette couleur mûre
+chaque fois que,
+porté par la chaleur
+des amitiés,
+je surmonte
+les défis
+d’une vie
+itinérante.
+
+Je te retrouve
+dans l’écharpe violette,
+offrande crochetée
+dans les tropiques,
+qui me garde
+au chaud
+lorsque je flâne
+dans les ruelles pavées
+d’une ville
+jadis médiévale,
+depuis épanouie
+en Ville Lumière.
+
+Je savoure
+ta présence effacée
+qui s’élève
+doucement
+en notes indiennes
+du pays lointain…
+des souvenirs
+s’embrasent,
+des gulmohars
+en fleurs.
+
+Avec tous tes
+caprices insolites,
+un plaisir joyeux,
+pour ce Nomade réticent,
+se distille encore
+même dans ta présence
+toujours fuyante,
+pour enfin emplir
+le cœur de son cœur.
+
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Continental Drift</p>
+        <p>
+Is it Uptown,
+not so far from
+the ‘madding crowd’,
+with its hills,
+where the river
+meets the cliffs
+and lindens 
+bloom
+on the high terrace
+in June?
+
+Might it be
+the serene
+winding paths
+around
+the Cloisters
+that never served,
+where I contemplate
+the vivid
+sunset
+over the still
+leafless trees
+of the far bank?
+
+Or—an ocean away—
+is it a short walk
+from the canal,
+just steps
+past the boulevard,
+beyond a little gate,
+where, 
+at our feet,
+distant plains
+quietly unfold?
+
+Home,
+quixotic Home,
+you play
+hide and seek
+as life
+slips me by.
+But your voice
+resounds
+in that mellow color
+of baritone
+every time,
+held by the warmth
+of friendships,
+I overcome
+the challenges
+of a life
+on wheels.
+
+You’re
+the purple scarf,
+crocheted gift
+from tropical climes,
+keeping me
+warm
+as I meander
+through the once cobbled
+medieval streets
+of a town
+now unfurled into
+the City of Light.
+
+I savour
+your faint presence
+wafting in
+on Indian tones
+from a
+faraway land…
+memories
+that flame,
+like gulmohars
+in flower.
+
+For all your
+mercurial ways,
+joyful pleasure,
+for this reluctant Nomad,
+still distills
+from your
+ever-wandering presence,
+settling into
+his heart of hearts.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>New York-Paris-Bengaluru</p>
+      <p>2024-2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+<em>La dérive continentale</em> est née d’un sentiment persistant de déplacement — non pas comme perte, mais comme manière d’habiter le monde. Entre New York, Paris et Bengaluru, le poème explore ce que signifie « être chez soi » lorsque les lieux s’éloignent, se superposent, ou continuent de vibrer en nous longtemps après le départ. Les paysages évoqués sont concrets, précisément situés, mais ils servent surtout de seuils : points de passage entre mémoire, affect et présence.
+La personnification du foyer — fuyant, joueur, parfois insaisissable — permet de suggérer qu’il ne se laisse pas fixer à une seule géographie. On le retrouve autant dans une voix, une amitié ou dans un passage urbain familier que dans un horizon lointain. Écrire ce texte a permis d’accueillir les effets parfois insolites du mouvement migratoire, et de reconnaître que la dérive s’ancre aussi dans des instants éphémères qui — comme une écharpe offerte ou une voix qui hante l’esprit — demeurent et réchauffent le cœur.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+<em>Continental Drift</em> was born from a persistent sense of displacement — not as loss, but as a way of inhabiting the world. Moving between New York, Paris, and Bengaluru, the poem explores what it means to call a place “home” when locations recede, overlap, or continue to resonate long after departure. The landscapes it evokes are concrete and precisely situated, yet they function primarily as thresholds: passages between memory, affect, and presence.
+
+The personification of home — elusive, playful, and at times evasive — allows for the suggestion that home resists being fixed to a single geography. It resides as much in a voice, a friendship, or a familiar passage in a city as in a distant horizon. Writing this poem became a way of acknowledging the sometimes unexpected effects of migratory life, and of recognizing that drift itself can take root in fleeting moments which — like a gifted scarf or a voice that lingers — endure and quietly offer warmth.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/continental-drift';
+      this.page.identifier = 'continental-drift';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>five-minutes</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Cinq minutes</p>
+        <p>
+« Je dois partir dans cinq minutes », 
+       dis-je.
+« Écris-moi un poème là-dessus », 
+       répondit-il.
+Et Sappho a miaulé, satisfaite
+(j’imagine, toute excitée
+par les signes clairs 
+de mon départ imminent).
+
+Mais que sont cinq minutes, 
+après tout, 
+sinon trois cents petites secondes
+avec lesquelles 
+je repousse 
+l’inévitable séparation ?
+
+Mais ces trois cents secondes 
+deviennent
+cinq minutes 
+délicieusement extensibles,
+et je tente de convaincre 
+chacun de ces instants fuyants —
+participants de ce drôle de calcul —
+de revêtir ce manteau d’éternité
+si facilement enfilé 
+dans la solitude ou le chagrin.
+
+Mais l’horloge avance, 
+implacable comme toujours.
+Mes appels silencieux 
+tombent de nouveau
+dans les oreilles sourdes 
+du Père Temps.
+
+Alors, il ne me reste 
+que cette baguette de mots,
+seul espoir pour raviver les images
+de la magie 
+du Temps suspendu —
+chaque fois 
+que je croise le regard 
+de ses yeux bruns
+la chaleur me gagne 
+au creux 
+de ce cœur tout épris.
+ </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Five Minutes</p>
+        <p>
+‘I have to leave in five minutes’ 
+      said I
+‘Write me a poem about it’ 
+      quoth He.
+And Sappho meowed with satisfaction
+(I imagine in gleeful anticipation 
+kindled by the signs 
+of my imminent departure).
+
+What are five minutes 
+after all
+but three hundred short seconds
+With which 
+I procrastinate 
+the inevitable parting.
+
+But Three hundred seconds 
+turn into
+five deliciously stretchable 
+minutes
+And I try to will 
+each of these flighty moments
+-- participants of that bizarre addition
+-- to put on their aeonic mantle
+So easily donned 
+in moments of solitude and despair.
+
+But, the clock ticks right on, 
+inflexible as ever
+My silent pleas 
+have fallen yet again
+on the deaf ears 
+of Father Time.
+
+So I am left 
+with this wand of words
+as my only hope
+to bring back images
+of the Magic of Time 
+effortlessly suspended
+every time 
+I feel the gaze
+of his soft brown eyes
+warming the cockles 
+of my love-struck heart.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Chicago/Paris</p>
+      <p>décembre 1999/2025 | December 1999/2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+<em>Cinq minutes</em> présente un texte méta-réflexif qui transforme le moment banal de départ en une méditation ludique sur le temps, l'amour et la mémoire. La tentative d'étirer ces dernières minutes, voulant que chaque seconde fugace prenne le poids de l'éternité — un manteau « si facilement enfilé dans la solitude ou le chagrin » — est un sentiment souvent éprouvé. Or, le temps reste obstinément inflexible. Ce qui émerge est la suggestion que, même si nous ne pouvons arrêter l'horloge, nous pouvons préserver la vérité émotionnelle d'un moment à travers la poésie. La « baguette de mots » devient un recours clair — une façon de suspendre le temps, sinon dans la réalité, du moins dans la mémoire, préservant ce qui se dissipe après le départ inévitable. Le poème saisit ce seuil doux-amer où l'amour rencontre la perte, où cinq minutes deviennent à la fois impossiblement courtes et infiniment précieuses.
+      </div>
+      <div id="reflection-en">
+        <p>
+<em>Five Minutes</em> is a meta-reflexive poem that transforms an ordinary moment of parting into a playful meditation on time, love, and memory. The attempt to stretch those final minutes, willing each fleeting second to take on the weight of eternity—a mantle "so easily donned in moments of solitude and despair"—is a commonly experienced feeling. Yet, time remains stubbornly inflexible. What emerges is the suggestion that while we cannot stop the clock, we can preserve the emotional truth of a moment through poetry. The "wand of words" becomes a clear recourse—a way to suspend time, if not in reality then in memory, preserving what the inevitable departure dissipates. The poem captures that bittersweet threshold where love meets loss, where five minutes become both impossibly short and infinitely precious.        </p>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/five-minutes';
+      this.page.identifier = 'five-minutes';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

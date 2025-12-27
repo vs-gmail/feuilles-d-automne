@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>separation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Séparation</p>
+        <p>
+Je le regarde, son coeur brisé,
+Incapable d’y remédier
+je ne peux que le bercer 
+avec mes yeux… 
+Une goutte de larme 
+se forme ; involontaire.
+
+Se séparer…
+je commence à comprendre
+n’est jamais qu’entre deux âmes 
+jadis entremêlées 
+car elles se trouvent 
+désormais enchevêtrées
+dans la toile de relations
+tissée depuis des années 
+avec la quenouille de l’amitié
+qui a filé des parentés 
+communes, choisies, héritées,
+dans une tapisserie si riche et vivante.
+
+Ensemble, les joies 
+qu’ils nous ont offertes
+par la simplicité 
+de leur présence accueillante
+je comprends à présent 
+ne sont ni acquises
+ni ne se prêtent 
+à la mise en bouteille. 
+Reste donc les souvenirs, 
+même les plus doux,
+déjà couverts par
+la patine du passé 
+qui s’éloigne.
+
+De la tristesse 
+qui les sépare
+qu’ils se retrouvent 
+de nouveau ancrés 
+chacun dans son présent
+pour redécouvrir 
+la joie dans les nouveaux chemins
+qui se dessinent.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Separation</p>
+        <p>
+I watch him, heart broken,
+Helpless to mend it —
+all I can do is cradle him
+with my eyes...
+A teardrop forms,
+unbidden.
+
+Separation
+I begin to understand,
+is never just between two souls
+once intertwined —
+for now they find themselves
+entangled still
+in a web of relations
+woven through the years
+with the spindle of friendship,
+which spun shared kinships —
+chosen, inherited, created —
+into a tapestry so rich and alive.
+
+Together, the joys
+they gave us
+in the sheer simplicity
+of their welcoming presence —
+I now see —
+were never ours to hold,
+nor made to be bottled.
+What remains 
+are memories,
+even the sweetest,
+already touched
+by the patina 
+of a fading past.
+
+From the sadness
+of parting,
+may they each
+anchor themselves again
+in their own present
+to rediscover joy
+in the new paths
+beginning to unfold.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>le 26 novembre 2024 | 26 novembre 2024</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Le poème prend son départ dans le conflit interne entre l’expérience vive d’une profonde empathie pour un ami souffrant d’une rupture et la traversée de l’impuissance à soulager sa douleur. Les effets de la séparation ne se limitent pas au couple défait ; ils se font sentir dans tout un réseau de relations, d’habitudes et de présences partagées qui se défont ou se déplacent de manière profonde. La séparation, qui apparaît d’abord comme une expérience silencieuse, presque immobile et personnelle, révèle, à une réflexion attentive, son impact plus profond sur les liens humains.
+
+Le tissage, comme métaphore, donne une forme tangible à cette complexité : les liens se filent lentement, parfois sans qu’on s’en rende compte, et finissent par former une tapisserie riche mais fragile. Le poème met ainsi en relief la nature éphémère de la joie partagée, qui ne peut être conservée ni figée dans le temps ; elle ne peut être vécue que dans l’instant, puis portée et transformée par la mémoire. Même si cette méditation n’offre pas de résolution nette, elle esquisse, sous forme de souhait, la possibilité d’un réancrage éventuel, permettant peut-être d’accepter la perte et de s’enrichir de nouvelles expériences à venir.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+The poem begins with experiencing deep empathy for a friend suffering the pain of a breakup, yet being utterly powerless to relieve it. The effects of separation are not limited to the erstwhile couple, but are felt by an entire network of relationships, habits, and shared presences that unravel or shift in profound ways. Separation, which at first appears as a silent, almost immobile, personal experience, reveals, upon attentive reflection, its deeper impact on human connections.
+
+Weaving as metaphor gives tangible form to this complexity: connections are spun slowly, sometimes unconsciously, and in time form a rich yet fragile tapestry. The poem thus highlights the fleeting nature of shared joy, which cannot be preserved or frozen in time; it can only be experienced in the moment and carried over, transformed by memory. If this meditation offers no clear resolution, it sketches, in the form of a wish, the possibility of a re-anchoring that might allow one to accept loss while remaining open to enrich oneself through new experiences yet to come.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/separation';
+      this.page.identifier = 'separation';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

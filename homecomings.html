@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homecomings</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Retours</p>
+        <p>
+‘Dans les mêmes eaux courantes
+on ne se rebaigne jamais’.
+Échos des moi éclipsés
+emportés par
+les trans-formations du temps
+me poussent à revivre
+mes retours.
+
+Accueilli à bras ouverts
+je retombe dans de vieux modes
+mon autre vie en oubli
+celle qui est la vraie
+devient invraisemblable.
+
+Reprenant la manche,
+il y a toujours une place pour moi.
+Peu importe si mon moi tout rond
+peut occuper leur espace bien carré.
+M’a-t-il jamais convenu ?
+
+Pourtant, la nostalgie
+cadre,
+s’accroche,
+m’attache à
+un torrent passé
+troublé à présent
+par le temps qui coule.
+
+Baigné dans une affection familière
+une double baignade temporelle
+semble bien possible.
+Enfin, presque.
+
+Sur leur propre terrain
+comme iels veulent.
+Tout ce qui compte
+c’est leur ici-et-maintenant.
+
+Alors que le miaulement feutré
+de ma vie lointaine
+résonne doucement
+dans la boîte de Schrödinger,
+à ce retour-là
+je me défais pleinement chez moi.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Homecomings</p>
+        <p>
+‘Into the flowing waters of the river
+one never dips twice’.
+Echoes of selves left behind
+washed away by
+the trans-formations of time
+moves me to experience anew
+my homecomings.
+
+Welcomed with open arms
+I slip into old habits
+oblivious to my other life
+real life
+turned not-so-real.
+
+Picking up where we left off
+there’s always room for me.
+No matter if my round self
+fits into their square space.
+Perhaps never a good fit?
+
+Yet, nostalgia
+frames,
+clings,
+ties me to
+a flowing past
+now muddied
+as time slips us by.
+
+Bathing in familiar affection
+double-dipping in time’s river
+seems somehow possible.
+Well, almost.
+
+On their turf
+on their terms
+all that matters
+is their here-and-now.
+
+As the muffled meow
+of my life afar
+echoes softly
+in Schroedinger’s box,
+to this homecoming
+I submit, fully unhomed.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>Le 24 avril 2025 | 24 April 2025 </p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Ce poème explore le paradoxe de la réintégration, tout en affirmant qu’aucun retour ne peut reproduire le passé. Les vers préliminaires — « Dans les mêmes eaux courantes / on ne se rebaigne jamais » — font écho, de manière implicite, à la pensée d’Héraclite, pour qui toute chose est soumise au flux et à la transformation. Le passé, comme le sujet qui y revient, a irrémédiablement changé.
+
+Accueilli à bras ouverts, le locuteur se laisse reprendre par les habitudes d’autrefois, tandis que sa vie « réelle » d’ailleurs devient progressivement invraisemblable. Le poème met en scène cette inadéquation à travers l’image d’un « moi tout rond » tentant d’occuper un « espace bien carré », soulignant l’impossibilité d’un ajustement parfait. La nostalgie, loin d’être consolatrice, agit comme une force d’attache à un passé désormais troublé.
+
+Le « miaulement feutré » résonnant dans la boîte de Schrödinger suggère la coexistence de réalités simultanées, entre le familier et l’altérité. Le poème assume ainsi que la transformation du temps rend impossible tout retour sans faille, et embrasse la complexité de l’identité nomade et du sentiment de désappartenance.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+<em>Homecomings</em> reflects on the paradox of returning to the familiar while recognizing that no return can ever replicate the past. The opening lines, “Into the flowing waters of the river / one never dips twice,” echo Heraclitus’ insight that everything exists in constant flux. The river, like memory and selfhood, is never the same, and the speaker’s past cannot be fully recaptured.
+
+Though welcomed with open arms, the nomad slips back into old habits, while those who receive the return remain unaware of the speaker’s “real” life elsewhere—one that has itself grown distant and has “turned not-so-real.” The attempt to fit a round, present-day self into a square space of home highlights this tension.
+
+The muffled, feathered meow in Schrödinger’s box captures these simultaneous realities, emphasizing a homecoming that is both familiar and alien. Ultimately, the poem reckons with how time’s transformations imply the impossibility of seamless return, and embraces the complexities of nomadic identity and unhoming.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/homecomings';
+      this.page.identifier = 'homecomings';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

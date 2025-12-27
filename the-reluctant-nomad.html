@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the-reluctant-nomad</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Le nomade réticent</p>
+        <p>
+Émigré, expatrié
+Immigrant, étranger
+NRI pour les Indiens
+visa d’étudiant 
+pour les universitaires,
+permis de travail
+pour les employé·es 
+en Amérique.
+
+L’esprit,
+formé avec le temps,
+répond à
+chaque étape
+avec la clarté
+de la Raison.
+pas de passion,
+pas de sentiments —
+les Institutions
+ne les tolèrent pas.
+
+Un soulagement palpable
+à la réception
+du titre sans ironie,
+le “permis anticipé”
+émancipe
+de la prison
+qu’est le statut
+lié au travail,
+une délivrance profonde
+à l’arrivée
+de la “carte verte”,
+et cinq ans
+plus tard,
+le prix en or
+de la nationalité.
+D’abord, tout commence 
+par le décollage,
+par-delà les mers,
+s’envoler avec le temps,
+planer haut, libéré
+des chaînes
+de ses origines.
+
+Et puis, par quelque alchimie —
+une décennie 
+qui en devient deux 
+voire plus,
+une seule valise
+se transforme
+en un appartement,
+signes espérés
+d’une intégration 
+dans le creuset américain.
+
+Mais les passions refoulées
+Rampent,
+S’élèvent,
+Éclatent
+jusqu’à
+déborder
+au-delà.
+
+Déchiré
+entre deux terres,
+deux cultures,
+des appels désunis
+effacent
+tout sentiment
+d’appartenance
+qui se recristallise
+à jamais
+comme un malaise
+d’espace et de temps.
+
+C’est à ce moment-là
+que, tout doucement,
+je commence 
+à comprendre
+le bonheur
+de défaire
+mon chez-moi.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">The Reluctant Nomad</p>
+        <p>
+Émigré, expatriate
+Immigrant, foreigner
+NRI to Indians
+F1s, J1s, for those
+at school
+sponsored H1s
+on the job
+in the US of A.
+
+The mind
+well-trained in time
+responds to
+each step with
+the clarity
+of Reason.
+No time for passion,
+none for feelings —
+institutions
+will have none of those.
+
+Palpable relief 
+for those receiving
+the ironically billed
+‘advance parole’.
+Freed from
+the prison
+of sponsor-linked
+status
+brings
+Deep solace 
+with the arrival
+of the ‘green’ card,
+citizenship —
+the plum prize,
+some five years hence.
+
+The way it all begins—
+flying overseas
+gliding with time
+soaring high
+freed from
+the shackles 
+of one’s origins.
+
+What follows—
+by some quiet alchemy,
+a decade turns
+into two or more,
+a suitcase 
+into an apartment.
+Signs awaited for 
+‘true’ melting pot
+integration,
+American style.
+
+Yet, ignored passions
+Creep
+Rise
+Erupt
+until they can 
+no longer
+be contained.
+
+Torn between 
+two lands,
+dual cultures, 
+unpaired beckonings 
+warp any
+sense 
+of belonging
+crystalizing 
+forever more
+as a malaise 
+in space and time.
+
+Only then,
+it slowly dawns 
+upon me
+to take comfort 
+in being 
+happily
+unhomed.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Bengaluru</p>
+      <p>le 21 mai 2025 | 21 May 2025 </p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+<em>Le Nomade Réticent</em> explore l’expérience migratoire à travers le prisme souvent invisible mais déterminant de la bureaucratie. Visas, statuts, permis et délais d’attente ne sont pas de simples cadres administratifs : ils se sédimentent dans la construction même de soi, et l’identité légale et professionnelle, souvent réductrice, tend à se présenter comme une raison d’être en soi. La clarté de la Raison — institutionnelle, procédurale — y domine les affects, reléguant passions et élans intimes à l’arrière-plan.
+
+La réticence du nomade à s'y engager refuse cette réduction. À mesure que le temps s’étire, que le migrant-nomade s’installe et que les valises deviennent appartements, une autre vérité émerge : l’individu excède toujours la personne juridique ou fonctionnelle. La migration révèle alors une condition plus profonde — celle d’une appartenance instable, recomposée, parfois inconfortable. 
+
+Face à ce flux, le nomadisme n’est plus vécu comme un manque, mais comme une manière d’habiter le monde autrement. Choisir de « se défaire » de son chez-soi devient une forme de liberté, où l’identité se base sur l’acceptation de l’éphémère.
+      </div>
+      <div id="reflection-en">
+        <p>
+<em>The Reluctant Nomad</em> explores the migratory experience through the often invisible yet decisive prism of bureaucracy. Visas, legal statuses, permits, and waiting periods are not merely administrative frameworks; they become sedimented within the very construction of the self, transforming the frequently reductive legal or professional identity into an end unto itself. The clarity of Reason—institutional and procedural—prevails over affect, relegating passion and interior life to the back burner.
+
+The reluctance of the nomad to engage resists this reduction. As time stretches, as the migrant-nomad settles and suitcases turn into apartments, another truth emerges: the individual always exceeds the legal or functional persona imposed upon them. Migration thus reveals a deeper condition—one of unstable, recomposed, and sometimes uncomfortable belonging.
+
+In the face of this flux, nomadism is no longer experienced as lack, but as an alternative way of inhabiting the world. To lucidly choose un-homing becomes a form of freedom, where identity is shaped through an embrace of the ephemeral.
+        </p>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/the-reluctant-nomad';
+      this.page.identifier = 'the-reluctant-nomad';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

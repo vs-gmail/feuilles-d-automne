@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>floating-bowls</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Bols flottants</p>
+        <p>
+Observer ces bols blancs
+flotter
+alors qu’ils se heurtent,
+se transformant 
+en mini-gongs,
+me transporte
+aux froides nuits 
+de Chicago
+où les rafales de vent
+sur le Lac Michigan
+faisaient entonner
+le chorus
+du son distinct
+des banquises
+qui s’entrechoquent.
+
+Je m’émerveillais alors,
+depuis la chaleur
+de mon lit douillet,
+à deux pas
+du rivage gelé,
+à entendre
+cette musique magique — 
+inouïe 
+aux oreilles tropicales —
+de glace 
+sur glace.
+
+Contempler en silence
+en cette chaude journée d’été,
+aux côtés de mon ami d’antan,
+le corps de ballet 
+des Clinamen tout blanc
+glisser 
+en un cortège sinueux 
+de porcelaine blanche,
+leurs reflets parfaits
+dans le bassin bleu clair,
+me fait m’arrêter
+pour songer
+aux années écoulées
+depuis que 
+j’ai entendu
+le chœur improbable
+de ces banquises-là.
+
+Les sons
+d’ici et maintenant,
+sous la Rotonde 
+baignée de lumière,
+de l’ancienne Bourse,
+se font rejoigner,
+en un continuum improbable,
+par les dendrons tentaculaires
+de mon esprit profond,
+avec 
+les fenêtres
+engivrées
+d’une vie passée.
+
+Je m’émerveille à nouveau,
+cette fois,
+devant la surprenante
+polyphonie —
+la concordance
+entre les notes céramiques
+du bassin
+et les tonalités glacées
+du lac,
+tandis que 
+mon esprit-voyageur 
+du temps
+s’harmonise
+à une musique
+qui résonne
+d’une légèreté du vécu.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Floating Bowls</p>
+        <p>
+Watching the white bowls
+float by
+as they collide,
+transforming their
+likeness into
+mini-gongs,
+takes me back
+to cold Chicago nights
+when wind gusts
+on Lake Michigan
+produced
+that distinct
+sound of
+clinking
+ice floes.
+
+I marveled then,
+from the warmth
+of my cosy bed,
+a mere block
+away from
+the frozen shore,
+on hearing
+that magical music —
+unlike any
+heard in the tropics —
+of ice on ice.
+
+Silently beholding 
+on this hot summer day,
+alongside my longtime friend,
+the corps de ballet 
+of white Clinamen
+glide 
+in a sinuous train
+of white porcelain,
+mirrored perfectly
+in the clear-blue pool,
+gives me pause
+to reflect
+on the years
+gone by
+since I heard
+the unlikely chorus
+of those ice floes.
+
+The sounds of
+the here and the now,
+under
+the light-filled rotonda
+of the old Bourse,
+are joined
+in unlikely continuum
+by the tentacular dendrons
+in the far reaches
+of this mind,
+with the frost-filled
+windows
+of a past life.
+
+I marvel once more,
+this time,
+at the surprising
+polyphony —
+the concordance
+between the ceramic notes
+from the pool
+and the icy tones
+of the lake,
+while
+my time-traveling 
+mind
+harmonizes
+to a music
+that resonates
+with a lightness of being.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>le 03 septembre 2025 | 03 September 2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+<em>Bols Flottants</em> déploie une réflexion profondément lucrétienne sur le son, le hasard et la mémoire. En mettant en résonance le cliquetis aléatoire des bols de porcelaine de Clinamen et la musique fragile des banquises sur le lac Michigan, le poème montre comment une perception présente peut provoquer une déviation mentale — un clinamen — par laquelle le passé revient habiter l’instant. Le son devient ainsi un tissu qui lie, reliant lieux, saisons et vies vécues.
+
+La présence silencieuse de l’« ami d’antan » non seulement inscrit cette expérience dans un partage sensible, mais suggère également comment être touché·es ensemble par la même expérience sensorielle approfondit subtilement mais sûrement les liens d’amitié, tandis que les souvenirs différents qu’elle éveille en chacun résonnent sans se confondre. L’image des « dendrons tentaculaires » donne une forme organique à la pensée, où le « ici et maintenant » est activement rejoint par le vécu. Le poème réunit ces éléments dans l’affirmation finale d’une harmonie singulière — une musique — née du hasard, de l’attention et de l’expérience incarnée.
+
+Une visite en août 2025 à <a href="https://www.pinaultcollection.com/fr/boursedecommerce/celeste-boursier-mougenot">Clinamen</a>, une installation d’art, par Céleste Boursier-Mougenot à la Bourse du Commerce à Paris a inspiré ce poème.
+        </p>
+      </div>
+      <div id="reflection-en">
+ <p>
+<em>Floating Bowls</em> unfolds a distinctly Lucretian meditation on sound, chance, and memory. By setting the aleatory clinking of the porcelain bowls of Clinamen against the fragile music of ice floes on Lake Michigan, the poem reveals how a present sensory experience can trigger a mental deviation—a clinamen—through which the past reenters the present moment. Sound thus becomes a fabric that binds, linking places, seasons, and lived lives.
+
+The silent presence of the “longtime friend” not only situates this experience within shared perception, but also suggests how being touched together by the same sensorial event subtly yet surely deepens the bonds of friendship, as differing memories are evoked in each and resonate without collapsing into one another. The image of “tentacular dendrons” gives organic form to thought itself, where the “here and now” is actively joined by memory. The poem brings these elements together in the concluding affirmation of a singular harmony—“a music”—born of chance, attention, and embodied experience.
+
+This poem was inspired by an August 2025 visit to <a href="https://www.pinaultcollection.com/en/boursedecommerce/celeste-boursier-mougenot">Clinamen</a>, an art installation, by Céleste Boursier-Mougenot at the Bourse du Commerce in Paris.        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/floating-bowls';
+      this.page.identifier = 'floating-bowls';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a-tear-for-america</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Une larme pour l'Amérique</p>
+        <p>
+Je verse une larme pour l’Amérique
+en ce jour solennel 
+où, 
+de nouveau,
+d’une violence inouïe,
+on fait face
+à la perte d’une vie.
+
+Je verse une larme pour l’Amérique
+dont la posture fière
+n’entrâve que
+la protection
+d’innocentes vies
+éteintes trop tôt
+par des détentes de haine.
+
+Je verse une larme pour l’Amérique
+lorsque aveuglé,
+le pouvoir malvisé
+s’accroche 
+sans excuse
+à des préceptes égoïstes
+intenables au cœur.
+
+La Liberté, prétendons-nous,
+pour la défense de soi,
+la Liberté, insistons-nous,
+de former des milices,
+la Liberté,
+que nous octroie
+le tout-sacré amendement…
+
+Je verse une larme 
+dans un profond désespoir,
+car, ces vies
+éteintes
+ont pour toujours disparu,
+les réparations
+ne sauraient jamais se faire.
+
+Pourtant, à travers
+ces larmes que je verse pour l’Amérique
+je guette même une lueur
+d’espoir naissant,
+afin que nous nous réveillions
+dans un monde baigné
+d’empathie et de paix.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">A Tear for America</p>
+        <p>
+I shed a tear for America
+on this solemn day
+as we are faced,
+in the most violent 
+of ways,
+with yet another
+loss of life.
+
+I shed a tear for America
+whose proud stance 
+but impedes 
+the protection
+of innocent lives 
+snuffed out too early
+by triggers of hate.
+
+I shed a tear for America
+for blinkered, 
+misguided power
+clings
+inexcusably
+to selfish precepts
+untenable at heart.
+
+Freedom, we claim,
+for self defense,
+Freedom, we insist,
+to form militias,
+Freedom, 
+as afforded by
+the all-sacred amendment…
+
+I shed a tear in deep despair,
+for, those lives 
+extinguished
+are forever
+lost,
+amends can
+never be made.
+
+Yet, through 
+these tears I shed for America
+I search for just a glimmer 
+of nascent hope,
+so we may awaken
+to a world suffused
+with empathy and peace.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Bengaluru</p>
+      <p>le 11 septembre 2025 | 11 September 2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+
+Écrit au lendemain d’un assassinat public aux États-Unis, ce poème est une méditation solennelle sur la perte de vie et la trahison de la responsabilité collective. L’anaphore de « verser une larme » souligne le désespoir face à des vies brisées par la violence insensée et évoque la tragique récurrence de ces pertes. Au cœur du poème se trouve une critique incisive : la liberté — présentée comme un droit fondamental — se trouve détournée par celleux qui détiennent le pouvoir, mettant en lumière la tension entre les principes légaux, fondements de l’Amérique constitutionnelle, et l’expérience vécue. Plutôt  que de se contenter de rester accablé face à cette violence, le poème suggère que tant que l’éveil moral et éthique ne prenne pas la place afin que monde soit rempli d’empathie et de paix, l’Amérique ne pourra pas prétendre être « la cité brillante sur la colline ».        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+
+Written in the aftermath of a public assassination in the United States, this poem is a solemn meditation on the loss of life and the betrayal of collective responsibility. The anaphoric repetition of “shedding a tear” underscores despair over lives cut short by senseless violence and evokes the tragic recurrence of such losses. At the core of the poem is a sharp critique of how freedom—presented as a fundamental right—has been hijacked by those in power, highlighting the tension between the legal principles, foundations of constitutional America, and lived experience. Rather than remain overwhelmed by endless violence, it proposes that until moral and ethical awareness takes hold so that our world may be filled with empathy and peace, America cannot claim to be “the shining city on a hill.”
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/a-tear-for-america';
+      this.page.identifier = 'a-tear-for-america';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

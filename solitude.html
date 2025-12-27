@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>solitude</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    /* Page background and text */
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    /* Columns for poems/reflections */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .columns > div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* Titles */
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Location / date */
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+
+    /* Button styling */
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    /* Reflection section hidden by default */
+    #reflection {
+      display: none;
+    }
+
+    /* Justify reflection text */
+    #reflection p {
+      text-align: justify;
+    }
+
+    /* Divider */
+    hr {
+      margin: 2rem 0 1rem 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    /* Links */
+    a {
+      color: #875626;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Disqus container styling */
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+    #disqus_thread * {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive columns for mobile */
+    @media (max-width: 600px) {
+      .columns {
+        flex-direction: column;
+      }
+    }
+
+    /* Preserve line breaks in poems and reflections */
+    .columns > div p,
+    #reflection > div p {
+      white-space: pre-wrap;
+    }
+
+    /* ===== New content wrapper overrides ===== */
+    
+    /* Poems aligned with left nav */
+    .content-wrapper.poem {
+      max-width: 900px;
+      margin-left: calc((100% - 900px)/2 + 220px);
+    }
+
+    /* Reflections centered */
+    .content-wrapper.reflection {
+      max-width: 900px;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Poem -->
+  <div class="content-wrapper poem">
+    <div class="columns">
+      <div>
+        <p class="title">Solitude</p>
+        <p>
+Des voix qui pèsent
+Des fantômes qui frôlent
+Un essaim de pensées grises
+qui hantent les recoins les plus noirs.
+
+Iels déboulent,
+avec un verre en main,
+sur les terrasses qui grouillent,
+S’infiltrent dans les parcs verdoyants
+sous l’abri de l’arbre ruisselant
+tout secoué par le vent. 
+
+Dans un clin d’oeil,
+iels me reviennent encore
+dans le regard passant d’un inconnu 
+me touchant, inlassable, au cœur.
+
+Que l’ennui ne s’attarde
+Que la peur ne s’installe
+ni las, ni amer
+Que je m’enveloppe
+Dans le doux sentiment 
+qu’est la solitude.
+        </p>
+      </div>
+      <div>
+        <p class="title">Solitude</p>
+        <p>
+Voices that weigh,
+ghosts that brush past,
+A swarm of grey thoughts
+Haunting the darkest corners.
+
+They burst in
+When, with glass in hand,
+on crowded terraces I stand,
+Slip into lush green parks,
+When under a dripping tree,
+I shelter, shaken by the wind.
+
+In the blink of an eye,
+They return yet again,
+when a stranger’s glance
+touches deep in the heart.
+
+May ennui no longer linger
+May fear no longer dally,
+neither weary nor bitter
+Let me settle into
+the joyful sentiment
+that is solitude.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location / Dates -->
+  <div class="lieu-date">
+    <p>Paris</p>
+    <p>le 23 avril 2025 | 23 April 2025</p>
+  </div>
+
+  <!-- Button to toggle reflection -->
+  <button onclick="toggleReflection()">Réflexions / Reflection</button>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Reflection -->
+  <div class="content-wrapper reflection">
+    <div id="reflection" class="columns">
+      <div>
+        <p>
+Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout — sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant — comme un fardeau presque tangible. Même si la répétition anaphorique de « iels me reviennent » présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, « Dans le doux sentiment qu’est la solitude », transforme tout poids restant en quelque chose de tendre, d’accepté.
+        </p>
+      </div>
+      <div>
+        <p>
+This poem explores the paradoxical and unexpected nature of solitude: at once weighty and alive. Disguised as voices, ghosts, grey thoughts, it appears everywhere — on crowded terraces, in lush green parks, or beneath a rain-drenched tree — as an almost tangible burden. Though the anaphoric repetition of “They return yet again” creates a sense of foreboding, the hope that fear and ennui will fade guides the poem gradually into a quiet meditation. The closing lines, “Let me settle into / The joyful sentiment / That is solitude,” transform any lingering weight into something tender, embraced, and fully accepted.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disqus comments -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    // Toggle reflection show/hide
+    function toggleReflection() {
+      var r = document.getElementById('reflection');
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    // Disqus configuration
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/solitude';
+      this.page.identifier = 'solitude';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+
+</body>
+</html>

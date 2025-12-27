@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>red-rain</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Pluie rouge</p>
+        <p>
+Une chaleur accablante
+cède la place
+à de lourdes gouttes 
+de pluie
+éclaboussant
+la terre desséchée
+avant que
+le déluge
+n’arrive
+de plein fouet.
+
+Loin de la brume 
+douce, constante,
+et de la pluie fine et froide
+de ma vie de nomade,
+je suis émerveillé
+par la force et la fureur
+de cette averse.
+
+Dans la rue à pied, 
+bien que trempé 
+jusqu’aux os, 
+la chaleur ambiante
+m’enveloppe, 
+Et de petits remous d’eau, 
+rougis 
+par la terre du Deccan, 
+tourbillonnent 
+à mes pieds 
+et inondent 
+l’allée 
+de part 
+à l’autre.
+
+Souvenirs lointains
+des froids mordants 
+se transforment
+en cette joie trempée.
+l’un peut-il
+exister
+sans l’autre ?
+
+Puis, tout aussi vite,
+le ciel réapparaît
+et alors que
+l’averse s’éloigne,
+la chaleur pesante
+se dissipe à présent.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Red Rain</p>
+        <p>
+Searing heat
+gives way
+to heavy drops
+of rain
+splattering on the 
+parched soil
+Before
+the torrent 
+arrives
+in full force.
+
+Far from the cold,
+constant, misty,
+drizzle
+of my nomadic life,
+I am awestruck
+by the force and fury
+of the downpour.
+
+As I walk 
+the street
+I am soaked 
+to the bones, 
+Yet wrapped 
+in the ambient warmth,
+as little eddies
+of water
+reddened
+by Deccan soil
+swirl 
+by my feet
+and flood 
+the entire lane.
+
+Distant memories
+of biting chills
+morph
+into a happy drench.
+Could one
+exist without
+the other?
+
+Then, just as suddenly
+the skies reappear
+And as the downpour
+clears
+the heavy heat 
+has since dissolved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Bengaluru</p>
+      <p>le 19 mai 2025 | 19 May 2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Ce poème est né d’un moment d’immersion physique dans une averse soudaine, le corps pris entre saturation et chaleur. Ce qui m’a frappé n’était pas seulement l’intensité de la pluie, mais sa générosité — sa capacité à laver les rues, rafraîchir l’air et dissoudre la lourdeur jusqu’alors immuable. L’eau de pluie, rougie par la terre du Deccan, rappelle que l’expérience corporelle s’entrelace de manière viscérale avec la terre elle-même pour devenir des empreintes indissociables de la mémoire. En marchant dans la rue inondée, au cœur de la puissance inattendue de ce flot soudain de pré-mousson, je me suis souvenu de combien elle différait de la bruine froide et persistante que j’avais connue au cours d’une vie de migrant dans les latitudes nordiques. Le poème circule entre ces mondes contrastés, non pour en privilégier un, mais pour interroger la possibilité que joie et inconfort, mouvement et immobilité, puissent exister indépendamment l’un de l’autre. À la fin, le ciel qui se dégage n’apporte aucune révélation — seulement un relâchement discret, lorsque la chaleur, comme un souffle retenu, finit par se dissiper.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+This poem grew out of a moment of physical immersion in a sudden downpour, with the body caught between saturation and warmth. What struck me was not only the intensity of the precipitation, but its generosity—the way it washed the streets, cooled the air, and dissolved a weight that had seemed immovable. The rainwater, reddened by the Deccan soil, reminds us that bodily experience viscerally intertwines with the land itself, becoming inseparable imprints of memory. Walking through the flooded street, amid the unexpected potency of this pre-monsoon shower, I was reminded of how different it was from the cold, persistent drizzle I had experienced during a migrant life in northern climes. The poem moves between those contrasting worlds not to choose one over the other, but to ask whether joy and discomfort, movement and stillness, can exist independently of one another. In the end, the clearing sky offers no revelation—only a quiet release, as heat, like a held breath, finally lets go.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/red-rain';
+      this.page.identifier = 'red-rain';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

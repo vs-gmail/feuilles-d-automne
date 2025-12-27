@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tuesday</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title">Mardi</p>
+        <p>
+Quand l’horloge
+a sonné vingt heures,
+assis près d’une fenêtre
+je sirotais nerveusement
+ma tisane à l’hibiscus.
+
+Tu t’es arrêté un instant
+au seuil de la porte,
+nos regards se sont croisés,
+et tu as esquissé
+ce sourire attendrissant
+que j’ai appris à chérir depuis.
+
+Quatre mardis depuis
+ce soir pluvieux d’avril,
+me revoilà assis,
+près d’une autre fenêtre
+une tisane d’hibiscus
+entre les mains.
+
+Je me rappelle
+ces semaines écoulées
+l’inquiétude s’est dissipée,
+cédant place
+à une douce impatience —
+dans l’attente
+d’une nouvelle soirée
+à passer
+en ta présence chaleureuse.
+
+Et dans ce rêve
+de futur tout proche,
+je souhaite que
+chaque mardi qui passe
+me ramène
+à cette toute première soirée
+de printemps,
+et qu’il en annonce
+maintes d’autres à venir.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Tuesday</p>
+        <p>
+As the clock
+struck eight
+I sat by a window
+nervously sipping
+my cup of hibiscus tea.
+
+You stood in the doorway
+for a moment
+before our eyes met
+and you broke into
+that endearing smile
+that I have now come to cherish.
+
+It is now four Tuesdays
+since that rainy April evening
+and I sit once more
+by another window
+sipping
+a cup of hibiscus tea.
+
+Images of the last four weeks
+fill my thoughts.
+But now, nervousness
+has long since dissolved
+and has give way
+to eager anticipation
+of yet another evening of delight
+in the warmth
+of your friendly presence.
+
+As I dream
+into the near future
+I hope that
+the passing
+of every Tuesday
+will mark
+that first one in Spring,
+and will be the herald
+of many more to come.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Chicago/Paris</p>
+      <p>mai 1999 / décembre 2025 | May 1999/December 2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Le poème Mardi dessine une atmosphère intime et réfléchie, où, au fil de quatre mardis successifs, se dévoile la naissance et l’évolution d’une relation. La tisane à l’hibiscus devient une synecdoche centrale : si, au début, la boisson chaude accentue la nervosité de celui qui attend — manifestée dans le geste de siroter —, la même tisane, tout en évoquant la première rencontre, nourrit désormais une douce impatience et une anticipation joyeuse. La récurrence des mardis suggère une routine agréable, ponctuée de moments partagés dans la chaleur de la présence de l’autre. Le texte explore ainsi la croissance d’un lien affectif naissant, construit à travers les petites habitudes du quotidien.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+The poem Tuesday paints an intimate and reflective atmosphere, where, over the course of four successive Tuesdays, the development of a relationship unfolds. Hibiscus tea becomes a central synecdoche: if, at first, sipping the hot drink conveys a nervous anticipation — manifested in the act of sipping —, the same tea, while recalling the first encounter, now nourishes a gentle, joyful expectation. The recurrence of Tuesdays suggests a pleasant routine, marked by moments shared in the warmth of the other’s presence. In this way, the poem explores the growth of a yet tentative emotional bond, built through the small habits of everyday life.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/tuesday';
+      this.page.identifier = 'tuesday';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

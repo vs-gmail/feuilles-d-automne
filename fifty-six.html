@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Cinquante-six</p>
         <p>
@@ -271,7 +271,12 @@ upon this new soil.
       }
 
       showingEnglish = !showingEnglish;
-    }
+
+    document.getElementById("poem-top").scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

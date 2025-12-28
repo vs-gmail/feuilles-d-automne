@@ -153,30 +153,100 @@ A Poetics of the In-Between</p>
 
 </div>
 
-<script>
-let showingEnglish = true;
-function toggleLanguage() {
-  if (window.innerWidth > 700) return;
-  const fr = document.getElementById("poem-fr");
-  const en = document.getElementById("poem-en");
-  const buttons = document.querySelectorAll(".lang-toggle");
+<!-- Disqus -->
+  <div id="disqus_thread"></div>
 
-  if (showingEnglish) {
-    en.style.display = "none";
-    fr.style.display = "block";
-    buttons.forEach(b => b.textContent = "Read in English");
-  } else {
-    fr.style.display = "none";
-    en.style.display = "block";
-    buttons.forEach(b => b.textContent = "Lire en français");
-  }
-  showingEnglish = !showingEnglish;
-document.getElementById("poem-top").scrollIntoView({
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
-</script>
 
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/foreword';
+      this.page.identifier = 'foreword';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
 </body>
 </html>

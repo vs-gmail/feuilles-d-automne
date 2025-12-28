@@ -62,13 +62,12 @@ button:hover {
   background-color: #a0613c;
 }
 
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 @media (max-width: 700px) {
-  #author-fr { display: none; }
-  #author-en { display: block; }
+  .lang-toggle { display: block; }
 }
 
-/* ---------- DESKTOP ---------- */
+/* DESKTOP */
 @media (min-width: 701px) {
   .lang-toggle { display: none; }
 }
@@ -76,7 +75,6 @@ button:hover {
 </head>
 
 <body>
-
 <div class="content-wrapper">
 
 <!-- Top mobile toggle -->
@@ -113,8 +111,6 @@ He now lives in Paris with his dog, Reshmé. <em>Autumn Leaves</em> is his first
 let showingEnglish = true;
 
 function toggleLanguage() {
-  if (window.innerWidth > 700) return;
-
   const fr = document.getElementById("author-fr");
   const en = document.getElementById("author-en");
   const buttons = document.querySelectorAll(".lang-toggle");
@@ -131,6 +127,15 @@ function toggleLanguage() {
 
   showingEnglish = !showingEnglish;
 }
+
+/* Initialize mobile view exactly like foreword.html */
+window.addEventListener("load", () => {
+  if (window.innerWidth <= 700) {
+    document.getElementById("author-fr").style.display = "none";
+    document.getElementById("author-en").style.display = "block";
+    showingEnglish = true;
+  }
+});
 </script>
 
 </body>

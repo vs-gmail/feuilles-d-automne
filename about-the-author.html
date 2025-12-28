@@ -81,6 +81,30 @@ button:hover {
   #author-en { display: block; }
 }
 </style>
+
+<script type="text/javascript">
+let showingEnglish = true;
+
+function toggleLanguage() {
+  if (window.innerWidth > 700) return;
+  
+  const fr = document.getElementById("author-fr");
+  const en = document.getElementById("author-en");
+  const buttons = document.querySelectorAll(".lang-toggle");
+
+  if (showingEnglish) {
+    en.style.display = "none";
+    fr.style.display = "block";
+    buttons.forEach(b => b.textContent = "Read in English");
+  } else {
+    fr.style.display = "none";
+    en.style.display = "block";
+    buttons.forEach(b => b.textContent = "Lire en français");
+  }
+  showingEnglish = !showingEnglish;
+}
+</script>
+
 </head>
 
 <body>
@@ -107,46 +131,6 @@ button:hover {
 <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
 </div>
-
-<script>
-let showingEnglish = true;
-
-function toggleLanguage() {
-  console.log("Toggle called. Window width:", window.innerWidth);
-  
-  if (window.innerWidth > 700) {
-    console.log("Desktop mode - toggle disabled");
-    return;
-  }
-  
-  const fr = document.getElementById("author-fr");
-  const en = document.getElementById("author-en");
-  const buttons = document.querySelectorAll(".lang-toggle");
-  
-  console.log("Before toggle - showingEnglish:", showingEnglish);
-  console.log("FR display:", fr.style.display);
-  console.log("EN display:", en.style.display);
-
-  if (showingEnglish) {
-    en.style.display = "none";
-    fr.style.display = "block";
-    buttons.forEach(b => b.textContent = "Read in English");
-  } else {
-    fr.style.display = "none";
-    en.style.display = "block";
-    buttons.forEach(b => b.textContent = "Lire en français");
-  }
-  showingEnglish = !showingEnglish;
-  
-  console.log("After toggle - showingEnglish:", showingEnglish);
-}
-
-// Log on page load
-window.addEventListener('load', function() {
-  console.log("Page loaded. Window width:", window.innerWidth);
-  console.log("Initial showingEnglish:", showingEnglish);
-});
-</script>
 
 </body>
 </html>

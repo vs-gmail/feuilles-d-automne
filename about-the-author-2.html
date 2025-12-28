@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about-the-author</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 0;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .columns-wrapper > div {
+      flex: 1 1 480px;
+      max-width: 520px;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
+    }
+
+    .columns-wrapper p {
+      text-align: justify;
+      line-height: 1.7;
+      margin: 0 0 1.2rem 0;
+      hyphens: auto;
+    }
+
+    #poem-fr { lang: fr; }
+    #poem-en { lang: en; }
+
+    
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .columns-wrapper {
+        flex-direction: column;
+      }
+
+      .lang-toggle {
+        display: block;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="content-wrapper">
+
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+<div class="columns-wrapper">
+
+<!-- FRENCH -->
+<div id="poem-fr">
+<p class="title"><em>À propos de l'auteur</p>
+
+<p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis.  Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d’automne</em> est son premier recueil de poésie.
+</p>
+</div>
+
+<!-- ENGLISH -->
+<div id="poem-en">
+<p class="title"><em>About the Author/p>
+
+<p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé.  <em>Autumn Leaves</em> is his first collection of poetry.
+</p>
+
+</div>
+
+</div>
+
+
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+</div>
+
+<script>
+let showingEnglish = true;
+function toggleLanguage() {
+  if (window.innerWidth > 700) return;
+  const fr = document.getElementById("poem-fr");
+  const en = document.getElementById("poem-en");
+  const buttons = document.querySelectorAll(".lang-toggle");
+
+  if (showingEnglish) {
+    en.style.display = "none";
+    fr.style.display = "block";
+    buttons.forEach(b => b.textContent = "Read in English");
+  } else {
+    fr.style.display = "none";
+    en.style.display = "block";
+    buttons.forEach(b => b.textContent = "Lire en français");
+  }
+  showingEnglish = !showingEnglish;
+}
+</script>
+
+</body>
+</html>

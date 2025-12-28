@@ -141,6 +141,14 @@ function toggleLanguage() {
   }
   showingEnglish = !showingEnglish;
 }
+window.addEventListener("load", () => {
+  if (window.innerWidth <= 700) {
+    document.getElementById("poem-fr").style.display = "none";
+    document.getElementById("poem-en").style.display = "block";
+    showingEnglish = true;
+  }
+});
+
 </script>
 
 </body>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>midnight-sun</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+<div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
+        <p class="title">Soleil de minuit</p>
+        <p>
+Le départ
+par longues étapes
+projette des ombres
+profondes
+dans la brume
+de séparation
+qui se prolonge
+au-delà de midi.
+
+La patience
+s’avère
+malléable,
+antidote parfait
+aux ardentes attentes
+de ciels dégagés
+rappelant
+les chaudes après-midi tropicales.
+
+Pourtant la fraîcheur
+des brumes languissantes 
+de novembre,
+tourbillonnant encore,
+s’attarde à se dissiper
+lentement,
+malgré la douce chaleur 
+d’un soleil lointain.
+
+La toile qui en émerge —
+révélera-t-elle
+dans une palette vive
+de rouge, de jaune, 
+et d’orange sang,
+le serein spectacle
+tel un soleil 
+de minuit nordique ?
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Midnight Sun</p>
+        <p>
+Departure
+in long stages
+casts shadows 
+deep
+into the fog 
+of separation
+as it protracts
+past midday.
+
+Patience 
+proves
+pliable,
+the perfect antidote 
+to the eager anticipation
+of clear skies
+reminiscent of 
+hot tropical afternoons
+
+Yet the coolness
+of the languishing mists 
+of November,
+still swirling, lingering,
+dissipates slowly,
+despite 
+the gentle warming 
+from a distant sun.
+
+The emerging view—
+will it reveal 
+in a vivid palette 
+of red, yellow, 
+and blood-orange,
+the quiet spectacle 
+like a northern
+midnight sun?
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>Le 16 novembre 2025 | 16 November 2025</p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Ce poème s’appuie sur la métaphore culminante du soleil de minuit, figure d’espoir, afin de contempler la notion d’un temps d’attente et de transformation qui s’embrouille et s’étire tel une matinée sous les brouillards de novembre.  Dans ce texte, la lumière n’est jamais brutale ; elle réchauffe doucement, à distance, suggérant que plutôt que dans un déclic, la clarté prend son temps pour se révéler par couches successives. Les images de brume, de fraîcheur et de leur lente dissipation traduisent une expérience intérieure : celle d’un départ, de l’attente et de la patience nécessaire pour traverser l’incertitude dans une période de transition et de transformation. Même si elle s’attarde, tout comme le soleil de minuit, on aura le temps de savourer les couleurs vives de la longue journée qu’elle dessine.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+The midnight sun, the culminating metaphor of this poem, presents a figure of hope, to reflect on a period of waiting and transition likened to a prolonged, foggy November morning. In this text, light is never harsh; it warms gently from a distance, suggesting that, rather than arriving in a sudden flash, clarity unfolds slowly, layer by layer. The images of mist, coolness, and their gradual dissipation convey an inner experience: that of departure, waiting, and the patience required to navigate uncertainty during a period of transition and transformation. As the day lingers, it brightens, and, like the midnight sun itself, there is time to savor the vivid colors of the long day it paints.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/midnight-sun';
+      this.page.identifier = 'midnight-sun';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

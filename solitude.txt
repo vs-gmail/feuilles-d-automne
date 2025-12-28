@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>solitude</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #111;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px;
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none;
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0;
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
+        <p class="title">Solitude</p>
+        <p>
+Des voix qui pèsent
+Des fantômes qui frôlent
+Un essaim de pensées grises
+qui hantent les recoins les plus noirs.
+
+Iels déboulent,
+avec un verre en main,
+sur les terrasses qui grouillent,
+S’infiltrent dans les parcs verdoyants
+sous l’abri de l’arbre ruisselant
+tout secoué par le vent. 
+
+Dans un clin d’oeil,
+iels me reviennent encore
+dans le regard passant d’un inconnu 
+me touchant, inlassable, au cœur.
+
+Que l’ennui ne s’attarde
+Que la peur ne s’installe
+ni las, ni amer
+Que je m’enveloppe
+Dans le doux sentiment 
+qu’est la solitude.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">Solitude</p>
+        <p>
+Voices that weigh,
+ghosts that brush past,
+A swarm of grey thoughts
+Haunting the darkest corners.
+
+They burst in
+When, with glass in hand,
+on crowded terraces I stand,
+Slip into lush green parks,
+When under a dripping tree,
+I shelter, shaken by the wind.
+
+In the blink of an eye,
+They return yet again,
+when a stranger’s glance
+touches deep in the heart.
+
+May ennui no longer linger
+May fear no longer dally,
+neither weary nor bitter
+Let me settle into
+the joyful sentiment
+that is solitude.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>le 23 avril 2025 | 23 April 2025</p>
+    </div>
+
+    <!-- Mobile toggle (bottom) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle -->
+    <button onclick="toggleReflection()">Réflexions / Reflection</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout — sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant — comme un fardeau presque tangible. Même si la répétition anaphorique de « iels me reviennent » présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, « Dans le doux sentiment qu’est la solitude », transforme tout poids restant en quelque chose de tendre, d’accepté.
+        </p>
+      </div>
+
+      <div id="reflection-en">
+        <p>
+This poem explores the paradoxical and unexpected nature of solitude: at once weighty and alive. Disguised as voices, ghosts, grey thoughts, it appears everywhere — on crowded terraces, in lush green parks, or beneath a rain-drenched tree — as an almost tangible burden. Though the anaphoric repetition of “They return yet again” creates a sense of foreboding, the hope that fear and ennui will fade guides the poem gradually into a quiet meditation. The closing lines, “Let me settle into / The joyful sentiment / That is solitude,” transform any lingering weight into something tender, embraced, and fully accepted.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return;
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById("reflection").style.display === "flex") {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(b => b.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById("reflection").style.display === "flex") {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(b => b.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+
+      document.getElementById("poem-top").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById("reflection");
+
+      if (r.style.display === "none" || r.style.display === "") {
+        r.style.display = "flex";
+        if (window.innerWidth <= 600) {
+          document.getElementById("reflection-fr").style.display = showingEnglish ? "none" : "block";
+          document.getElementById("reflection-en").style.display = showingEnglish ? "block" : "none";
+        } else {
+          document.getElementById("reflection-fr").style.display = "block";
+          document.getElementById("reflection-en").style.display = "block";
+        }
+      } else {
+        r.style.display = "none";
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      }
+    });
+
+    var disqus_config = function () {
+      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/solitude';
+      this.page.identifier = 'solitude';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://autumn-leaves.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+</body>
+</html>

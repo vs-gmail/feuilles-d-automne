@@ -146,7 +146,7 @@ hr {
 </head>
 <body>
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="poem-top">
 
   <!-- Top mobile toggle -->
   <button class="lang-toggle mobile-only" onclick="toggleLanguage()">Lire en français</button>
@@ -317,6 +317,10 @@ function toggleLanguage() {
   }
 
   showingEnglish = !showingEnglish;
+document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function toggleReflection() {

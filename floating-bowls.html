@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Bols flottants</p>
         <p>
@@ -374,7 +374,11 @@ This poem was inspired by an August 2025 visit to <a href="https://www.pinaultco
       }
 
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

@@ -24,7 +24,11 @@
         buttons.forEach(btn => btn.textContent = "Lire en français");
       }
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
     window.addEventListener("load", () => {
       if (window.innerWidth <= 600) {
         document.getElementById("poem-fr").style.display = "none";
@@ -108,7 +112,7 @@
 <body>
   <div class="content-wrapper">
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
-    <div class="columns-wrapper">
+<div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title"><em>À propos de l'auteur</em></p>
         <p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis. Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d'automne</em> est son premier recueil de poésie.</p>

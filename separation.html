@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Séparation</p>
         <p>
@@ -257,16 +257,12 @@ beginning to unfold.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Le poème prend son départ dans le conflit interne entre l’expérience vive d’une profonde empathie pour un ami souffrant d’une rupture et la traversée de l’impuissance à soulager sa douleur. Les effets de la séparation ne se limitent pas au couple défait ; ils se font sentir dans tout un réseau de relations, d’habitudes et de présences partagées qui se défont ou se déplacent de manière profonde. La séparation, qui apparaît d’abord comme une expérience silencieuse, presque immobile et personnelle, révèle, à une réflexion attentive, son impact plus profond sur les liens humains.
-
-Le tissage, comme métaphore, donne une forme tangible à cette complexité : les liens se filent lentement, parfois sans qu’on s’en rende compte, et finissent par former une tapisserie riche mais fragile. Le poème met ainsi en relief la nature éphémère de la joie partagée, qui ne peut être conservée ni figée dans le temps ; elle ne peut être vécue que dans l’instant, puis portée et transformée par la mémoire. Même si cette méditation n’offre pas de résolution nette, elle esquisse, sous forme de souhait, la possibilité d’un réancrage éventuel, permettant peut-être d’accepter la perte et de s’enrichir de nouvelles expériences à venir.
+Le poème prend son départ dans l'expérience d'émotions contradictoires — profonde empathie pour un ami souffrant d'une rupture, et l'impuissance totale à soulager sa douleur. Les effets de la séparation se répercutent dans tout un réseau de relations, et des habitudes longuement partagées qui se défont. Le tissage, comme métaphore, donne forme à cette complexité : les liens se filent lentement et forment une tapisserie riche mais fragile. Le poème met ainsi en relief la nature éphémère de la joie partagée, qui ne peut être vécue que dans l'instant, puis portée, changée, par la mémoire. Si cette méditation n'offre pas de résolution nette, elle esquisse la possibilité d'un réancrage permettant d'accepter la perte et de s'ouvrir à de nouvelles expériences.
         </p>
       </div>
       <div id="reflection-en">
         <p>
-The poem begins with experiencing deep empathy for a friend suffering the pain of a breakup, yet being utterly powerless to relieve it. The effects of separation are not limited to the erstwhile couple, but are felt by an entire network of relationships, habits, and shared presences that unravel or shift in profound ways. Separation, which at first appears as a silent, almost immobile, personal experience, reveals, upon attentive reflection, its deeper impact on human connections.
-
-Weaving as metaphor gives tangible form to this complexity: connections are spun slowly, sometimes unconsciously, and in time form a rich yet fragile tapestry. The poem thus highlights the fleeting nature of shared joy, which cannot be preserved or frozen in time; it can only be experienced in the moment and carried over, transformed by memory. If this meditation offers no clear resolution, it sketches, in the form of a wish, the possibility of a re-anchoring that might allow one to accept loss while remaining open to enrich oneself through new experiences yet to come.
+The poem begins with experiencing conflicting emotions—deep empathy for a friend suffering a breakup, yet feeling utterly powerless to relieve it. The effects of separation ripple through an entire network of relationships and the long-shared habits that unravel. Weaving as metaphor gives form to this complexity: connections are spun slowly, forming a rich yet fragile tapestry. The poem highlights the fleeting nature of shared joy, which can only be experienced in the moment, only to be carried, changed, by memory. If this meditation offers no clear resolution, it sketches the possibility of re-anchoring that might allow one to accept the loss while remaining open to new experiences.
         </p>
       </div>
     </div>
@@ -307,7 +303,11 @@ Weaving as metaphor gives tangible form to this complexity: connections are spun
       }
 
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

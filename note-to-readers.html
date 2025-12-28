@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About the Author</title>
+  <title>Note-to-readersr</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
   
@@ -74,3 +74,51 @@
     }
     button {
       display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #a0613c;
+    }
+    .lang-toggle {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0;
+      }
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+    }
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title"><em> Note aux lecteur·ices</em></p>
+        <p>Afin de permettre la lecture des versions française et anglaise côte à côte, ce recueil est optimisé pour une consultation sur ordinateur de bureau ou portable. Sur appareils mobiles, une seule langue s'affiche à la fois ; un bouton à cliquer sert pour passer du français à l'anglais. Pour maximiser l'espace d'affichage sur tout appareil, glissez l'en-tête vers le haut pour le masquer.</p>
+      </div>
+      <div id="poem-en">
+        <p class="title"><em>Note to Readers</em></p>
+        <p>In order to allow for reading both the French and English versions side by side, this collection is optimized for desktop or laptop computers. On mobile devices, one language is displayed at a time, with a toggle button to switch between French and English. To display more text on screen, swipe up to hide the header.</p>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+  </div>
+</body>
+</html>

@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Cinquante-six</p>
         <p>
@@ -225,11 +225,12 @@ upon this new soil.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Cinquante-six</em> marque un seuil autobiographique où « l’été » de la vie ressent l’approche de l’automne. Cette métaphore saisonnière évoque moins un déclin qu’une maturation, une transformation portée par l’expérience vécue. La répétition anaphorique « Dans l’été de ma vie » ancre le poème dans un présent encore lumineux, où « la solitude brille » et « le bonheur se reforme » — suggérant que ces états ne sont pas des acquis, mais des configurations mouvantes, des formes qui se recomposent sans cesse. La notion de « force » dans quatre déclinaisons — suffisante, attachante, transformante, migrante — confère à la chaleur estivale une qualité active et dynamique. Cette force n’est pas un reste passif, mais un élan qui traverse, attache, transforme et migre. Le poème cite le poète romantique britannique Keats (« Season of mists and mellow fruitfulness ») pour rappeler l’image d’un automne robuste et inscrire cette transition dans une lignée poétique plus ancienne : ce poème n’est, après tout, pas le premier à éclairer la vie à la lumière des saisons. Les vers conclusifs invitent à « porter ses fruits / sur ce sol nouveau » et soulignent une vérité universelle : tout passage de saison — physique ou métaphysique — offre aussi la possibilité de se déraciner en pleine conscience des « vieilles habitudes » afin de se replanter en sol nouveau.
+<em>Cinquante-six</em> marque un seuil autobiographique où « l'été » de la vie ressent l'approche de l'automne. Cette métaphore saisonnière évoque moins un déclin qu'une maturation portée par l'expérience vécue. La répétition du vers qui ouvre le poème ancre le poème dans un présent encore lumineux et suggère des états mouvants qui se recomposent sans cesse. La notion de « force » déclinée en quatre avatars confère à la chaleur estivale une qualité dynamique : un élan qui traverse, attache, transforme et migre. La citation, « Season of mists and mellow fruitfulness », de Keats, poète romantique britannique, inscrit cette transition dans une lignée poétique ancienne. Finalement, chaque passage de saison offre la possibilité de se déraciner consciemment pour se replanter en sol nouveau.
       </div>
       <div id="reflection-en">
         <p>
-<em>Fifty-Six</em> marks an autobiographical threshold where the “summer” of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation—a transformation borne of lived experience. The anaphoric repetition “In the summer of my life” anchors the poem in a still-luminous present, where “solitude shines” and “happiness re-forms,” suggesting that these states are not fixed acquisitions but shifting configurations, forms that continually recompose themselves. The notion of “strength,” declined in four facets—sufficient, endearing, transforming, migrating—grants summer’s warmth an active, dynamic quality. This strength is not a passive residue but a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats (“Season of mists and mellow fruitfulness”) recalls the image of a robust autumn and inscribes this transition within a broader poetic lineage: this poem is, after all, not the first to cast life in seasonal light. The final lines invite us to “bear its fruit / upon this new soil,” foregrounding a universal truth: any seasonal passage—physical or metaphysical—also offers the opportunity for a mindful uprooting of old habits, and for replanting in new soil.        </p>
+<em>Fifty-Six</em> marks an autobiographical threshold where the "summer" of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation borne of lived experience. The repetition of the opening line anchors the poem in a still-luminous present and suggests shifting states that continually recompose themselves. The notion of four different avatars of grants summer's warmth a dynamic quality: it is a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats —"Season of mists and mellow fruitfulness"— inscribes this transition within a broader poetic lineage. Ultimately, any seasonal passage offers the opportunity for mindful uprooting and replanting in new soil.
+</p>
         </p>
       </div>
     </div>
@@ -270,7 +271,12 @@ upon this new soil.
       }
 
       showingEnglish = !showingEnglish;
-    }
+
+    document.getElementById("poem-top").scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

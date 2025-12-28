@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Pluie rouge</p>
         <p>
@@ -268,13 +268,11 @@ has since dissolved.
     <!-- Reflections -->
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
-        <p>
-Ce poème est né d’un moment d’immersion physique dans une averse soudaine, le corps pris entre saturation et chaleur. Ce qui m’a frappé n’était pas seulement l’intensité de la pluie, mais sa générosité — sa capacité à laver les rues, rafraîchir l’air et dissoudre la lourdeur jusqu’alors immuable. L’eau de pluie, rougie par la terre du Deccan, rappelle que l’expérience corporelle s’entrelace de manière viscérale avec la terre elle-même pour devenir des empreintes indissociables de la mémoire. En marchant dans la rue inondée, au cœur de la puissance inattendue de ce flot soudain de pré-mousson, je me suis souvenu de combien elle différait de la bruine froide et persistante que j’avais connue au cours d’une vie de migrant dans les latitudes nordiques. Le poème circule entre ces mondes contrastés, non pour en privilégier un, mais pour interroger la possibilité que joie et inconfort, mouvement et immobilité, puissent exister indépendamment l’un de l’autre. À la fin, le ciel qui se dégage n’apporte aucune révélation — seulement un relâchement discret, lorsque la chaleur, comme un souffle retenu, finit par se dissiper.
+        <p>Ce poème est né d'un moment d'immersion dans une averse soudaine, le corps pris entre saturation et chaleur. Ce qui frappe n'est pas seulement l'intensité de la pluie, mais sa générosité — sa capacité à laver les rues, rafraîchir l'air et dissoudre la lourdeur. L'eau rougie par la terre du Deccan ancre l'expérience corporelle dans la mémoire viscérale du lieu. Le poème circule entre deux mondes contrastés — entre la pluie de pré-mousson du présent et la bruine froide des latitudes nordiques d'un autre temps — non pour en privilégier un, mais pour interroger si la joie de l'un pourrait exister sans la gêne de l'autre. Quand le ciel se dégage, il n'apporte aucune révélation, sinon un relâchement discret lorsque la chaleur, comme un souffle retenu, finit par se dissiper.
         </p>
       </div>
       <div id="reflection-en">
-        <p>
-This poem grew out of a moment of physical immersion in a sudden downpour, with the body caught between saturation and warmth. What struck me was not only the intensity of the precipitation, but its generosity—the way it washed the streets, cooled the air, and dissolved a weight that had seemed immovable. The rainwater, reddened by the Deccan soil, reminds us that bodily experience viscerally intertwines with the land itself, becoming inseparable imprints of memory. Walking through the flooded street, amid the unexpected potency of this pre-monsoon shower, I was reminded of how different it was from the cold, persistent drizzle I had experienced during a migrant life in northern climes. The poem moves between those contrasting worlds not to choose one over the other, but to ask whether joy and discomfort, movement and stillness, can exist independently of one another. In the end, the clearing sky offers no revelation—only a quiet release, as heat, like a held breath, finally lets go.
+        <p>This poem grew out of a moment of physical immersion in a sudden downpour, the body caught between saturation and warmth. What strikes is not only the rain's intensity but its generosity—washing streets, cooling air, dissolving weight. The rainwater, reddened by Deccan soil, anchors bodily experience in visceral memory of place. The poem moves between contrasting worlds—the pre-monsoon shower of the present and the cold drizzle of northern climes of another time—not to choose one over the other, but to ask if joy could exist without the experience of discomfort. While the clearing sky offers no revelation, it brings a quiet release as heat, like a held breath, finally lets go.
         </p>
       </div>
     </div>
@@ -315,7 +313,11 @@ This poem grew out of a moment of physical immersion in a sudden downpour, with 
       }
 
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

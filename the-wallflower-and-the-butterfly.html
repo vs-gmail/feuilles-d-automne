@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+    <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">La marguerite et le papillon</p>
         <p>
@@ -229,11 +229,10 @@ at the soirée delight.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>La marguerite et le papillon</em> explore la dualité intérieure que chacun porte en soi. La "marguerite intérieure", discrète et attentive, se réveille au cœur de la soirée, tandis que son alter ego, le "papillon mondain", se faufile avec aisance parmi la foule. Cependant, ces deux figures ne sont pas opposées, mais les deux faces d’une même personne, chacune reflétant l’autre de manière inversée. Le poème met en lumière que notre comportement en société — qu’il soit réservé ou flamboyant — cache une vulnérabilité profonde. Le papillon mondain, malgré son allure confiante, partage avec la marguerite le même cœur fragile. Ils sont "reflets inverses", deux aspects d'une même âme, qui se complètent parfaitement tout en restant vulnérables. Bien qu’elles semblent s'éloigner dans leur manière d’occuper l’espace social, la marguerite et le papillon restent des étrangers l’un à l’autre, inconscients de leur fragilité partagée. À travers cette subtile danse, le poème dévoile une vérité essentielle : l'éclat extérieur du papillon et le retrait intérieur de la marguerite ne sont que les deux faces d’une même quête de connexion.
-      </div>
+<em>La marguerite et le papillon</em> explore la dualité intérieure que chacun porte en soi. La "marguerite intérieure", discrète et attentive, se révèle peu au cœur de la soirée, tandis que son alter ego, le "papillon mondain", se faufile avec aisance parmi la foule. Loin d'être opposées, ces deux figures sont les reflets inversés d'une même personne, chacune cachant une vulnérabilité profonde. Le papillon mondain, malgré son allure confiante, partage avec la marguerite le même cœur fragile.
       <div id="reflection-en">
         <p>
-<em>The Wallflower and the Butterfly</em> explores the internal duality we each carry within us. The "inner wallflower" stirs when the crowd surges, silently observing, while its counterpart, the "social butterfly," navigates the same social space with charm and ease. The key revelation here is that these two figures are not opposites, but obverse reflections of one another, each serving as a mirror image of the other. The poem reveals that our behavior in social situations—whether quiet and reserved or outwardly confident—often hides a deeper vulnerability. The social butterfly may appear carefree, but beneath that exterior, it shares the same heart as the wallflower. They are "obverse complements," each embodying a different aspect of the same essence, both equally vulnerable at their core. Despite how they appear in a social setting, both figures remain strangers to one another, each unaware of the other’s shared fragility. In this delicate interplay, the poem captures a profound truth: the butterfly’s outward brilliance and the wallflower’s inward retreat are obverse reflections of one soul, each embodying the same hidden yearning for connection.        </p>
+<em>The Wallflower and the Butterfly</em> explores the internal duality we each carry within us. The "inner wallflower" stirs carefully when the crowd surges, silently observing, while its counterpart, the "social butterfly," navigates the same social space with charm and ease. Far from being opposites, they are obverse reflections of one another, both hiding a deeper vulnerability. The social butterfly may appear carefree, but beneath that exterior, it shares the same fragile heart as the wallflower.      </div>
         </p>
       </div>
     </div>
@@ -274,7 +273,11 @@ at the soirée delight.
       }
 
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

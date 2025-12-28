@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
   <style>
-    /* Page background and text */
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
@@ -18,33 +17,53 @@
       color: #111;
     }
 
-    /* Columns for poems/reflections */
-    .columns {
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .columns-wrapper {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
+      margin-left: 220px;
     }
 
-    .columns > div {
+    .columns-wrapper > div {
+      max-width: 400px;
       flex: 1;
-      min-width: 200px;
     }
 
-    /* Titles */
     .title {
       font-family: 'Bree Serif', serif;
       font-weight: normal;
       margin-bottom: 0.5rem;
     }
 
-    /* Location / date */
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
     .lieu-date {
       text-align: center;
       font-style: italic;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
     }
 
-    /* Button styling */
     button {
       display: block;
       margin: 1.5rem auto;
@@ -61,77 +80,65 @@
       background-color: #a0613c;
     }
 
-    /* Reflection section hidden by default */
     #reflection {
       display: none;
     }
 
-    /* Justify reflection text */
     #reflection p {
       text-align: justify;
+      white-space: pre-wrap;
     }
 
-    /* Divider */
     hr {
-      margin: 2rem 0 1rem 0;
+      margin: 2rem 0 1rem;
       border: 0;
       border-top: 1px solid #ccc;
     }
 
-    /* Links */
-    a {
-      color: #875626;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Disqus container styling */
     #disqus_thread {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
       padding-top: 1rem;
     }
-    #disqus_thread * {
-      font-size: 0.9rem;
+
+    .lang-toggle {
+      display: none;
     }
 
-    /* Responsive columns for mobile */
     @media (max-width: 600px) {
-      .columns {
-        flex-direction: column;
+      .columns-wrapper {
+        margin-left: 0;
       }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
     }
 
-    /* Preserve line breaks in poems and reflections */
-    .columns > div p,
-    #reflection > div p {
-      white-space: pre-wrap;
-    }
-
-    /* ===== New content wrapper overrides ===== */
-    
-    /* Poems aligned with left nav */
-    .content-wrapper.poem {
-      max-width: 900px;
-      margin-left: calc((100% - 900px)/2 + 220px);
-    }
-
-    /* Reflections centered */
-    .content-wrapper.reflection {
-      max-width: 900px;
-      margin: 1rem auto;
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
 </head>
-<body>
 
-  <!-- Poem -->
-  <div class="content-wrapper poem">
-    <div class="columns">
-      <div>
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+    <div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
         <p class="title">Solitude</p>
         <p>
 Des voix qui pèsent
@@ -159,7 +166,8 @@ Dans le doux sentiment
 qu’est la solitude.
         </p>
       </div>
-      <div>
+
+      <div id="poem-en">
         <p class="title">Solitude</p>
         <p>
 Voices that weigh,
@@ -188,51 +196,110 @@ that is solitude.
         </p>
       </div>
     </div>
-  </div>
 
-  <!-- Location / Dates -->
-  <div class="lieu-date">
-    <p>Paris</p>
-    <p>le 23 avril 2025 | 23 April 2025</p>
-  </div>
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Paris</p>
+      <p>le 23 avril 2025 | 23 April 2025</p>
+    </div>
 
-  <!-- Button to toggle reflection -->
-  <button onclick="toggleReflection()">Réflexions / Reflection</button>
+    <!-- Mobile toggle (bottom) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-  <!-- Divider -->
-  <hr>
+    <!-- Reflection toggle -->
+    <button onclick="toggleReflection()">Réflexions / Reflection</button>
 
-  <!-- Reflection -->
-  <div class="content-wrapper reflection">
-    <div id="reflection" class="columns">
-      <div>
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
         <p>
-Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout — sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant — comme un fardeau presque tangible. Même si la répétition anaphorique de « iels me reviennent » présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, « Dans le doux sentiment qu’est la solitude », transforme tout poids restant en quelque chose de tendre, d’accepté.
+Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout — sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant — comme un fardeau presque tangible. Même si la répétition anaphorique de « iels me reviennent » présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, « Dans le doux sentiment qu’est la solitude », transforme tout poids restant en quelque chose de tendre, d’accepté.
         </p>
       </div>
-      <div>
+
+      <div id="reflection-en">
         <p>
 This poem explores the paradoxical and unexpected nature of solitude: at once weighty and alive. Disguised as voices, ghosts, grey thoughts, it appears everywhere — on crowded terraces, in lush green parks, or beneath a rain-drenched tree — as an almost tangible burden. Though the anaphoric repetition of “They return yet again” creates a sense of foreboding, the hope that fear and ennui will fade guides the poem gradually into a quiet meditation. The closing lines, “Let me settle into / The joyful sentiment / That is solitude,” transform any lingering weight into something tender, embraced, and fully accepted.
         </p>
       </div>
     </div>
+
   </div>
 
-  <!-- Disqus comments -->
+  <!-- Disqus -->
   <div id="disqus_thread"></div>
 
   <script>
-    // Toggle reflection show/hide
-    function toggleReflection() {
-      var r = document.getElementById('reflection');
-      if (r.style.display === 'none' || r.style.display === '') {
-        r.style.display = 'flex';
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return;
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById("reflection").style.display === "flex") {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(b => b.textContent = "Read in English");
       } else {
-        r.style.display = 'none';
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById("reflection").style.display === "flex") {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(b => b.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+
+      document.getElementById("poem-top").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function toggleReflection() {
+      const r = document.getElementById("reflection");
+
+      if (r.style.display === "none" || r.style.display === "") {
+        r.style.display = "flex";
+        if (window.innerWidth <= 600) {
+          document.getElementById("reflection-fr").style.display = showingEnglish ? "none" : "block";
+          document.getElementById("reflection-en").style.display = showingEnglish ? "block" : "none";
+        } else {
+          document.getElementById("reflection-fr").style.display = "block";
+          document.getElementById("reflection-en").style.display = "block";
+        }
+      } else {
+        r.style.display = "none";
       }
     }
 
-    // Disqus configuration
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      }
+    });
+
     var disqus_config = function () {
       this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/solitude';
       this.page.identifier = 'solitude';
@@ -245,7 +312,7 @@ This poem explores the paradoxical and unexpected nature of solitude: at once we
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
 
+  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
 </body>
 </html>

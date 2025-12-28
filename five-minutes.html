@@ -141,7 +141,7 @@
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Poems -->
-    <div class="columns-wrapper">
+<div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Cinq minutes</p>
         <p>
@@ -248,7 +248,7 @@ of my love-struck heart.
     <!-- Location / Date -->
     <div class="lieu-date">
       <p>Chicago/Paris</p>
-      <p>décembre 1999/2025 | December 1999/2025</p>
+      <p>décembre 1999/2025| December 1999/2025</p>
     </div>
 
     <!-- Mobile toggle button (after poem & location/date) -->
@@ -308,7 +308,11 @@ of my love-struck heart.
       }
 
       showingEnglish = !showingEnglish;
-    }
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
     function toggleReflection() {
       const r = document.getElementById('reflection');

@@ -96,7 +96,7 @@
 
 <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-<div class="columns-wrapper">
+<div class="columns-wrapper" id="poem-top">
 
 <!-- FRENCH -->
 <div id="poem-fr">
@@ -171,6 +171,10 @@ function toggleLanguage() {
     buttons.forEach(b => b.textContent = "Lire en français");
   }
   showingEnglish = !showingEnglish;
+document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 </script>
 

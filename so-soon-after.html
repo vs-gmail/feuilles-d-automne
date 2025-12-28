@@ -80,7 +80,7 @@
 </head>
 <body>
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="poem-top">
 
   <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
@@ -153,7 +153,9 @@ For a long time to come.
     <p>le 23 juillet 2023 | 23 July 2023</p>
   </div>
 
-  <button onclick="toggleReflection()">Réflexions / Reflections</button>
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+<button onclick="toggleReflection()">Réflexions / Reflections</button>
   <hr>
 
   <!-- Reflections -->
@@ -206,7 +208,11 @@ For a long time to come.
     }
 
     showingEnglish = !showingEnglish;
-  }
+  document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
   function toggleReflection() {
     const r = document.getElementById('reflection');

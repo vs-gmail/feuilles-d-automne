@@ -36,17 +36,15 @@ body {
 }
 .columns p {
   text-align: justify;
+  text-justify: inter-word;
   line-height: 1.7;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   margin: 0 0 1.2rem 0;
 }
-.lieu-date {
-  text-align: center;
-  font-style: italic;
-  margin: 2.5rem 0 1.5rem;
-}
 button {
-  display: block;
+  display: none;
   margin: 1.5rem auto;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
@@ -59,21 +57,12 @@ button {
 button:hover {
   background-color: #a0613c;
 }
-.lang-toggle {
-  display: none;
-}
 @media (max-width: 700px) {
   .columns {
     flex-direction: column;
   }
-  .lang-toggle {
+  button {
     display: block;
-  }
-  #author-fr { 
-    display: none !important; 
-  }
-  #author-en { 
-    display: block !important; 
   }
 }
 </style>
@@ -81,53 +70,62 @@ button:hover {
 <body>
 <div class="content-wrapper">
   <!-- Top mobile toggle -->
-  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+  <button id="btnTop" onclick="toggleLang()">Lire en français</button>
   <div class="columns">
     <!-- FRENCH -->
-    <div id="author-fr">
+    <div id="fr-text">
       <p class="title"><em>À propos de l'auteur</em></p>
       <p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis.  Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d'automne</em> est son premier recueil de poésie.</p>
     </div>
     <!-- ENGLISH -->
-    <div id="author-en">
+    <div id="en-text">
       <p class="title"><em>About the Author</em></p>
       <p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé.  <em>Autumn Leaves</em> is his first collection of poetry.</p>
     </div>
   </div>
   <!-- Bottom mobile toggle -->
-  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+  <button id="btnBottom" onclick="toggleLang()">Lire en français</button>
 </div>
 <script>
-let showingEnglish = true;
-function toggleLanguage() {
-  if (window.innerWidth > 700) return;
-  const fr = document.getElementById("author-fr");
-  const en = document.getElementById("author-en");
-  const buttons = document.querySelectorAll(".lang-toggle");
-  if (showingEnglish) {
-    en.style.display = "none";
-    fr.style.display = "block";
-    buttons.forEach(b => b.textContent = "Read in English");
-    showingEnglish = false;
+let currentLang = 'en';
+
+function toggleLang() {
+  const frDiv = document.getElementById('fr-text');
+  const enDiv = document.getElementById('en-text');
+  const btnTop = document.getElementById('btnTop');
+  const btnBottom = document.getElementById('btnBottom');
+  
+  if (currentLang === 'en') {
+    frDiv.style.display = 'block';
+    enDiv.style.display = 'none';
+    btnTop.textContent = 'Read in English';
+    btnBottom.textContent = 'Read in English';
+    currentLang = 'fr';
   } else {
-    fr.style.display = "none";
-    en.style.display = "block";
-    buttons.forEach(b => b.textContent = "Lire en français");
-    showingEnglish = true;
+    frDiv.style.display = 'none';
+    enDiv.style.display = 'block';
+    btnTop.textContent = 'Lire en français';
+    btnBottom.textContent = 'Lire en français';
+    currentLang = 'en';
   }
 }
-window.addEventListener("load", () => {
-  const fr = document.getElementById("author-fr");
-  const en = document.getElementById("author-en");
+
+function initPage() {
+  const frDiv = document.getElementById('fr-text');
+  const enDiv = document.getElementById('en-text');
+  
   if (window.innerWidth <= 700) {
-    fr.style.display = "none";
-    en.style.display = "block";
-    showingEnglish = true;
+    frDiv.style.display = 'none';
+    enDiv.style.display = 'block';
+    currentLang = 'en';
   } else {
-    fr.style.display = "block";
-    en.style.display = "block";
+    frDiv.style.display = 'block';
+    enDiv.style.display = 'block';
   }
-});
+}
+
+window.addEventListener('load', initPage);
+window.addEventListener('resize', initPage);
 </script>
 </body>
 </html>

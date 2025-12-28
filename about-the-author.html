@@ -11,66 +11,55 @@
   <style>
     body {
       font-family: 'Alegreya', serif;
-      margin: 1rem;
-      line-height: 1.6;
+      margin: 0;
       background: #e2d8b9;
       color: #111;
     }
 
     .content-wrapper {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 1.5rem;
     }
 
-    /* Poem columns wrapper (centered with nav offset) */
     .columns-wrapper {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
       flex-wrap: wrap;
-      margin-left: 220px; /* adjust for Google Sites nav */
     }
 
     .columns-wrapper > div {
-      max-width: 400px;
-      flex: 1;
+      flex: 1 1 480px;
+      max-width: 520px;
     }
 
     .title {
       font-family: 'Bree Serif', serif;
       font-weight: normal;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .columns-wrapper p {
-      white-space: pre-wrap;
+      text-align: justify;
+      line-height: 1.7;
+      margin: 0 0 1.2rem 0;
+      hyphens: auto;
     }
 
-    /* Reflection wrapper: fully centered, no nav offset */
-    .reflection-columns {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-left: 0; 
-    }
-
-    .reflection-columns > div {
-      max-width: 400px;
-      flex: 1;
-    }
+    #poem-fr { lang: fr; }
+    #poem-en { lang: en; }
 
     .lieu-date {
       text-align: center;
       font-style: italic;
-      margin: 2rem 0;
+      margin: 2.5rem 0 1.5rem;
     }
 
     button {
       display: block;
       margin: 1.5rem auto;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       font-size: 1rem;
       cursor: pointer;
       background-color: #875626;
@@ -83,166 +72,81 @@
       background-color: #a0613c;
     }
 
-    #reflection {
-      display: none; /* hidden by default */
-    }
-
-    #reflection p {
-      text-align: justify;
-      white-space: pre-wrap;
-    }
-
-    hr {
-      margin: 2rem 0 1rem;
-      border: 0;
-      border-top: 1px solid #ccc;
-    }
-
-    #disqus_thread {
-      max-width: 700px;
-      margin: 2rem auto;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
-    /* Mobile-only language toggle buttons */
     .lang-toggle {
       display: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .columns-wrapper {
-        margin-left: 0; /* remove nav offset */
+        flex-direction: column;
       }
 
       .lang-toggle {
         display: block;
-        margin: 1.5rem auto;
       }
 
       #poem-fr { display: none; }
       #poem-en { display: block; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (min-width: 601px) {
-      .lang-toggle { display: none; }
-      #reflection { display: none; } 
-      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
 </head>
 
 <body>
-  <div class="content-wrapper">
+<div class="content-wrapper">
 
-    <!-- Mobile toggle button (top) -->
-    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-    <!-- Poems -->
-    <div class="columns-wrapper">
-      <div id="poem-fr">
-        <p class="title">À propos de l'auteur</p>
-        <p>
-Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis.  Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d’automne</em> est son premier recueil de poésie.
-        </p>
-      </div>
+<div class="columns-wrapper">
 
-      <div id="poem-en">
-        <p class="title">About the Author</p>
-        <p>
-Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé.  <em>Autumn Leaves</em> is his first collection of poetry.
-        </p>
-      </div>
-    </div>
+<!-- FRENCH -->
+<div id="poem-fr">
+<p class="title"><em>À propos de l'auteur</p>
 
-    
+<p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis.  Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d’automne</em> est son premier recueil de poésie.
+</p>
+</div>
 
-    <!-- Mobile toggle button (after poem & location/date) -->
-    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+<!-- ENGLISH -->
+<div id="poem-en">
+<p class="title"><em>About the Author</p>
 
-    <!-- Reflection toggle button -->
-    
+<p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé.  <em>Autumn Leaves</em> is his first collection of poetry.
+</p>
 
-    <hr>
+</div>
 
-    
+</div>
 
+<div class="lieu-date">
+    <p><b>Vinay Swamy</b></p>
+<p>Paris</p>
+  <p>le 01 janvier 2026 | 01 January 2026</p>
+</div>
 
-  <script>
-    let showingEnglish = true;
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-    function toggleLanguage() {
-      if (window.innerWidth > 600) return; // desktop unaffected
+</div>
 
-      const fr = document.getElementById("poem-fr");
-      const en = document.getElementById("poem-en");
-      const reflFr = document.getElementById("reflection-fr");
-      const reflEn = document.getElementById("reflection-en");
-      const buttons = document.querySelectorAll(".lang-toggle");
+<script>
+let showingEnglish = true;
+function toggleLanguage() {
+  if (window.innerWidth > 700) return;
+  const fr = document.getElementById("poem-fr");
+  const en = document.getElementById("poem-en");
+  const buttons = document.querySelectorAll(".lang-toggle");
 
-      if (showingEnglish) {
-        en.style.display = "none";
-        fr.style.display = "block";
-        if (document.getElementById('reflection').style.display === 'flex') {
-          reflEn.style.display = "none";
-          reflFr.style.display = "block";
-        }
-        buttons.forEach(btn => btn.textContent = "Read in English");
-      } else {
-        fr.style.display = "none";
-        en.style.display = "block";
-        if (document.getElementById('reflection').style.display === 'flex') {
-          reflFr.style.display = "none";
-          reflEn.style.display = "block";
-        }
-        buttons.forEach(btn => btn.textContent = "Lire en français");
-      }
-
-      showingEnglish = !showingEnglish;
-    }
-
-    function toggleReflection() {
-      const r = document.getElementById('reflection');
-
-      if (r.style.display === 'none' || r.style.display === '') {
-        r.style.display = 'flex';
-        if (window.innerWidth <= 600) {
-          if (showingEnglish) {
-            document.getElementById('reflection-fr').style.display = 'none';
-            document.getElementById('reflection-en').style.display = 'block';
-          } else {
-            document.getElementById('reflection-fr').style.display = 'block';
-            document.getElementById('reflection-en').style.display = 'none';
-          }
-        } else {
-          // desktop: show both
-          document.getElementById('reflection-fr').style.display = 'block';
-          document.getElementById('reflection-en').style.display = 'block';
-        }
-      } else {
-        r.style.display = 'none';
-      }
-    }
-
-    window.addEventListener("load", () => {
-      if (window.innerWidth <= 600) {
-        document.getElementById("poem-fr").style.display = "none";
-        document.getElementById("poem-en").style.display = "block";
-        document.getElementById("reflection").style.display = "none";
-        document.getElementById("reflection-fr").style.display = "none";
-        document.getElementById("reflection-en").style.display = "none";
-        showingEnglish = true;
-        document.querySelectorAll(".lang-toggle").forEach(btn => {
-          btn.textContent = "Lire en français";
-        });
-      } else {
-        document.getElementById("reflection").style.display = "none";
-        document.getElementById("reflection-fr").style.display = "none";
-        document.getElementById("reflection-en").style.display = "none";
-      }
-    });
+  if (showingEnglish) {
+    en.style.display = "none";
+    fr.style.display = "block";
+    buttons.forEach(b => b.textContent = "Read in English");
+  } else {
+    fr.style.display = "none";
+    en.style.display = "block";
+    buttons.forEach(b => b.textContent = "Lire en français");
+  }
+  showingEnglish = !showingEnglish;
+}
+</script>
 
 </body>
 </html>

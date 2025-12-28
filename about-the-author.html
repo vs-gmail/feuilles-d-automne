@@ -41,10 +41,11 @@ body {
 }
 
 /* FORCE justification inside embedded iframe */
-.columns p {
-  text-align: justify !important;
-  white-space: normal !important;
-  hyphens: auto !important;
+.columns p,
+.columns-wrapper p {
+    text-align: justify !important;
+    white-space: normal !important;
+    hyphens: auto !important;
 }
 
 button {
@@ -114,8 +115,8 @@ He now lives in Paris with his dog, Reshmé. <em>Autumn Leaves</em> is his first
 let showingEnglish = true;
 
 function toggleLanguage() {
-  const fr = document.getElementById("author-fr");
-  const en = document.getElementById("author-en");
+const fr = document.getElementById("author-fr");
+const en = document.getElementById("author-en");
   const buttons = document.querySelectorAll(".lang-toggle");
 
   if (showingEnglish) {
@@ -133,11 +134,15 @@ function toggleLanguage() {
 
 /* MOBILE INIT: ensure toggle works when loaded in iframe */
 window.addEventListener("load", () => {
-  if (window.innerWidth <= 700) {
-    document.getElementById("author-fr").style.display = "none";
-    document.getElementById("author-en").style.display = "block";
-    showingEnglish = true;
-  }
+    if (window.innerWidth <= 700) {
+        fr.style.display = "none";
+        en.style.display = "block";
+        showingEnglish = true;
+    } else {
+        fr.style.display = "block";
+        en.style.display = "block";
+        showingEnglish = true;
+    }
 });
 </script>
 

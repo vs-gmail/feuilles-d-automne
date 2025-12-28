@@ -82,6 +82,10 @@
       -webkit-hyphens: auto;
       -moz-hyphens: auto;
     }
+
+     .columns-wrapper p {
+      white-space: pre-wrap;
+    }
     button {
       display: block;
       margin: 1.5rem auto;
@@ -131,7 +135,7 @@ Pour celleux qui le désirent, cliquer sur le bouton « réflexion » révèle d
 
 Finalement, si vous le souhaitez, dans la dernière section de la page dédiée à chaque paire-poétique, vous pouvez laisser un commentaire pertinent au poème.  Aussi, à la fin de l’avant-propos se propose un champ pour tout commentaire de nature globale ou générale.
 
-Bonne lecture !
+<P align="right">Bonne lecture !</p>
 
 </p>
       </div>
@@ -147,7 +151,7 @@ For those who would like more context, clicking on the reflections button will r
 
 Finally, if you wish, you may comment on any particular poem in the last section of each page of poem-pairs. There is space for general comments at the end of the foreword as well.
 
-Happy reading!
+<P align="right">Happy reading!</p>
 </p>
       </div>
     </div>
@@ -160,5 +164,42 @@ Happy reading!
     </div>
 <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
   </div>
+
+<script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 </body>
 </html>

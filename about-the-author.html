@@ -23,14 +23,14 @@ body {
   box-sizing: border-box;
 }
 
-.columns-wrapper {
+.columns {
   display: flex;
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
 }
 
-.columns-wrapper > div {
+.columns > div {
   flex: 1 1 480px;
   max-width: 520px;
 }
@@ -41,18 +41,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.columns-wrapper p {
-  display: block !important;
-  width: 100% !important;
-  text-align: justify !important;
-  white-space: normal !important;
-  hyphens: auto !important;
+.columns p {
+  text-align: justify;
   line-height: 1.7;
-  margin: 0 0 1.2rem 0 !important;
+  hyphens: auto;
+  margin: 0 0 1.2rem 0;
 }
-
-#author-fr { lang: fr; }
-#author-en { lang: en; }
 
 .lieu-date {
   text-align: center;
@@ -76,22 +70,17 @@ button:hover {
   background-color: #a0613c;
 }
 
-/* Hide toggle on desktop */
 .lang-toggle {
   display: none;
 }
 
 @media (max-width: 700px) {
-  .columns-wrapper {
+  .columns {
     flex-direction: column;
   }
-
-  /* Show mobile toggle */
   .lang-toggle {
     display: block;
   }
-
-  /* Show English by default, hide French */
   #author-fr { display: none; }
   #author-en { display: block; }
 }
@@ -104,7 +93,7 @@ button:hover {
   <!-- Top mobile toggle -->
   <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-  <div class="columns-wrapper">
+  <div class="columns">
     <!-- FRENCH -->
     <div id="author-fr">
       <p class="title"><em>À propos de l'auteur</em></p>
@@ -127,8 +116,7 @@ button:hover {
 let showingEnglish = true;
 
 function toggleLanguage() {
-  if (window.innerWidth > 700) return; // desktop: do nothing
-
+  if (window.innerWidth > 700) return;
   const fr = document.getElementById("author-fr");
   const en = document.getElementById("author-en");
   const buttons = document.querySelectorAll(".lang-toggle");
@@ -145,7 +133,6 @@ function toggleLanguage() {
   showingEnglish = !showingEnglish;
 }
 
-// Ensure correct initial display on load
 window.addEventListener("load", () => {
   const fr = document.getElementById("author-fr");
   const en = document.getElementById("author-en");

@@ -22,12 +22,16 @@
       padding: 1.5rem;
     }
 
-    .columns-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
+   /* Two-column layout using CSS Grid with French slightly wider */
+.columns-wrapper {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr; /* French slightly wider than English */
+  gap: 5rem; /* increase gutter from 2rem to 3rem */
+  justify-content: center;
+  margin: 0 auto;
+  align-items: start; /* align items at top */
+  grid-auto-rows: minmax(1px, auto); /* flexible row height */
+}
 
     .columns-wrapper > div {
       flex: 1 1 480px;

@@ -20,6 +20,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .columns-wrapper {
@@ -46,9 +47,6 @@ body {
   margin: 0 0 1.2rem 0;
   hyphens: auto;
 }
-
-#author-fr { lang: fr; }
-#author-en { lang: en; }
 
 button {
   display: block;
@@ -94,14 +92,14 @@ button:hover {
 
 <!-- FRENCH -->
 <div id="author-fr">
-<p class="title"><em>À propos de l'auteur</em></p>
-<p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis.  Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d'automne</em> est son premier recueil de poésie.</p>
+  <p class="title"><em>À propos de l'auteur</em></p>
+  <p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis. Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d'automne</em> est son premier recueil de poésie.</p>
 </div>
 
 <!-- ENGLISH -->
 <div id="author-en">
-<p class="title"><em>About the Author</em></p>
-<p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé.  <em>Autumn Leaves</em> is his first collection of poetry.</p>
+  <p class="title"><em>About the Author</em></p>
+  <p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé. <em>Autumn Leaves</em> is his first collection of poetry.</p>
 </div>
 
 </div>
@@ -112,11 +110,22 @@ button:hover {
 
 <script>
 let showingEnglish = true;
+
 function toggleLanguage() {
-  if (window.innerWidth > 700) return;
+  console.log("Toggle called. Window width:", window.innerWidth);
+  
+  if (window.innerWidth > 700) {
+    console.log("Desktop mode - toggle disabled");
+    return;
+  }
+  
   const fr = document.getElementById("author-fr");
   const en = document.getElementById("author-en");
   const buttons = document.querySelectorAll(".lang-toggle");
+  
+  console.log("Before toggle - showingEnglish:", showingEnglish);
+  console.log("FR display:", fr.style.display);
+  console.log("EN display:", en.style.display);
 
   if (showingEnglish) {
     en.style.display = "none";
@@ -128,7 +137,15 @@ function toggleLanguage() {
     buttons.forEach(b => b.textContent = "Lire en français");
   }
   showingEnglish = !showingEnglish;
+  
+  console.log("After toggle - showingEnglish:", showingEnglish);
 }
+
+// Log on page load
+window.addEventListener('load', function() {
+  console.log("Page loaded. Window width:", window.innerWidth);
+  console.log("Initial showingEnglish:", showingEnglish);
+});
 </script>
 
 </body>

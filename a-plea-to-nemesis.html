@@ -111,7 +111,7 @@
 </head>
 <body>
 
-<div class="content-wrapper">
+<div class="content-wrapper" id="poem-top">
 
   <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
@@ -279,7 +279,11 @@ towards that farthest horizon of love.
     }
 
     showingEnglish = !showingEnglish;
-  }
+  document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
 
   function toggleReflection() {
     const r = document.getElementById('reflection');

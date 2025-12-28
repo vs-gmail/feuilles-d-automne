@@ -15,42 +15,65 @@ body {
   background: #e2d8b9;
   color: #111;
 }
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-/* Use CSS Grid for two columns */
+
+/* Two-column layout using CSS Grid with French slightly wider */
 .columns-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* two equal columns */
-  gap: 2rem;
-  justify-content: center; /* centers the grid */
+  grid-template-columns: 1.1fr 1fr; /* French slightly wider than English */
+  gap: 5rem; /* increase gutter from 2rem to 3rem */
+  justify-content: center;
   margin: 0 auto;
+  align-items: start; /* align items at top */
+  grid-auto-rows: minmax(1px, auto); /* flexible row height */
 }
+
+
+/* Inner divs */
 .columns-wrapper > div {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
-.columns-wrapper p {
+
+/* Paragraphs */
+#poem-fr p {
+  margin-bottom: 0.9em; /* 0.9 of default */
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   white-space: pre-wrap;
-  margin: 0 0 1rem 0;
 }
-.lieu-date {
-  text-align: center;
-  font-style: italic;
-  margin: 2rem 0;
+
+#poem-en p {
+  margin-bottom: 1em; /* default spacing */
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  white-space: pre-wrap;
 }
+
+/* Title styling */
 .title {
   font-family: 'Bree Serif', serif;
   font-weight: normal;
   margin-bottom: 0.5rem;
 }
+
+/* Location / Date */
+.lieu-date {
+  text-align: center;
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+/* Toggle buttons */
 button {
   display: block;
   margin: 1.5rem auto;
@@ -62,15 +85,19 @@ button {
   border: none;
   border-radius: 8px;
 }
+
 button:hover {
   background-color: #a0613c;
 }
+
 .lang-toggle {
   display: none;
 }
+
+/* Responsive: single column on mobile */
 @media (max-width: 600px) {
   .columns-wrapper {
-    grid-template-columns: 1fr; /* single column for mobile */
+    grid-template-columns: 1fr;
   }
   .lang-toggle {
     display: block;
@@ -79,10 +106,12 @@ button:hover {
   #poem-fr { display: none; }
   #poem-en { display: block; }
 }
+
 @media (min-width: 601px) {
   .lang-toggle { display: none; }
 }
 </style>
+
 </head>
 <body>
   <div class="content-wrapper">

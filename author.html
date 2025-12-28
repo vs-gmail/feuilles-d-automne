@@ -74,3 +74,51 @@
     }
     button {
       display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #a0613c;
+    }
+    .lang-toggle {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0;
+      }
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+    }
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+    <div class="columns-wrapper">
+      <div id="poem-fr">
+        <p class="title"><em>À propos de l'auteur</em></p>
+        <p>Né en Inde, Vinay Swamy a été enseignant-chercheur en études francophones à Vassar College aux États-Unis. Il réside actuellement à Paris avec sa chienne, Reshmé. <em>Feuilles d'automne</em> est son premier recueil de poésie.</p>
+      </div>
+      <div id="poem-en">
+        <p class="title"><em>About the Author</em></p>
+        <p>Born in India, Vinay Swamy was Professor of Francophone studies at Vassar College in the United States. He now lives in Paris with his dog, Reshmé. <em>Autumn Leaves</em> is his first collection of poetry.</p>
+      </div>
+    </div>
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+  </div>
+</body>
+</html>

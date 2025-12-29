@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes-to-readersr</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+    
+
+<style>
+ body {
+  font-family: 'Alegreya', serif;
+  margin: 1rem;
+  line-height: 1.6;
+  background: #e2d8b9;
+  color: #875626;
+}
+
+.section {
+  font-family: "Brea", serif;
+  font-weight: bold;
+  margin-top: 1.2em;
+  margin-left: 2em; /* ≈ 1 tab */
+}
+  .entry {
+  font-family: "Alegreya", serif;
+  font-weight: 500;
+  display: block;
+  line-height: 1.25;
+  margin: 0.15em 0;
+  margin-left: 3em; /* ≈ 1.5 tabs */
+
+}
+
+
+/* no-color added to links no underline */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.no-indent {
+  margin-left: 0 !important;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Two-column layout using CSS Grid with French slightly wider */
+.columns-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* French slightly wider than English */
+  gap: 5rem; /* increase gutter from 2rem to 3rem */
+  justify-content: center;
+  margin: 0 auto;
+  align-items: start; /* align items at top */
+  grid-auto-rows: minmax(1px, auto); /* flexible row height */
+}
+
+
+/* Inner divs */
+.columns-wrapper > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Paragraphs */
+#poem-fr p {
+  margin-bottom: 0.9em; /* 0.9 of default */
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  white-space: pre-wrap;
+}
+
+#poem-en p {
+  margin-bottom: 1em; /* default spacing */
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  white-space: pre-wrap;
+}
+
+/* Title styling */
+.title {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+/* Toggle buttons */
+button {
+  display: block;
+  margin: 1.5rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #875626;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #a0613c;
+}
+
+.lang-toggle {
+  display: none;
+}
+
+/* Responsive: single column on mobile */
+@media (max-width: 600px) {
+  .columns-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .lang-toggle {
+    display: block;
+    margin: 1.5rem auto;
+  }
+  #poem-fr { display: none; }
+  #poem-en { display: block; }
+}
+
+@media (min-width: 601px) {
+  .lang-toggle { display: none; }
+}
+</style>
+
+</head>
+<body>
+  <div class="content-wrapper">
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+<div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
+        <p class="title"><em> Sommaire</em></p>
+        
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/notes-to-readers">Notes aux lecteur·ices</a>
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/foreword">Avant-propos</a>
+
+<div class="section">I. LES SAISONS GLISSENT</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/fifty-six">Cinquante-six</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/the-face-of-impossibility">Le visage de l’impossible</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/autumn-leaves">Feuilles d’automne</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/separation">Séparation</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/carpe-diem">Carpe Diem</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/continental-drift">La Dérive continentale</a>
+
+<div class="section">II. RITUELS DU LIEN</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/tuesday">Mardi</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/five-minutes">Cinq minutes</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/the-wallflower-and-the-butterfly">La Marguerite et le papillon</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/floating-bowls">Bols flottants</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/symbiosis">Symbiose</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/covid-blues">Les Blues du Covid</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/birthday-wishes">Souhaits d’anniversaire</a>
+
+<div class="section">III. FRAGMENTS D’ABSENCE</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/dear-gerard">Cher Gérard</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/so-soon-after">Si peu après</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/postponement">Report</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/a-plea-to-nemesis">Plaidoyer à Némésis</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/aah-i-killed-him">Aaah... je l’ai tué...!</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/red-rain">Pluie rouge</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/mango-memories">Mémoires en mangues</a>
+
+<div class="section">IV. VERS L’APRÈS</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/homecomings">Retours</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/solitude">Solitude</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/metamorphosis">Métamorphose</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/when-swallows-take-flight">Quand les hirondelles s'envolent</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/the-reluctant-nomad">Le Nomade réticent</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/midnight-sun">Soleil de minuit</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/monarchs">Monarques</a><br>
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/about-the-author">À propos de l'auteur</a>
+
+
+      </div>
+    <div id="poem-en">
+        <p class="title"><em> Contents</em></p>
+
+
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/notes-to-readers">Note to Readers</a>
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/foreword">Foreword</a>
+
+<div class="section">I. DRIFTING SEASONS</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/fifty-six">Fifty-Six</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/the-face-of-impossibility">The Face of Impossibility</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/autumn-leaves">Autumn Leaves</a>
+<a class="entry" href="http://sep/">Separation</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/carpe-diem">Carpe Diem</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/continental-drift">Continental Drift</a>
+
+<div class="section">II. RITUALS OF CONNECTION</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/tuesday">Tuesday</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/five-minutes">Five Minutes</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/the-wallflower-and-the-butterfly">The Wallflower and the Butterfly</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/floating-bowls">Floating Bowls</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/symbiosis">Symbiosis</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/covid-blues">Covid Blues</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/birthday-wishes">Birthday Wishes</a>
+
+<div class="section">III. FRAGMENTS OF ABSENCE</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/dear-gerard">Dear Gérard</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/so-soon-after">So Soon After</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/postponement">Postponement</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/a-plea-to-nemesis">A Plea to Nemesis</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/aah-i-killed-him">Aaah... I killed him...!</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/red-rain">Red Rain</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/mango-memories">Mango Memories</a>
+
+<div class="section">IV. TOWARDS AN AFTER</div>
+
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/homecomings">Homecomings</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/solitude">Solitude</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/metamorphosis">Metamorphosis</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/when-swallows-take-flight">When Swallows Take Flight</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/the-reluctant-nomad">The Reluctant Nomad</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/midnight-sun">Midnight Sun</a>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/monarchs">Monarchs</a>
+<a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/about-the-author">About the Author</a>
+
+
+
+      </div>
+</div>
+
+
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+  </div>
+<script>
+let showingEnglish = true;
+
+function toggleLanguage() {
+  if (window.innerWidth > 600) return; // desktop unaffected
+
+  const fr = document.getElementById("poem-fr");
+  const en = document.getElementById("poem-en");
+  const refl = document.getElementById("reflection");
+  const reflFr = document.getElementById("reflection-fr");
+  const reflEn = document.getElementById("reflection-en");
+  const buttons = document.querySelectorAll(".lang-toggle");
+
+  if (showingEnglish) {
+    en.style.display = "none";
+    fr.style.display = "block";
+
+    if (refl && refl.style.display === "flex") {
+      reflEn.style.display = "none";
+      reflFr.style.display = "block";
+    }
+
+    buttons.forEach(btn => btn.textContent = "Read in English");
+  } else {
+    fr.style.display = "none";
+    en.style.display = "block";
+
+    if (refl && refl.style.display === "flex") {
+      reflFr.style.display = "none";
+      reflEn.style.display = "block";
+    }
+
+    buttons.forEach(btn => btn.textContent = "Lire en français");
+  }
+
+  showingEnglish = !showingEnglish;
+
+  document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+// Initialize for mobile view
+if (window.innerWidth <= 600) {
+  const fr = document.getElementById("poem-fr");
+  const en = document.getElementById("poem-en");
+  fr.style.display = "none";
+  en.style.display = "block";
+  showingEnglish = true;
+  document.querySelectorAll(".lang-toggle").forEach(btn => {
+    btn.textContent = "Lire en français";
+  });
+}
+</script>
+</body>
+</html>

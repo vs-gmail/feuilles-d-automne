@@ -182,7 +182,7 @@ button:hover {
 <a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/when-swallows-take-flight">Quand les hirondelles s'envolent</a>
 <a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/the-reluctant-nomad">Le Nomade réticent</a>
 <a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/midnight-sun">Soleil de minuit</a>
-<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/monarchs">Monarques</a><br>
+<a class="entry" href="https://sites.google.com/view/feuilles-d-automne/iv-vers-lapr%C3%A8s-towards-an-after/monarchs">Monarques</a>
 <a class="entry no-indent" href="https://sites.google.com/view/feuilles-d-automne/about-the-author">À propos de l'auteur</a>
 
 
@@ -297,28 +297,41 @@ if (window.innerWidth <= 600) {
   });
 }
 
-// Force links to open in parent window (backup to <base> tag)
+// Force links to open in parent window - aggressive approach
 document.addEventListener('DOMContentLoaded', function() {
   var links = document.querySelectorAll('a');
   
   links.forEach(function(link) {
+    // Remove any existing target attributes
+    link.removeAttribute('target');
+    
     link.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       
+      var url = this.href;
+      
+      // Try multiple methods in sequence
       try {
-        if (window.top !== window.self) {
-          window.top.location.href = this.href;
-        } else {
-          window.location.href = this.href;
-        }
-      } catch (error) {
+        // Method 1: Try window.top
+        window.top.location.href = url;
+      } catch (error1) {
         try {
-          window.parent.location.href = this.href;
-        } catch (err) {
-          window.location.href = this.href;
+          // Method 2: Try window.parent
+          window.parent.location.href = url;
+        } catch (error2) {
+          try {
+            // Method 3: Try postMessage to parent
+            window.parent.postMessage({type: 'navigate', url: url}, '*');
+          } catch (error3) {
+            // Method 4: Fallback to opening in same frame
+            window.location.href = url;
+          }
         }
       }
-    });
+      
+      return false;
+    }, true); // Use capture phase
   });
 });
 </script>

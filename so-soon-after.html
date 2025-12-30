@@ -8,32 +8,53 @@
  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
-  <style>
+    <style>
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
       line-height: 1.6;
       background: #e2d8b9;
-      color: #111;
-      overflow-x: hidden;
+      color: #875626;
     }
 
     .content-wrapper {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 1rem;
-      box-sizing: border-box;
     }
 
-    .columns {
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 4rem;
       flex-wrap: wrap;
-      max-width: 100%;
-      box-sizing: border-box;
+      margin-left: 175px; /* adjust for Google Sites nav */
     }
 
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
     @media (min-width: 601px) {
       .poem .columns { margin-left: 220px; }
     }

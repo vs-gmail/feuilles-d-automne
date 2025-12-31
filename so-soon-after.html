@@ -8,7 +8,7 @@
  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <style>
+   <style>
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
@@ -55,17 +55,17 @@
       flex-wrap: wrap;
       margin-left: 0; 
     }
-    @media (min-width: 601px) {
-      .poem .columns { margin-left: 220px; }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
     }
 
-    .columns > div { max-width: 400px; flex: 1 1 300px; }
-
-    .title { font-family: 'Bree Serif', serif; font-weight: normal; margin-bottom: 0.5rem; }
-
-    .columns p { white-space: pre-wrap; }
-
-    .lieu-date { text-align: center; font-style: italic; margin: 2rem 0; }
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
 
     button {
       display: block;
@@ -79,35 +79,70 @@
       border-radius: 8px;
     }
 
-    button:hover { background-color: #a0613c; }
+    button:hover {
+      background-color: #a0613c;
+    }
 
-    #reflection { display: none; }
-    #reflection p { text-align: justify; }
+    #reflection {
+      display: none; /* hidden by default */
+    }
 
-    hr { margin: 2rem 0 1rem; border: 0; border-top: 1px solid #ccc; }
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
 
-    #disqus_thread { max-width: 700px; margin: 2rem auto; border-top: 1px solid #ccc; padding-top: 1rem; }
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
 
-    .lang-toggle { display: none; }
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
 
     @media (max-width: 600px) {
-      .columns { margin-left: 0; padding: 0; }
-      .lang-toggle { display: block; margin: 1.5rem auto; }
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
       #poem-fr { display: none; }
       #poem-en { display: block; }
       #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
 </head>
-<body>
 
+<body>
 <div class="content-wrapper" id="poem-top">
 
-  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+      <!-- Mobile toggle button (top) -->
+button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
   <!-- Poems -->
-  <div class="poem columns">
-    <div id="poem-fr">
+<div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
       <p class="title">Si peu après</p>
       <p>
 Tu es partie 
@@ -174,104 +209,108 @@ For a long time to come.
     <p>le 23 juillet 2023 | 23 July 2023</p>
   </div>
 
-<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-<button onclick="toggleReflection()">Réflexions / Reflections</button>
-  <hr>
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
 
-  <!-- Reflections -->
-  <div id="reflection" class="columns">
-    <div id="reflection-fr">
-      <p>
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
 <em>Si peu après</em> affronte la compression du deuil&nbsp;—&nbsp;comment «&nbsp;si peu après&nbsp;» une perte, une autre survient avant que la première n'ait été absorbée. Même à distance en espace-temps, la mémoire reste vive&nbsp;—&nbsp;la table, les plats, les mots&nbsp;—&nbsp;et cette clarté intense appelle à porter ce qui a été perdu, en devenant sentinelles de la mémoire.      </p>
     </div>
     <div id="reflection-en">
       <p>
-<em>Si peu après</em> confronts the compression of grief—how "so soon after" one loss, another follows before the first has been absorbed. Even with spatio-temporal distance, memory remains vivid—the table, the dishes, the words—and this intense clarity calls for carrying forward what has been lost by becoming sentinels of memory.      </p>
+<em>Si peu après</em> confronts the compression of grief—how "so soon after" one loss, another follows before the first has been absorbed. Even with spatio-temporal distance, memory remains vivid—the table, the dishes, the words—and this intense clarity calls for carrying forward what has been lost by becoming sentinels of memory. </p>
+      </div>
     </div>
+
   </div>
 
   <!-- Disqus -->
   <div id="disqus_thread"></div>
 
-</div>
+  <script>
+    let showingEnglish = true;
 
-<script>
-  let showingEnglish = true;
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
 
-  function toggleLanguage() {
-    if (window.innerWidth > 600) return;
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
 
-    const fr = document.getElementById("poem-fr");
-    const en = document.getElementById("poem-en");
-    const reflFr = document.getElementById("reflection-fr");
-    const reflEn = document.getElementById("reflection-en");
-    const buttons = document.querySelectorAll(".lang-toggle");
-
-    if (showingEnglish) {
-      en.style.display = "none";
-      fr.style.display = "block";
-      if (document.getElementById('reflection').style.display === 'flex') {
-        reflEn.style.display = "none";
-        reflFr.style.display = "block";
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
       }
-      buttons.forEach(btn => btn.textContent = "Read in English");
-    } else {
-      fr.style.display = "none";
-      en.style.display = "block";
-      if (document.getElementById('reflection').style.display === 'flex') {
-        reflFr.style.display = "none";
-        reflEn.style.display = "block";
-      }
-      buttons.forEach(btn => btn.textContent = "Lire en français");
-    }
 
-    showingEnglish = !showingEnglish;
-  document.getElementById("poem-top").scrollIntoView({
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
 
-  function toggleReflection() {
-    const r = document.getElementById('reflection');
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
 
-    if (r.style.display === 'none' || r.style.display === '') {
-      r.style.display = 'flex';
-      if (window.innerWidth <= 600) {
-        if (showingEnglish) {
-          document.getElementById('reflection-fr').style.display = 'none';
-          document.getElementById('reflection-en').style.display = 'block';
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
         } else {
+          // desktop: show both
           document.getElementById('reflection-fr').style.display = 'block';
-          document.getElementById('reflection-en').style.display = 'none';
+          document.getElementById('reflection-en').style.display = 'block';
         }
       } else {
-        document.getElementById('reflection-fr').style.display = 'block';
-        document.getElementById('reflection-en').style.display = 'block';
+        r.style.display = 'none';
       }
-    } else {
-      r.style.display = 'none';
     }
-  }
 
-  window.addEventListener("load", () => {
-    if (window.innerWidth <= 600) {
-      document.getElementById("poem-fr").style.display = "none";
-      document.getElementById("poem-en").style.display = "block";
-      document.getElementById("reflection").style.display = "none";
-      document.getElementById("reflection-fr").style.display = "none";
-      document.getElementById("reflection-en").style.display = "none";
-      showingEnglish = true;
-      document.querySelectorAll(".lang-toggle").forEach(btn => {
-        btn.textContent = "Lire en français";
-      });
-    } else {
-      document.getElementById("reflection").style.display = "none";
-      document.getElementById("reflection-fr").style.display = "none";
-      document.getElementById("reflection-en").style.display = "none";
-    }
-  });
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
 
   var disqus_config = function () {
     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/so-soon-after';

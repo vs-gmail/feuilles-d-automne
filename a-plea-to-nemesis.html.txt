@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a-plea-to-nemesis</title>
+
+ <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #875626;
+
+letter-spacing: 0.05em;
+
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 175px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+
+    @media (min-width: 601px) {
+      .poem .columns {
+        margin-left: 220px;
+      }
+    }
+
+    .columns > div {
+      max-width: 400px;
+      flex: 1 1 300px;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns p {
+      white-space: pre-wrap;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none;
+    }
+
+    #reflection p {
+      text-align: justify;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    .lang-toggle { display: none; }
+
+    @media (max-width: 600px) {
+      .columns { margin-left: 0; padding: 0; }
+      .lang-toggle { display: block; margin: 1.5rem auto; }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="content-wrapper" id="poem-top">
+
+  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+  <!-- Poems -->
+  <div class="poem columns">
+    <div id="poem-fr">
+      <p class="title">Plaidoyer à Némésis</p>
+      <p>
+Une énigme d’enfance, telle que je m’en souviens, disait :
+— Je te suis partout,
+mais dès que tu te retournes,
+je ne suis plus là. Qui suis-je ?
+— Une ombre, bien sûr,
+répondais-je avec ravissement.
+
+Et une ombre, oui, c’est bien ce que tu es,
+dans le ciel bleu de cette amitié
+baigné du soleil de la tendresse.
+Un seul nuage gris sur l’azur profond,
+prêt à s’évaporer
+en un souffle de néant.
+Et pourtant, tu fais sentir ta présence voilée
+à tant d’instants douloureux.
+
+J’entends tes pas légers, agiles,
+tantôt s’approchant, tantôt s’éloignant,
+et comme si tu t’en repaissais avec jubilation,
+tu dérègles cruellement
+la mécanique bien huilée de ce penseur.
+Et d’un seul coup, tu t’attaques à son cœur,
+le torturant avec ton instrument du doute —
+il ne faut qu’un geste précis,
+laissant derrière lui
+un amas impuissant de nerfs brisés.
+
+Ô Némésis, ce simple prestidigitateur de mots
+peut-il t’enjoindre d’abandonner ton manteau mystérieux,
+de faire disparaître ton masque dans une bouffée de fumée ?
+Je t’en prie, renonce à ce faux sentiment d’immortalité —
+car le réconfort ne réside pas dans ce mot éphémère.
+
+Retourne plutôt à ta vie mythique,
+Ô déesse grecque d’un autre temps —
+je t’implore de regagner
+ton lointain passé hellénique :
+l’heure n’est plus aux mascarades.
+
+Débarrasse-toi donc de ton manteau nuageux,
+et que le ciel de cette amitié
+s’éclaircisse à perte de vue.
+Souffle plutôt ton zéphyr de confiance
+et fais voguer en douceur ces âmes pleines d’espoir
+vers cet horizon lointain de l’amour.
+      </p>
+    </div>
+
+    <div id="poem-en">
+      <p class="title">A Plea to Nemesis</p>
+      <p>
+A childhood riddle as I remember asked
+-- I follow you at all times,
+but whenever you look back, 
+I am never there, what am I?
+-- A Shadow of course, 
+I used to answer with glee.
+
+And a shadow indeed you are 
+in the blue skies of this friendship 
+filled with the sunshine of tenderness.
+One lone grey cloud against the deep blue,
+on the brink of evaporating
+into a wisp of nothingness.
+Yet, you make your veiled presence 
+at many an instance sorely felt.
+
+I hear your soft nimble steps
+now advancing, now retreating,
+and almost as if in self-nourishing glee
+you cruelly discombobulate 
+the well-oiled machinery of this cogitator.
+And in one fell swoop you prey upon his heart,
+tormenting him with that instrument of doubt
+-- it takes but one deft stroke,
+that leaves behind in its wake
+a helpless mass of shattered nerves.
+
+O Nemesis, can this mere prestidigitator of words 
+will upon you to discard your mysterious mantle,
+to make your mask vanish in a puff of smoke?
+Pray let go of that false sense of immortality,
+for comfort lies not in this ephemeral word.
+
+Return instead to your mythical life,
+O sometime Greek Goddess
+-- I implore you to step right back 
+into your distant Hellenic past
+-- now is not the time for masquerades.
+
+Shed therefore your cloudy cloak
+and let the skies of this friendship
+clear-up as far as the mind’s eye can see.
+Blow instead your Zephyr of Trust
+and gently set sail these hopeful souls 
+towards that farthest horizon of love.
+      </p>
+    </div>
+  </div>
+
+  <!-- Location / Date -->
+  <div class="lieu-date">
+    <p>Chicago/Paris</p>
+    <p>les 07 juin 1999 | 20 April 2025</p>
+  </div>
+
+ <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+ <button onclick="toggleReflection()">Réflexions / Reflections</button>
+  <hr>
+
+  <!-- Reflections -->
+  <div id="reflection" class="columns">
+    <div id="reflection-fr">
+      <p>
+<em>Plaidoyer à Némésis</em> s'adresse à la déesse grecque de la rétribution comme présence importune qui hante une amitié. Le lecteur découvrira son style allégorique riche — une expérience précoce visant à mobiliser la mythologie pour penser les défis de la vie intime et intérieure. Le plaidoyer demande à Némésis d'abandonner son ingérence voilée et de regagner son royaume mythique, permettant à la confiance et l'affection de s'épanouir sans entrave. La rhétorique ornée du poème contraste vivement avec l'esthétique épurée du reste du recueil.      </p>
+    </div>
+    <div id="reflection-en">
+      <p>
+<em>A Plea to Nemesis</em> addresses the Greek goddess of retribution as an unwelcome presence shadowing a friendship. The reader will discover its rich allegorical style—an early experiment in harnessing mythology to think through challenges of inner and intimate life. The plea asks Nemesis to abandon her veiled interference and return to her mythic realm, allowing trust and affection to flourish unimpeded. The poem's ornate rhetoric contrasts sharply with the collection's otherwise spare aesthetic.      </p>
+    </div>
+  </div>
+
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
+
+</div>
+
+<script>
+  let showingEnglish = true;
+
+  function toggleLanguage() {
+    if (window.innerWidth > 600) return;
+
+    const fr = document.getElementById("poem-fr");
+    const en = document.getElementById("poem-en");
+    const reflFr = document.getElementById("reflection-fr");
+    const reflEn = document.getElementById("reflection-en");
+    const buttons = document.querySelectorAll(".lang-toggle");
+
+    if (showingEnglish) {
+      en.style.display = "none";
+      fr.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflEn.style.display = "none";
+        reflFr.style.display = "block";
+      }
+      buttons.forEach(btn => btn.textContent = "Read in English");
+    } else {
+      fr.style.display = "none";
+      en.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflFr.style.display = "none";
+        reflEn.style.display = "block";
+      }
+      buttons.forEach(btn => btn.textContent = "Lire en français");
+    }
+
+    showingEnglish = !showingEnglish;
+  document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+  function toggleReflection() {
+    const r = document.getElementById('reflection');
+
+    if (r.style.display === 'none' || r.style.display === '') {
+      r.style.display = 'flex';
+      if (window.innerWidth <= 600) {
+        if (showingEnglish) {
+          document.getElementById('reflection-fr').style.display = 'none';
+          document.getElementById('reflection-en').style.display = 'block';
+        } else {
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'none';
+        }
+      } else {
+        document.getElementById('reflection-fr').style.display = 'block';
+        document.getElementById('reflection-en').style.display = 'block';
+      }
+    } else {
+      r.style.display = 'none';
+    }
+  }
+
+  window.addEventListener("load", () => {
+    if (window.innerWidth <= 600) {
+      document.getElementById("poem-fr").style.display = "none";
+      document.getElementById("poem-en").style.display = "block";
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+      showingEnglish = true;
+      document.querySelectorAll(".lang-toggle").forEach(btn => {
+        btn.textContent = "Lire en français";
+      });
+    } else {
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+    }
+  });
+
+  var disqus_config = function () {
+    this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/a-plea-to-nemesis';
+    this.page.identifier = 'a-plea-to-nemesis';
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://autumn-leaves.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+
+</body>
+</html>

@@ -106,31 +106,30 @@
     }
 
     /* Mobile-only language toggle buttons */
-    .lang-toggle {
-      display: none;
-    }
-
+    
     @media (max-width: 600px) {
-      .columns-wrapper {
-        margin-left: 0; /* remove nav offset */
-        letter-spacing: -0.05em;
-      }
+  body {
+    margin: 0.5rem;
+  }
+  
+  .content-wrapper {
+    padding: 0 0.5rem;
+  }
+  
+  .columns-wrapper {
+    margin-left: 0; /* remove nav offset */
+  }
+  
+  .columns-wrapper p {
+    letter-spacing: -0.05em;
+  }
 
-      .lang-toggle {
-        display: block;
-        margin: 1.5rem auto;
-      }
-
-      #poem-fr { display: none; }
-      #poem-en { display: block; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (min-width: 601px) {
-      .lang-toggle { display: none; }
-      #reflection { display: none; } 
-      #reflection-fr, #reflection-en { display: none; }
+  .lang-toggle { display: block; margin: 1.5rem auto; }
+  #poem-fr { display: none; }
+  #poem-en { display: block; }
+  #reflection { display: none; }
+  #reflection-fr, #reflection-en { display: none; }
+}
     }
   </style>
 </head>

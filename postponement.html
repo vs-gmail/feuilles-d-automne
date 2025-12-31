@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>postponement</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <style>
+   <style>
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
@@ -54,127 +55,93 @@
       flex-wrap: wrap;
       margin-left: 0; 
     }
-@media (min-width: 601px) {
-  .poem .columns {
-    margin-left: 220px;
-  }
-}
 
-.columns > div {
-  max-width: 400px;
-  flex: 1 1 300px;
-}
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
 
-.title {
-  font-family: 'Bree Serif', serif;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-}
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
 
-.columns p {
-  white-space: pre-wrap;
-}
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
 
-.lieu-date {
-  text-align: center;
-  font-style: italic;
-  margin: 2rem 0;
-}
+    button:hover {
+      background-color: #a0613c;
+    }
 
-button {
-  display: block;
-  margin: 1.5rem auto;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #875626;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-}
+    #reflection {
+      display: none; /* hidden by default */
+    }
 
-button:hover {
-  background-color: #a0613c;
-}
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
 
-/* Reflections hidden by default */
-#reflection {
-  display: none;
-  flex-wrap: wrap;
-}
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
 
-#reflection p {
-  text-align: justify;
-  white-space: pre-wrap;
-}
+    #disqus_thread {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
 
-/* Reflections two-column layout on desktop */
-@media (min-width: 601px) {
-  #reflection {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
 
-  #reflection > div {
-    flex: 1 1 400px;
-    max-width: 400px;
-  }
-}
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
 
-hr {
-  margin: 2rem 0 1rem;
-  border: 0;
-  border-top: 1px solid #ccc;
-}
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
 
-#disqus_thread {
-  max-width: 700px;
-  margin: 2rem auto;
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-}
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .columns {
-    margin-left: 0;
-    padding: 0;
-  }
-  #poem-fr, #poem-en,
-  #reflection-fr, #reflection-en {
-    max-width: 100%;
-  }
-
-  /* Mobile-only toggle buttons */
-  .lang-toggle.mobile-only {
-    display: block;
-  }
-
-  /* Hide each reflection language by default */
-  #reflection-fr, #reflection-en {
-    display: none;
-  }
-}
-
-/* Hide mobile-only toggles on desktop */
-@media (min-width: 601px) {
-  .lang-toggle.mobile-only {
-    display: none;
-  }
-}
-</style>
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="content-wrapper">
 
-<div class="content-wrapper" id="poem-top">
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-  <!-- Top mobile toggle -->
-  <button class="lang-toggle mobile-only" onclick="toggleLanguage()">Lire en français</button>
-
-  <div class="poem">
-    <div class="columns">
-      <!-- French -->
+    <!-- Poems -->
+<div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title">Report</p>
         <p>
@@ -225,7 +192,6 @@ dans les jours à venir.
         </p>
       </div>
 
-      <!-- English -->
       <div id="poem-en">
         <p class="title">Postponement</p>
         <p>
@@ -299,87 +265,108 @@ in the days to come.
     </div>
     <div id="reflection-en">
       <p>
-<em>Postponement</em> traces the emotional arc of a cancelled evening—from the blinking answering machine through disappointment to unexpected consolation. The poem captures how anticipation transforms into concern, then acceptance. The closing lines suggest that cancellation is a mere postponement, and not an end—a harbinger of what may yet unfold in the days to come.      </p>
+<em>Postponement</em> traces the emotional arc of a cancelled evening—from the blinking answering machine through disappointment to unexpected consolation. The poem captures how anticipation transforms into concern, then acceptance. The closing lines suggest that cancellation is a mere postponement, and not an end—a harbinger of what may yet unfold in the days to come.     /p>
+      </div>
     </div>
+
   </div>
 
-</div>
+  <!-- Disqus -->
+  <div id="disqus_thread"></div>
 
-<script>
-let showingEnglish = true;
+  <script>
+    let showingEnglish = true;
 
-function toggleLanguage() {
-  if (window.innerWidth > 600) return; // desktop: do nothing
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
 
-  const fr = document.getElementById("poem-fr");
-  const en = document.getElementById("poem-en");
-  const reflFr = document.getElementById("reflection-fr");
-  const reflEn = document.getElementById("reflection-en");
-  const buttons = document.querySelectorAll(".lang-toggle");
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
 
-  if (showingEnglish) {
-    en.style.display = "none";
-    fr.style.display = "block";
-    if (document.getElementById('reflection').style.display === 'flex') {
-      reflEn.style.display = "none";
-      reflFr.style.display = "block";
-    }
-    buttons.forEach(btn => btn.textContent = "Read in English");
-  } else {
-    fr.style.display = "none";
-    en.style.display = "block";
-    if (document.getElementById('reflection').style.display === 'flex') {
-      reflFr.style.display = "none";
-      reflEn.style.display = "block";
-    }
-    buttons.forEach(btn => btn.textContent = "Lire en français");
-  }
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
 
-  showingEnglish = !showingEnglish;
-document.getElementById("poem-top").scrollIntoView({
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
 
-function toggleReflection() {
-  const r = document.getElementById('reflection');
-  if (r.style.display === 'none' || r.style.display === '') {
-    r.style.display = 'flex';
-    // mobile: show only current language
-    if (window.innerWidth <= 600) {
-      document.getElementById('reflection-fr').style.display = showingEnglish ? 'none' : 'block';
-      document.getElementById('reflection-en').style.display = showingEnglish ? 'block' : 'none';
-    } else {
-      document.getElementById('reflection-fr').style.display = 'block';
-      document.getElementById('reflection-en').style.display = 'block';
-    }
-  } else {
-    r.style.display = 'none';
-  }
-}
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
 
-window.addEventListener("load", () => {
-  if (window.innerWidth <= 600) {
-    document.getElementById("poem-fr").style.display = "none";
-    document.getElementById("poem-en").style.display = "block";
-    document.getElementById("reflection").style.display = "none";
-    document.getElementById("reflection-fr").style.display = "none";
-    document.getElementById("reflection-en").style.display = "none";
-    showingEnglish = true;
-    document.querySelectorAll(".lang-toggle").forEach(btn => {
-      btn.textContent = "Lire en français";
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
     });
-  } else {
-    // Desktop: show both poems, reflections hidden initially
-    document.getElementById("poem-fr").style.display = "block";
-    document.getElementById("poem-en").style.display = "block";
-    document.getElementById("reflection").style.display = "none";
-    document.getElementById("reflection-fr").style.display = "block";
-    document.getElementById("reflection-en").style.display = "block";
-  }
-});
+var disqus_config = function () {
+    this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/postponement';
+    this.page.identifier = 'postponement';
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://autumn-leaves.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 </script>
+<noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
+
+</body>
+</html>
 
 </body>
 </html>

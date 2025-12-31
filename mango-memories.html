@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <style>
+   <style>
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
@@ -56,26 +56,9 @@
       margin-left: 0; 
     }
 
-    /* Desktop-only offset for Google Sites left navigation */
-    @media (min-width: 601px) {
-      .poem .columns {
-        margin-left: 220px;
-      }
-    }
-
-    .columns > div {
+    .reflection-columns > div {
       max-width: 400px;
-      flex: 1 1 300px;
-    }
-
-    .title {
-      font-family: 'Bree Serif', serif;
-      font-weight: normal;
-      margin-bottom: 0.5rem;
-    }
-
-    .columns p {
-      white-space: pre-wrap;
+      flex: 1;
     }
 
     .lieu-date {
@@ -101,7 +84,7 @@
     }
 
     #reflection {
-      display: none;
+      display: none; /* hidden by default */
     }
 
     #reflection p {
@@ -128,31 +111,38 @@
     }
 
     @media (max-width: 600px) {
-      .columns {
-        margin-left: 0;
-        padding: 0;
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
       }
+
       .lang-toggle {
         display: block;
         margin: 1.5rem auto;
       }
+
       #poem-fr { display: none; }
       #poem-en { display: block; }
       #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
 </head>
 
 <body>
+  <div class="content-wrapper">
 
-<div class="content-wrapper" id="poem-top">
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
-  <!-- Mobile toggle button -->
-  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
-
-  <!-- Poems -->
-  <div class="poem columns">
-    <div id="poem-fr">
+    <!-- Poems -->
+<div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
       <p class="title">Mémoires en mangues</p>
       <p>
 Arriver au pays,
@@ -215,9 +205,9 @@ par la puissance
 d’une vie cousue
 dans un goût si fruité.
       </p>
-    </div>
+      </div>
 
-    <div id="poem-en">
+      <div id="poem-en">
       <p class="title">Mango Memories</p>
       <p>
 Arriving back home, 
@@ -302,8 +292,10 @@ Ce poème est né d’une sensation très simple : le parfum d’une mangue mûr
     </div>
     <div id="reflection-en">
       <p>
-This poem begins with a small, almost accidental moment: the scent of a ripe mango. Very quickly, this olfactory pleasure becomes a passage, recalling memory not as a clear narrative, but as a slow, sensory unfolding. What follows is a series of images focused on the child’s body — fingers, wrists, scraped elbows — for it is through touch, even before thought, that memory is triggered. The mango itself remains modest and familiar, yet powerful, carrying a quiet authority in its ability to summon a past where time is fluid: layered and non-linear rather than fixed, slipping through the fingers like the juice of the fruit. The poem moves between presence and absence, childhood and the present day, as a gentle attempt to stitch a life together through so fruity a taste.      </p>
+This poem begins with a small, almost accidental moment: the scent of a ripe mango. Very quickly, this olfactory pleasure becomes a passage, recalling memory not as a clear narrative, but as a slow, sensory unfolding. What follows is a series of images focused on the child’s body — fingers, wrists, scraped elbows — for it is through touch, even before thought, that memory is triggered. The mango itself remains modest and familiar, yet powerful, carrying a quiet authority in its ability to summon a past where time is fluid: layered and non-linear rather than fixed, slipping through the fingers like the juice of the fruit. The poem moves between presence and absence, childhood and the present day, as a gentle attempt to stitch a life together through so fruity a taste.     </p>
+      </div>
     </div>
+
   </div>
 
   <!-- Disqus -->

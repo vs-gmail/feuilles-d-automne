@@ -8,13 +8,16 @@
  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
 
-   <style>
+    <style>
     body {
       font-family: 'Alegreya', serif;
       margin: 1rem;
       line-height: 1.6;
       background: #e2d8b9;
       color: #875626;
+
+letter-spacing: 0.05em;
+
     }
 
     .content-wrapper {
@@ -29,11 +32,11 @@
       justify-content: center;
       gap: 4rem;
       flex-wrap: wrap;
-      margin-left: 150px; /* adjust for Google Sites nav */
+      margin-left: 175px; /* adjust for Google Sites nav */
     }
 
     .columns-wrapper > div {
-      max-width: 500px;
+      max-width: 400px;
       flex: 1;
     }
 
@@ -56,9 +59,26 @@
       margin-left: 0; 
     }
 
-    .reflection-columns > div {
+
+    @media (min-width: 601px) {
+      .poem .columns {
+        margin-left: 220px;
+      }
+    }
+
+    .columns > div {
       max-width: 400px;
-      flex: 1;
+      flex: 1 1 300px;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns p {
+      white-space: pre-wrap;
     }
 
     .lieu-date {
@@ -84,12 +104,11 @@
     }
 
     #reflection {
-      display: none; /* hidden by default */
+      display: none;
     }
 
     #reflection p {
       text-align: justify;
-      white-space: pre-wrap;
     }
 
     hr {
@@ -105,104 +124,77 @@
       padding-top: 1rem;
     }
 
-    /* Mobile-only format and language toggle buttons */
-    .lang-toggle {
-      display: none;
-    }
-    
-    @media (max-width: 600px) {
-      body {
-        margin: 0.1rem;
-      }
-      
-      .content-wrapper {
-        padding: 0 0.1rem;
-      }
-      
-      .columns-wrapper {
-        margin-left: 0; /* remove nav offset */
-      }
-      
-      .columns-wrapper p {
-        letter-spacing: -0.12em;
-        font-size: 0.9rem;
-      }
+    .lang-toggle { display: none; }
 
+    @media (max-width: 600px) {
+      .columns { margin-left: 0; padding: 0; }
       .lang-toggle { display: block; margin: 1.5rem auto; }
       #poem-fr { display: none; }
       #poem-en { display: block; }
       #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (min-width: 601px) {
-      .lang-toggle { display: none; }
-      #reflection { display: none; } 
-      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
 </head>
-
 <body>
-  <div class="content-wrapper">
 
-    <!-- Mobile toggle button (top) -->
-    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+<div class="content-wrapper" id="poem-top">
 
-    <!-- Poems -->
-<div class="columns-wrapper" id="poem-top">
-      <div id="poem-fr">
+  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+  <!-- Poems -->
+  <div class="poem columns">
+    <div id="poem-fr">
       <p class="title">Plaidoyer à Némésis</p>
       <p>
-Une énigme d'enfance, telle que je m'en souviens, disait :
+Une énigme d’enfance, telle que je m’en souviens, disait :
 — Je te suis partout,
 mais dès que tu te retournes,
 je ne suis plus là. Qui suis-je ?
 — Une ombre, bien sûr,
 répondais-je avec ravissement.
 
-Et une ombre, oui, c'est bien ce que tu es,
+Et une ombre, oui, c’est bien ce que tu es,
 dans le ciel bleu de cette amitié
 baigné du soleil de la tendresse.
-Un seul nuage gris sur l'azur profond,
-prêt à s'évaporer
+Un seul nuage gris sur l’azur profond,
+prêt à s’évaporer
 en un souffle de néant.
 Et pourtant, tu fais sentir ta présence voilée
-à tant d'instants douloureux.
+à tant d’instants douloureux.
 
-J'entends tes pas légers, agiles,
-tantôt s'approchant, tantôt s'éloignant,
-et comme si tu t'en repaissais avec jubilation,
+J’entends tes pas légers, agiles,
+tantôt s’approchant, tantôt s’éloignant,
+et comme si tu t’en repaissais avec jubilation,
 tu dérègles cruellement
 la mécanique bien huilée de ce penseur.
-Et d'un seul coup, tu t'attaques à son cœur,
+Et d’un seul coup, tu t’attaques à son cœur,
 le torturant avec ton instrument du doute —
-il ne faut qu'un geste précis,
+il ne faut qu’un geste précis,
 laissant derrière lui
 un amas impuissant de nerfs brisés.
 
 Ô Némésis, ce simple prestidigitateur de mots
-peut-il t'enjoindre d'abandonner ton manteau mystérieux,
+peut-il t’enjoindre d’abandonner ton manteau mystérieux,
 de faire disparaître ton masque dans une bouffée de fumée ?
-Je t'en prie, renonce à ce faux sentiment d'immortalité —
+Je t’en prie, renonce à ce faux sentiment d’immortalité —
 car le réconfort ne réside pas dans ce mot éphémère.
 
 Retourne plutôt à ta vie mythique,
-Ô déesse grecque d'un autre temps —
-je t'implore de regagner
+Ô déesse grecque d’un autre temps —
+je t’implore de regagner
 ton lointain passé hellénique :
-l'heure n'est plus aux mascarades.
+l’heure n’est plus aux mascarades.
 
 Débarrasse-toi donc de ton manteau nuageux,
 et que le ciel de cette amitié
-s'éclaircisse à perte de vue.
+s’éclaircisse à perte de vue.
 Souffle plutôt ton zéphyr de confiance
-et fais voguer en douceur ces âmes pleines d'espoir
-vers cet horizon lointain de l'amour.
+et fais voguer en douceur ces âmes pleines d’espoir
+vers cet horizon lointain de l’amour.
       </p>
-      </div>
+    </div>
 
-      <div id="poem-en">
+    <div id="poem-en">
       <p class="title">A Plea to Nemesis</p>
       <p>
 A childhood riddle as I remember asked
@@ -246,7 +238,7 @@ into your distant Hellenic past
 
 Shed therefore your cloudy cloak
 and let the skies of this friendship
-clear-up as far as the mind's eye can see.
+clear-up as far as the mind’s eye can see.
 Blow instead your Zephyr of Trust
 and gently set sail these hopeful souls 
 towards that farthest horizon of love.
@@ -266,99 +258,98 @@ towards that farthest horizon of love.
   <hr>
 
   <!-- Reflections -->
-  <div id="reflection" class="reflection-columns">
+  <div id="reflection" class="columns">
     <div id="reflection-fr">
       <p>
-<em>Plaidoyer à Némésis</em> s'adresse à la déesse grecque de la rétribution comme présence importune qui hante une amitié. Le lecteur découvrira son style allégorique riche — une expérience précoce visant à mobiliser la mythologie pour penser les défis de la vie intime et intérieure. Le plaidoyer demande à Némésis d'abandonner son ingérence voilée et de regagner son royaume mythique, permettant à la confiance et l'affection de s'épanouir sans entrave. La rhétorique ornée du poème contraste vivement avec l'esthétique épurée du reste du recueil.      </p>
+<em>Plaidoyer à Némésis</em> s'adresse à la déesse grecque de la rétribution comme présence importune qui hante une amitié. Le lecteur découvrira son style allégorique riche — une expérience précoce visant à mobiliser la mythologie pour penser les défis de la vie intime et intérieure. Le plaidoyer demande à Némésis d'abandonner son ingérence voilée et de regagner son royaume mythique, permettant à la confiance et l'affection de s'épanouir sans entrave. La rhétorique ornée du poème contraste vivement avec l'esthétique épurée du reste du recueil.      </p>
     </div>
     <div id="reflection-en">
       <p>
-<em>A Plea to Nemesis</em> addresses the Greek goddess of retribution as an unwelcome presence shadowing a friendship. The reader will discover its rich allegorical style—an early experiment in harnessing mythology to think through challenges of inner and intimate life. The plea asks Nemesis to abandon her veiled interference and return to her mythic realm, allowing trust and affection to flourish unimpeded. The poem's ornate rhetoric contrasts sharply with the collection's otherwise spare aesthetic.      </p>
-      </div>
+<em>A Plea to Nemesis</em> addresses the Greek goddess of retribution as an unwelcome presence shadowing a friendship. The reader will discover its rich allegorical style—an early experiment in harnessing mythology to think through challenges of inner and intimate life. The plea asks Nemesis to abandon her veiled interference and return to her mythic realm, allowing trust and affection to flourish unimpeded. The poem's ornate rhetoric contrasts sharply with the collection's otherwise spare aesthetic.      </p>
     </div>
-
   </div>
 
   <!-- Disqus -->
   <div id="disqus_thread"></div>
 
-  <script>
-    let showingEnglish = true;
+</div>
 
-    function toggleLanguage() {
-      if (window.innerWidth > 600) return; // desktop unaffected
+<script>
+  let showingEnglish = true;
 
-      const fr = document.getElementById("poem-fr");
-      const en = document.getElementById("poem-en");
-      const reflFr = document.getElementById("reflection-fr");
-      const reflEn = document.getElementById("reflection-en");
-      const buttons = document.querySelectorAll(".lang-toggle");
+  function toggleLanguage() {
+    if (window.innerWidth > 600) return;
 
-      if (showingEnglish) {
-        en.style.display = "none";
-        fr.style.display = "block";
-        if (document.getElementById('reflection').style.display === 'flex') {
-          reflEn.style.display = "none";
-          reflFr.style.display = "block";
-        }
-        buttons.forEach(btn => btn.textContent = "Read in English");
-      } else {
-        fr.style.display = "none";
-        en.style.display = "block";
-        if (document.getElementById('reflection').style.display === 'flex') {
-          reflFr.style.display = "none";
-          reflEn.style.display = "block";
-        }
-        buttons.forEach(btn => btn.textContent = "Lire en français");
+    const fr = document.getElementById("poem-fr");
+    const en = document.getElementById("poem-en");
+    const reflFr = document.getElementById("reflection-fr");
+    const reflEn = document.getElementById("reflection-en");
+    const buttons = document.querySelectorAll(".lang-toggle");
+
+    if (showingEnglish) {
+      en.style.display = "none";
+      fr.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflEn.style.display = "none";
+        reflFr.style.display = "block";
       }
+      buttons.forEach(btn => btn.textContent = "Read in English");
+    } else {
+      fr.style.display = "none";
+      en.style.display = "block";
+      if (document.getElementById('reflection').style.display === 'flex') {
+        reflFr.style.display = "none";
+        reflEn.style.display = "block";
+      }
+      buttons.forEach(btn => btn.textContent = "Lire en français");
+    }
 
-      showingEnglish = !showingEnglish;
-    document.getElementById("poem-top").scrollIntoView({
+    showingEnglish = !showingEnglish;
+  document.getElementById("poem-top").scrollIntoView({
     behavior: "smooth",
     block: "start"
   });
 }
 
-    function toggleReflection() {
-      const r = document.getElementById('reflection');
+  function toggleReflection() {
+    const r = document.getElementById('reflection');
 
-      if (r.style.display === 'none' || r.style.display === '') {
-        r.style.display = 'flex';
-        if (window.innerWidth <= 600) {
-          if (showingEnglish) {
-            document.getElementById('reflection-fr').style.display = 'none';
-            document.getElementById('reflection-en').style.display = 'block';
-          } else {
-            document.getElementById('reflection-fr').style.display = 'block';
-            document.getElementById('reflection-en').style.display = 'none';
-          }
-        } else {
-          // desktop: show both
-          document.getElementById('reflection-fr').style.display = 'block';
+    if (r.style.display === 'none' || r.style.display === '') {
+      r.style.display = 'flex';
+      if (window.innerWidth <= 600) {
+        if (showingEnglish) {
+          document.getElementById('reflection-fr').style.display = 'none';
           document.getElementById('reflection-en').style.display = 'block';
+        } else {
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'none';
         }
       } else {
-        r.style.display = 'none';
+        document.getElementById('reflection-fr').style.display = 'block';
+        document.getElementById('reflection-en').style.display = 'block';
       }
+    } else {
+      r.style.display = 'none';
     }
+  }
 
-    window.addEventListener("load", () => {
-      if (window.innerWidth <= 600) {
-        document.getElementById("poem-fr").style.display = "none";
-        document.getElementById("poem-en").style.display = "block";
-        document.getElementById("reflection").style.display = "none";
-        document.getElementById("reflection-fr").style.display = "none";
-        document.getElementById("reflection-en").style.display = "none";
-        showingEnglish = true;
-        document.querySelectorAll(".lang-toggle").forEach(btn => {
-          btn.textContent = "Lire en français";
-        });
-      } else {
-        document.getElementById("reflection").style.display = "none";
-        document.getElementById("reflection-fr").style.display = "none";
-        document.getElementById("reflection-en").style.display = "none";
-      }
-    });
+  window.addEventListener("load", () => {
+    if (window.innerWidth <= 600) {
+      document.getElementById("poem-fr").style.display = "none";
+      document.getElementById("poem-en").style.display = "block";
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+      showingEnglish = true;
+      document.querySelectorAll(".lang-toggle").forEach(btn => {
+        btn.textContent = "Lire en français";
+      });
+    } else {
+      document.getElementById("reflection").style.display = "none";
+      document.getElementById("reflection-fr").style.display = "none";
+      document.getElementById("reflection-en").style.display = "none";
+    }
+  });
 
   var disqus_config = function () {
     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/a-plea-to-nemesis';

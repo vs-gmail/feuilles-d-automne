@@ -111,8 +111,20 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        margin: 0.25rem;
+      }
+      
+      .content-wrapper {
+        padding: 0 0.25rem;
+      }
+      
       .columns-wrapper {
         margin-left: 0; /* remove nav offset */
+      }
+      
+      .columns-wrapper p {
+        letter-spacing: -0.05em;
       }
 
       .lang-toggle {
@@ -152,39 +164,39 @@ de ton message,
 me laissant dans un brouillard 
 de souci, de remords, et de culpabilité.
 
-J’ai décroché le combiné 
+J'ai décroché le combiné 
 et composé ton numéro,
-m’imaginant désespérément 
-que j’avais mal entendu ta voix.
+m'imaginant désespérément 
+que j'avais mal entendu ta voix.
 Mais ton tout premier « allô » 
-a balayé d’un coup
+a balayé d'un coup
 le moindre espoir – 
-j’ai su alors
-que cette soirée n’aurait pas lieu.
+j'ai su alors
+que cette soirée n'aurait pas lieu.
 
 De retour dans le brouillard des émotions,
 je me suis appuyé 
 sur la pensée rassurante
-qu’il valait mieux que tu te reposes.
-j’ai senti fondre en moi 
+qu'il valait mieux que tu te reposes.
+j'ai senti fondre en moi 
 cette pointe de douleur,
-née d’un égoïsme discret 
-qui s’était emparé de mon cœur,
+née d'un égoïsme discret 
+qui s'était emparé de mon cœur,
 allourdi par ce simple rhume 
 qui nous aura séparés.
 
 Maintenant, seul, 
 à ma fenêtre,
-j’apprends 
+j'apprends 
 à apprivoiser la déception.
 Le téléphone sonne à nouveau – 
-c’est toi.
+c'est toi.
 
 Nous nous parlons 
 Pendant quelques instants
 surtout des films, et des anges.
 Mais cet appel résonne 
-d’autre chose 
+d'autre chose 
 que de simples mots.
 — peut-être du précurseur
 de ce qui nous attend 
@@ -206,7 +218,7 @@ I picked up the receiver
 and dialed your number
 desperately imagining 
 that I had misread your voice
-But your very first “hello” 
+But your very first "hello" 
 deftly destroyed
 the faintest of hopes – 
 I knew then 
@@ -243,15 +255,14 @@ in the days to come.
       </div>
 
     </div>
-  </div>
 
   <div class="lieu-date">
-    <p>Chicago / Paris</p>
+    <p>Chicago / Paris</p>
     <p>août 1999 | March 2025</p>
   </div>
 
   <!-- Bottom mobile toggle -->
-  <button class="lang-toggle mobile-only" onclick="toggleLanguage()">Lire en français</button>
+  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
   <!-- Reflection toggle -->
   <button onclick="toggleReflection()">Réflexions / Reflections</button>
@@ -261,11 +272,11 @@ in the days to come.
   <div id="reflection" class="reflection-columns">
     <div id="reflection-fr">
       <p>
-<em>Report</em> retrace l'arc émotionnel d'une soirée annulée — du répondeur clignotant à la déception jusqu'à une consolation inattendue. Le poème saisit comment l'anticipation se transforme en inquiétude, puis en acceptation. Les vers conclusifs suggèrent que l'annulation n'est qu'un report, et non une fin définitive — un présage de ce qui reste à venir dans les jours suivants.      </p>
+<em>Report</em> retrace l'arc émotionnel d'une soirée annulée — du répondeur clignotant à la déception jusqu'à une consolation inattendue. Le poème saisit comment l'anticipation se transforme en inquiétude, puis en acceptation. Les vers conclusifs suggèrent que l'annulation n'est qu'un report, et non une fin définitive — un présage de ce qui reste à venir dans les jours suivants.      </p>
     </div>
     <div id="reflection-en">
       <p>
-<em>Postponement</em> traces the emotional arc of a cancelled evening—from the blinking answering machine through disappointment to unexpected consolation. The poem captures how anticipation transforms into concern, then acceptance. The closing lines suggest that cancellation is a mere postponement, and not an end—a harbinger of what may yet unfold in the days to come.     /p>
+<em>Postponement</em> traces the emotional arc of a cancelled evening—from the blinking answering machine through disappointment to unexpected consolation. The poem captures how anticipation transforms into concern, then acceptance. The closing lines suggest that cancellation is a mere postponement, and not an end—a harbinger of what may yet unfold in the days to come.      </p>
       </div>
     </div>
 
@@ -364,9 +375,6 @@ var disqus_config = function () {
   })();
 </script>
 <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-
-</body>
-</html>
 
 </body>
 </html>

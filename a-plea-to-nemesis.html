@@ -15,7 +15,7 @@
       line-height: 1.6;
       background: #e2d8b9;
       color: #875626;
-      letter-spacing: -0.12em;
+      letter-spacing: -0.09em;
 
     }
 
@@ -80,7 +80,20 @@
       white-space: pre-wrap;
     }
 
-    .lieu-date {
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+
+    }.lieu-date {
       text-align: center;
       font-style: italic;
       margin: 2rem 0;
@@ -131,17 +144,23 @@
       #poem-fr { display: none; }
       #poem-en { display: block; }
       #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+
     }
-  </style>
+  @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }</style>
 </head>
+
 <body>
 
-<div class="content-wrapper" id="poem-top">
 
-  <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+      <!-- Mobile toggle button (top) -->
+<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
   <!-- Poems -->
-  <div class="poem columns">
+ <div class="content-wrapper" id="poem-top">
     <div id="poem-fr">
       <p class="title">Plaidoyer à Némésis</p>
       <p>
@@ -251,15 +270,18 @@ towards that farthest horizon of love.
     <p>les 07 juin 1999 | 20 April 2025</p>
   </div>
 
- <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
- <button onclick="toggleReflection()">Réflexions / Reflections</button>
-  <hr>
+    <!-- Reflection toggle button -->
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
 
-  <!-- Reflections -->
-  <div id="reflection" class="columns">
-    <div id="reflection-fr">
-      <p>
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
 <em>Plaidoyer à Némésis</em> s'adresse à la déesse grecque de la rétribution comme présence importune qui hante une amitié. Le lecteur découvrira son style allégorique riche — une expérience précoce visant à mobiliser la mythologie pour penser les défis de la vie intime et intérieure. Le plaidoyer demande à Némésis d'abandonner son ingérence voilée et de regagner son royaume mythique, permettant à la confiance et l'affection de s'épanouir sans entrave. La rhétorique ornée du poème contraste vivement avec l'esthétique épurée du reste du recueil.      </p>
     </div>
     <div id="reflection-en">

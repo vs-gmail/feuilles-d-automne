@@ -7,39 +7,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
   
-  <script>
-    let showingEnglish = true;
-    function toggleLanguage() {
-      if (window.innerWidth > 600) return;
-      const fr = document.getElementById("poem-fr");
-      const en = document.getElementById("poem-en");
-      const buttons = document.querySelectorAll(".lang-toggle");
-      if (showingEnglish) {
-        en.style.display = "none";
-        fr.style.display = "block";
-        buttons.forEach(btn => btn.textContent = "Read in English");
-      } else {
-        fr.style.display = "none";
-        en.style.display = "block";
-        buttons.forEach(btn => btn.textContent = "Lire en français");
-      }
-      showingEnglish = !showingEnglish;
-    document.getElementById("poem-top").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
-    window.addEventListener("load", () => {
-      if (window.innerWidth <= 600) {
-        document.getElementById("poem-fr").style.display = "none";
-        document.getElementById("poem-en").style.display = "block";
-        showingEnglish = true;
-        document.querySelectorAll(".lang-toggle").forEach(btn => {
-          btn.textContent = "Lire en français";
-        });
-      }
-    });
-  </script>
   
   <style>
     body {
@@ -59,10 +26,10 @@
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
-      margin-left: 220px;
+      margin-left: 150px;
     }
     .columns-wrapper > div {
-      max-width: 400px;
+      max-width: 600px;
       flex: 1;
     }
     .title {
@@ -124,6 +91,40 @@
     </div>
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
   </div>
+
+<script>
+    let showingEnglish = true;
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return;
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>

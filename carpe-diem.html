@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -230,12 +230,15 @@ no more.
       <div id="reflection-fr">
         <p>
 Ce poème met en lumière le moment où l’on réalise que l’on vit en suspension, attendant que la vie commence alors qu’elle se dévoile à tout moment. <em>Carpe Diem</em> ne parle pas de saisir le jour avec urgence ou bravade, mais d’apprendre à reconnaître l’instant présent dans sa douceur et à en faire l’expérience d’une manière non pressée. Le temps y est comparé à un thé que l’on savoure : ni brûlant, ni froid, mais à la température idéale pour en goûter pleinement chaque nuance. L’image de l’«&nbsp;heure du thé&nbsp;» évoque un moment de pause, situé entre le plein midi de la jeunesse et le crépuscule à venir.
-C’est dans les interstices de ce temps et de cet espace que l’attente peut se transformer doucement en renouvellement. En prêtant attention aux gestes simples et aux sensations, ce sentiment de suspension cesse d’être passif et devient un mouvement générateur, où «&nbsp;ne plus attendre&nbsp;» n’est pas une rupture, mais une prise de conscience tranquille et intime, pleinement ancrée dans le présent.        </p>
+
+C’est dans les interstices de ce temps et de cet espace que l’attente peut se transformer doucement en renouvellement. En prêtant attention aux gestes simples et aux sensations, ce sentiment de suspension cesse d’être passif et devient un mouvement générateur, où «&nbsp;ne plus attendre&nbsp;» n’est pas une rupture, mais une prise de conscience tranquille et intime, pleinement ancrée dans le présent.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
 This poem highlights the moment when we realize we have been living in suspension, waiting for life to begin, when it is unfolding at every moment. <em>Carpe Diem</em> does not urge us to seize the day with haste or bravado, but to recognize the present moment in its gentleness and to experience it in an unhurried manner. Time is compared to a cup of tea, neither too hot nor too cold, but at the perfect temperature to be fully savored. The image of “tea time” evokes a pause, a quiet moment set between the high noon of youth and the approaching dusk.
-It is within the interstices of this time and space that waiting can quietly transform into renewal. By paying attention to simple gestures and sensations, this feeling of suspension ceases to be passive and becomes a generative movement, where “to wait no more” is not a rupture, but a calm and intimate awakening to being fully present.
+
+It is within the interstices of this time and space that waiting can quietly transform into renewal. By paying attention to simple gestures and sensations, this feeling of suspension ceases to be passive and becomes a generative movement, where “to wait no more” is not a rupture, but a calm and intimate awakening to being fully present.
         </p>
       </div>
     </div>
@@ -243,8 +246,6 @@ This poem highlights the moment when we realize we have been living in suspensio
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -322,20 +323,20 @@ This poem highlights the moment when we realize we have been living in suspensio
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/carpe-diem';
-      this.page.identifier = 'carpe-diem';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

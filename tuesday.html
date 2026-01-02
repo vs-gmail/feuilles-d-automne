@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -251,19 +251,19 @@ of many more to come.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Le poème <em>Mardi</em> dessine une atmosphère intime et réfléchie, où, au fil de quatre mardis successifs, se dévoile la naissance et l’évolution d’une relation. La tisane à l’hibiscus devient une synecdoche centrale : si, au début, la boisson chaude accentue la nervosité de celui qui attend&nbsp;—&nbsp;manifestée dans le geste de siroter —, la même tisane, tout en évoquant la première rencontre, nourrit désormais une douce impatience et une anticipation joyeuse. La récurrence des mardis suggère une routine agréable, ponctuée de moments partagés dans la chaleur de la présence de l’autre. Le texte explore ainsi la croissance d’un lien affectif naissant, construit à travers les petites habitudes du quotidien.        </p>
+Le poème <em>Mardi</em> dessine une atmosphère intime et réfléchie, où, au fil de quatre mardis successifs, se dévoile la naissance et l’évolution d’une relation. La tisane à l’hibiscus devient une synecdoche centrale : si, au début, la boisson chaude accentue la nervosité de celui qui attend&nbsp;—&nbsp;manifestée dans le geste de siroter —, la même tisane, tout en évoquant la première rencontre, nourrit désormais une douce impatience et une anticipation joyeuse. La récurrence des mardis suggère une routine agréable, ponctuée de moments partagés dans la chaleur de la présence de l’autre. Le texte explore ainsi la croissance d’un lien affectif naissant, construit à travers les petites habitudes du quotidien.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-The poem <em>Tuesday</em> paints an intimate and reflective atmosphere, where, over the course of four successive Tuesdays, the development of a relationship unfolds. Hibiscus tea becomes a central synecdoche: if, at first, sipping the hot drink conveys a nervous anticipation&nbsp;—&nbsp;manifested in the act of sipping&nbsp;—&nbsp;the same tea, while recalling the first encounter, now nourishes a gentle, joyful expectation. The recurrence of Tuesdays suggests a pleasant routine, marked by moments shared in the warmth of the other’s presence. In this way, the poem explores the growth of a yet tentative emotional bond, built through the small habits of everyday life.        </p>
+The poem <em>Tuesday</em> paints an intimate and reflective atmosphere, where, over the course of four successive Tuesdays, the development of a relationship unfolds. Hibiscus tea becomes a central synecdoche: if, at first, sipping the hot drink conveys a nervous anticipation&nbsp;—&nbsp;manifested in the act of sipping&nbsp;—&nbsp;the same tea, while recalling the first encounter, now nourishes a gentle, joyful expectation. The recurrence of Tuesdays suggests a pleasant routine, marked by moments shared in the warmth of the other’s presence. In this way, the poem explores the growth of a yet tentative emotional bond, built through the small habits of everyday life.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -341,20 +341,20 @@ The poem <em>Tuesday</em> paints an intimate and reflective atmosphere, where, o
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/tuesday';
-      this.page.identifier = 'tuesday';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

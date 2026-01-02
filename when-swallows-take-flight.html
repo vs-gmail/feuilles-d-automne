@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -331,19 +331,19 @@ of new friends.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème médite sur les seuils de transformation et la double nature des rites de passage. La cérémonie de remise des diplômes offre l’occasion de cette réflexion et un espace pour l’espoir : anticipation du monde à venir pour les étudiants, et renouveau du cycle éducatif pour leurs mentors. Pour ces derniers, la robe, symbole d’autorité, de professionnalisme et de tradition, porte le poids des attentes et ses plis cérémoniaux de velours exigent la retenue requise. Alors que les souvenirs de défis ardus se transforment en sourires et que les toques sont lancées, elles s’envolent ensemble comme des hirondelles, incarnant une liberté naissante, la possibilité et le mouvement vers de nouveaux horizons. Dans cette murmuration, à l’esprit du poète désormais éloigné, sa propre «&nbsp;petite hirondelle&nbsp;» se joint à la danse aérienne, et quitte le monde familier de l’université tout en emportant avec elle ses leçons.        </p>
+Ce poème médite sur les seuils de transformation et la double nature des rites de passage. La cérémonie de remise des diplômes offre l’occasion de cette réflexion et un espace pour l’espoir : anticipation du monde à venir pour les étudiants, et renouveau du cycle éducatif pour leurs mentors. Pour ces derniers, la robe, symbole d’autorité, de professionnalisme et de tradition, porte le poids des attentes et ses plis cérémoniaux de velours exigent la retenue requise. Alors que les souvenirs de défis ardus se transforment en sourires et que les toques sont lancées, elles s’envolent ensemble comme des hirondelles, incarnant une liberté naissante, la possibilité et le mouvement vers de nouveaux horizons. Dans cette murmuration, à l’esprit du poète désormais éloigné, sa propre «&nbsp;petite hirondelle&nbsp;» se joint à la danse aérienne, et quitte le monde familier de l’université tout en emportant avec elle ses leçons.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-This poem meditates on thresholds, transformation, and the dual nature of rites of passage. The rituals of graduation provide occasion for this reflection and space for hope: anticipation of the world beyond, for the students, and the renewal of the educational cycle for their mentors. For them, the gown, at once a symbol of authority, professionalism, and tradition, carries with it the weight of expectations—its ceremonial velvet folds demand the requisite restraint. As hard-earned memories transposed into smiles and caps are tossed, they take flight together like swallows, embodying release, possibility, and movement toward new horizons. With this murmuration, in the mind’s eye of the poet, now far away, a “little swallow” of his own joins the aerial dance, and leaves the familiar world of academia while carrying its lessons forward.         </p>
+This poem meditates on thresholds, transformation, and the dual nature of rites of passage. The rituals of graduation provide occasion for this reflection and space for hope: anticipation of the world beyond, for the students, and the renewal of the educational cycle for their mentors. For them, the gown, at once a symbol of authority, professionalism, and tradition, carries with it the weight of expectations—its ceremonial velvet folds demand the requisite restraint. As hard-earned memories transposed into smiles and caps are tossed, they take flight together like swallows, embodying release, possibility, and movement toward new horizons. With this murmuration, in the mind’s eye of the poet, now far away, a “little swallow” of his own joins the aerial dance, and leaves the familiar world of academia while carrying its lessons forward. 
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -421,20 +421,20 @@ This poem meditates on thresholds, transformation, and the dual nature of rites 
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/when-swallows-take-flight';
-      this.page.identifier = 'when-swallows-take-flight';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

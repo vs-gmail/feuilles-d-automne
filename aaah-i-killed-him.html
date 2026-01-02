@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -217,8 +217,6 @@ The poem seeks to give voice to that sensation — replaying in words the erupti
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -295,20 +293,20 @@ document.getElementById("poem-top").scrollIntoView({
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/aaah-i-killed-him';
-      this.page.identifier = 'aaah-i-killed-him';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

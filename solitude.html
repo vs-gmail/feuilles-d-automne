@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -218,7 +218,8 @@ that is solitude.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout&nbsp;—&nbsp;sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant&nbsp;—&nbsp;comme un fardeau presque tangible. Même si la visite non sollicitée à répétition, évoquée par «&nbsp;iels me reviennent&nbsp;», présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, «&nbsp;Dans le doux sentiment qu’est la solitude&nbsp;», transforme tout poids restant en quelque chose de tendre, d’accepté.      </div>
+Ce poème explore l’apparence paradoxale et insolite de la solitude : à la fois pesante et vivante. Déguisée comme des voix, des fantômes, des pensées grises, elle apparaît partout&nbsp;—&nbsp;sur terrasses bondées, dans parcs verdoyants ou sous un arbre ruisselant&nbsp;—&nbsp;comme un fardeau presque tangible. Même si la visite non sollicitée à répétition, évoquée par «&nbsp;iels me reviennent&nbsp;», présage un lourd pressentiment, le souhait que la peur et l’ennui s’effacent mène progressivement le poème vers une méditation paisible. La fin, «&nbsp;Dans le doux sentiment qu’est la solitude&nbsp;», transforme tout poids restant en quelque chose de tendre, d’accepté.
+      </div>
 
       <div id="reflection-en">
         <p>
@@ -230,8 +231,6 @@ This poem explores the paradoxical and unexpected nature of solitude: at once we
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -300,20 +299,20 @@ This poem explores the paradoxical and unexpected nature of solitude: at once we
         });
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/solitude';
-      this.page.identifier = 'solitude';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

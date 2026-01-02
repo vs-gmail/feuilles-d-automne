@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -257,19 +257,19 @@ beginning to unfold.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Le poème prend son départ dans l'expérience d'émotions contradictoires — profonde empathie pour un ami souffrant d'une rupture, et l'impuissance totale à soulager sa douleur. Les effets de la séparation se répercutent dans tout un réseau de relations, et des habitudes longuement partagées qui se défont. Le tissage, comme métaphore, donne forme à cette complexité : les liens se filent lentement et forment une tapisserie riche mais fragile. Le poème met ainsi en relief la nature éphémère de la joie partagée, qui ne peut être vécue que dans l'instant, puis portée, changée, par la mémoire. Si cette méditation n'offre pas de résolution nette, elle esquisse la possibilité d'un réancrage permettant d'accepter la perte et de s'ouvrir à de nouvelles expériences.        </p>
+Le poème prend son départ dans l'expérience d'émotions contradictoires — profonde empathie pour un ami souffrant d'une rupture, et l'impuissance totale à soulager sa douleur. Les effets de la séparation se répercutent dans tout un réseau de relations, et des habitudes longuement partagées qui se défont. Le tissage, comme métaphore, donne forme à cette complexité : les liens se filent lentement et forment une tapisserie riche mais fragile. Le poème met ainsi en relief la nature éphémère de la joie partagée, qui ne peut être vécue que dans l'instant, puis portée, changée, par la mémoire. Si cette méditation n'offre pas de résolution nette, elle esquisse la possibilité d'un réancrage permettant d'accepter la perte et de s'ouvrir à de nouvelles expériences.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-The poem begins with experiencing conflicting emotions—deep empathy for a friend suffering a breakup, yet feeling utterly powerless to relieve it. The effects of separation ripple through an entire network of relationships and the long-shared habits that unravel. Weaving as metaphor gives form to this complexity: connections are spun slowly, forming a rich yet fragile tapestry. The poem highlights the fleeting nature of shared joy, which can only be experienced in the moment, only to be carried, changed, by memory. If this meditation offers no clear resolution, it sketches the possibility of re-anchoring that might allow one to accept the loss while remaining open to new experiences.        </p>
+The poem begins with experiencing conflicting emotions—deep empathy for a friend suffering a breakup, yet feeling utterly powerless to relieve it. The effects of separation ripple through an entire network of relationships and the long-shared habits that unravel. Weaving as metaphor gives form to this complexity: connections are spun slowly, forming a rich yet fragile tapestry. The poem highlights the fleeting nature of shared joy, which can only be experienced in the moment, only to be carried, changed, by memory. If this meditation offers no clear resolution, it sketches the possibility of re-anchoring that might allow one to accept the loss while remaining open to new experiences.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -347,20 +347,20 @@ The poem begins with experiencing conflicting emotions—deep empathy for a frie
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/separation';
-      this.page.identifier = 'separation';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

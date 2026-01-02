@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -303,7 +303,8 @@ homes of yesteryear.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Métamorphose</em> peint le tableau vif de Bengaluru, une ville en pleine mutation, traversée par les vagues migratoires, le dynamisme de l’économie numérique et l’évolution de ses paysages urbains. Mais cette modernité n’a pas remplacé entièrement la tradition. Ainsi, les <em>darshinis</em>, cantines locales accessibles, saines et rapides, partagent l’espace urbain avec les microbrasseries, aujourd’hui emblématiques d’une Bengaluru branchée et mondialisée. Entre ces deux univers se dessine une vie plurielle, où vit toujours une génération qui a connu la Bengaluru d’avant. Le poème se referme sur les cocotiers, toujours debout au-dessus des terrasses en voie de disparition, un dernier souffle de constance, un fil de mémoire spatial qui résiste au rythme mouvant d'une ville en ébullition.        </p>
+<em>Métamorphose</em> peint le tableau vif de Bengaluru, une ville en pleine mutation, traversée par les vagues migratoires, le dynamisme de l’économie numérique et l’évolution de ses paysages urbains. Mais cette modernité n’a pas remplacé entièrement la tradition. Ainsi, les <em>darshinis</em>, cantines locales accessibles, saines et rapides, partagent l’espace urbain avec les microbrasseries, aujourd’hui emblématiques d’une Bengaluru branchée et mondialisée. Entre ces deux univers se dessine une vie plurielle, où vit toujours une génération qui a connu la Bengaluru d’avant. Le poème se referme sur les cocotiers, toujours debout au-dessus des terrasses en voie de disparition, un dernier souffle de constance, un fil de mémoire spatial qui résiste au rythme mouvant d'une ville en ébullition.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
@@ -315,8 +316,6 @@ homes of yesteryear.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -394,20 +393,20 @@ homes of yesteryear.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/metamorphosis';
-      this.page.identifier = 'metamorphosis';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

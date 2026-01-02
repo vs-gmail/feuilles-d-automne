@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -334,11 +334,15 @@ with a lightness of being.
       <div id="reflection-fr">
         <p>
 <em>Bols Flottants</em> déploie une réflexion lucrétienne sur le son, le hasard et la mémoire. Il met en résonance deux expériences sensorielles séparées par l'espace-temps : le cliquetis des bols de Clinamen et la musique fragile des banquises sur le lac Michigan. Le son sert de tissu qui lie, reliant lieux, saisons et vies vécues, et le passé revient habiter l'instant. La présence silencieuse de l'«&nbsp;ami d'antan&nbsp;» inscrit l'expérience dans un partage sensible, suggérant comment être touchés ensemble par la même sensation approfondit les liens d'amitié. Le poème affirme une harmonie singulière née du hasard, de l'attention et de l'expérience incarnée.
-Une visite en août 2025 à <a <a href="https://www.pinaultcollection.com/fr/boursedecommerce/celeste-boursier-mougenot" target="_blank" rel="noopener noreferrer">Clinamen</a>, une installation d'art, par Céleste&nbsp;Boursier-Mougenot à la Bourse du Commerce à Paris a inspiré ce poème.        </p>
+
+Une visite en août 2025 à <a <a href="https://www.pinaultcollection.com/fr/boursedecommerce/celeste-boursier-mougenot" target="_blank" rel="noopener noreferrer">Clinamen</a>, une installation d'art, par Céleste&nbsp;Boursier-Mougenot à la Bourse du Commerce à Paris a inspiré ce poème.
+        </p>
       </div>
       <div id="reflection-en">
  <p>
-<em>Floating Bowls</em> unfolds a Lucretian meditation on sound, chance, and memory. It links two experiences spatio-temporally separated: the clinking of Clinamen's bowls and the fragile music of ice floes on Lake Michigan. Sound serves as connective tissue, linking places, seasons, and lived lives, and the past returns to inhabit the present. The silent presence of the "longtime friend" situates experience within shared perception, suggesting how being touched together by the same experience deepens friendship. The poem affirms a singular harmony born of chance, attention, and embodied experience.This poem was inspired by an August 2025 visit to <a href="https://www.pinaultcollection.com/en/boursedecommerce/celeste-boursier-mougenot"
+<em>Floating Bowls</em> unfolds a Lucretian meditation on sound, chance, and memory. It links two experiences spatio-temporally separated: the clinking of Clinamen's bowls and the fragile music of ice floes on Lake Michigan. Sound serves as connective tissue, linking places, seasons, and lived lives, and the past returns to inhabit the present. The silent presence of the "longtime friend" situates experience within shared perception, suggesting how being touched together by the same experience deepens friendship. The poem affirms a singular harmony born of chance, attention, and embodied experience.
+
+This poem was inspired by an August 2025 visit to <a href="https://www.pinaultcollection.com/en/boursedecommerce/celeste-boursier-mougenot"
    target="_blank"
    rel="noopener noreferrer">Clinamen</a>, an art installation by Céleste&nbsp;Boursier-Mougenot at the Bourse du Commerce in Paris.
       </div>
@@ -347,8 +351,6 @@ with a lightness of being.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -426,20 +428,20 @@ with a lightness of being.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/floating-bowls';
-      this.page.identifier = 'floating-bowls';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

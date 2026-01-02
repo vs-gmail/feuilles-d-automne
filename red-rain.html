@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -269,19 +269,19 @@ has since dissolved.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème est né d'un moment d'immersion dans une averse soudaine, le corps pris entre saturation et chaleur. Ce qui frappe n'est pas seulement l'intensité de la pluie, mais sa générosité — sa capacité à laver les rues, rafraîchir l'air et dissoudre la lourdeur. L'eau rougie par la terre du Deccan ancre l'expérience corporelle dans la mémoire viscérale du lieu. Le poème circule entre deux mondes contrastés — entre la pluie de pré-mousson du présent et la bruine froide des latitudes nordiques d'un autre temps — non pour en privilégier un, mais pour interroger si la joie de l'un pourrait exister sans la gêne de l'autre. Quand le ciel se dégage, il n'apporte aucune révélation, sinon un relâchement discret lorsque la chaleur, comme un souffle retenu, finit par se dissiper.        </p>
+Ce poème est né d'un moment d'immersion dans une averse soudaine, le corps pris entre saturation et chaleur. Ce qui frappe n'est pas seulement l'intensité de la pluie, mais sa générosité — sa capacité à laver les rues, rafraîchir l'air et dissoudre la lourdeur. L'eau rougie par la terre du Deccan ancre l'expérience corporelle dans la mémoire viscérale du lieu. Le poème circule entre deux mondes contrastés — entre la pluie de pré-mousson du présent et la bruine froide des latitudes nordiques d'un autre temps — non pour en privilégier un, mais pour interroger si la joie de l'un pourrait exister sans la gêne de l'autre. Quand le ciel se dégage, il n'apporte aucune révélation, sinon un relâchement discret lorsque la chaleur, comme un souffle retenu, finit par se dissiper.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-This poem grew out of a moment of physical immersion in a sudden downpour, the body caught between saturation and warmth. What strikes is not only the rain's intensity but its generosity—washing streets, cooling air, dissolving weight. The rainwater, reddened by Deccan soil, anchors bodily experience in visceral memory of place. The poem moves between contrasting worlds—the pre-monsoon shower of the present and the cold drizzle of northern climes of another time—not to choose one over the other, but to ask if joy could exist without the experience of discomfort. While the clearing sky offers no revelation, it brings a quiet release as heat, like a held breath, finally lets go.        </p>
+This poem grew out of a moment of physical immersion in a sudden downpour, the body caught between saturation and warmth. What strikes is not only the rain's intensity but its generosity—washing streets, cooling air, dissolving weight. The rainwater, reddened by Deccan soil, anchors bodily experience in visceral memory of place. The poem moves between contrasting worlds—the pre-monsoon shower of the present and the cold drizzle of northern climes of another time—not to choose one over the other, but to ask if joy could exist without the experience of discomfort. While the clearing sky offers no revelation, it brings a quiet release as heat, like a held breath, finally lets go.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -359,20 +359,20 @@ This poem grew out of a moment of physical immersion in a sudden downpour, the b
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/red-rain';
-      this.page.identifier = 'red-rain';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

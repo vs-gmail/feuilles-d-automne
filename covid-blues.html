@@ -97,7 +97,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -200,7 +200,8 @@ waiting for the covid cloud to lift.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Les Blues du Covid</em> exprime l’épuisement physique et moral de la maladie à travers des images précises : «&nbsp;frissons," «&nbsp;tête lourde," «&nbsp;douleurs dans les articulations." Pourtant, au cœur de cet isolement, Reshmé, un animal de compagnie, manifeste une inquiétude discrète. Elle «&nbsp;renifle" le souffle du malade régulièrement, témoignant ainsi d’une vigilance affectueuse, malgré la distance prudente qu’elle garde. Cette attention silencieuse apporte une touche de tendresse à la solitude du poème. S’accrocher à la patience permet de traverser la pénible journée, dans la lassitude du temps suspendu, avec l’espoir de la dissipation éventuelle du «&nbsp;nuage covidien&nbsp;».      </div>
+<em>Les Blues du Covid</em> exprime l’épuisement physique et moral de la maladie à travers des images précises : «&nbsp;frissons," «&nbsp;tête lourde," «&nbsp;douleurs dans les articulations." Pourtant, au cœur de cet isolement, Reshmé, un animal de compagnie, manifeste une inquiétude discrète. Elle «&nbsp;renifle" le souffle du malade régulièrement, témoignant ainsi d’une vigilance affectueuse, malgré la distance prudente qu’elle garde. Cette attention silencieuse apporte une touche de tendresse à la solitude du poème. S’accrocher à la patience permet de traverser la pénible journée, dans la lassitude du temps suspendu, avec l’espoir de la dissipation éventuelle du «&nbsp;nuage covidien&nbsp;».
+      </div>
       <div id="reflection-en">
         <p>
 <em>Covid Blues</em> vividly portrays the physical and emotional toll of Covid through sensory details like "chills," "heavy head," and "joint pain." These symptoms frame a quiet struggle with illness. Reshme, a beloved pet, plays a subtle yet significant role: by "sniffing" the patient’s breath three times an hour, she demonstrates a keen concern, an instinctive vigilance, even if she no longer lies close. This small, persistent act of care softens the theme of isolation. Clinging to patience allows one to endure the languid drift of time, with hope resting on the eventual lifting of the "covid cloud."
@@ -211,8 +212,6 @@ waiting for the covid cloud to lift.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -290,20 +289,20 @@ waiting for the covid cloud to lift.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/covid-blues';
-      this.page.identifier = 'covid-blues';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

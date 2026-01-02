@@ -97,7 +97,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -346,12 +346,15 @@ his heart of hearts.
       <div id="reflection-fr">
         <p>
 <em>La dérive continentale</em> est née d’un sentiment persistant de déplacement — non pas comme perte, mais comme manière d’habiter le monde. Entre New York, Paris et Bengaluru, le poème explore ce que signifie «&nbsp;«&nbsp;être chez soi&nbsp;» lorsque les lieux s’éloignent, se superposent, ou continuent de vibrer en nous longtemps après le départ. Les paysages évoqués sont concrets, précisément situés, mais ils servent surtout de seuils : points de passage entre mémoire, affect et présence.
-La personnification du foyer — fuyant, joueur, parfois insaisissable — permet de suggérer qu’il ne se laisse pas fixer à une seule géographie. On le retrouve autant dans une voix, une amitié ou dans un passage urbain familier que dans un horizon lointain. Écrire ce texte a permis d’accueillir les effets parfois insolites du mouvement migratoire.  Il reconnaît que le chez soi s’ancre aussi dans des instants éphémères de dérive qui — comme une écharpe offerte ou une voix qui hante l’esprit — demeurent dans l’esprit et réchauffent le cœur.        </p>
+
+La personnification du foyer — fuyant, joueur, parfois insaisissable — permet de suggérer qu’il ne se laisse pas fixer à une seule géographie. On le retrouve autant dans une voix, une amitié ou dans un passage urbain familier que dans un horizon lointain. Écrire ce texte a permis d’accueillir les effets parfois insolites du mouvement migratoire.  Il reconnaît que le chez soi s’ancre aussi dans des instants éphémères de dérive qui — comme une écharpe offerte ou une voix qui hante l’esprit — demeurent dans l’esprit et réchauffent le cœur.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
 <em>Continental Drift</em> was born from a persistent sense of displacement — not as loss, but as a way of inhabiting the world. Moving between New York, Paris, and Bengaluru, the poem explores what it means to call a place "home" when locations recede, overlap, or continue to resonate long after departure. The landscapes it evokes are concrete and precisely situated, yet they function primarily as thresholds: passages between memory, affect, and presence.
-The personification of home — elusive, playful, and at times evasive — allows for the suggestion that home resists being geographically fixed. Rather, it resides as much in a voice, a friendship, or a familiar passage in a city as in a distant horizon. Writing this poem allowed for an acknowledgment of the sometimes unexpected effects of migratory life. It recognizes that home can anchor itself in ephemeral drifting moments which — like a gifted scarf or a voice that lingers — endure in the mind and quietly offer warmth.
+
+The personification of home — elusive, playful, and at times evasive — allows for the suggestion that home resists being geographically fixed. Rather, it resides as much in a voice, a friendship, or a familiar passage in a city as in a distant horizon. Writing this poem allowed for an acknowledgment of the sometimes unexpected effects of migratory life. It recognizes that home can anchor itself in ephemeral drifting moments which — like a gifted scarf or a voice that lingers — endure in the mind and quietly offer warmth.
         </p>
       </div>
     </div>
@@ -359,8 +362,6 @@ his heart of hearts.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -438,20 +439,20 @@ his heart of hearts.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/continental-drift';
-      this.page.identifier = 'continental-drift';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

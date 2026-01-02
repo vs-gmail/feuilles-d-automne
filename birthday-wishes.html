@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -211,18 +211,18 @@ And a happy return of many more.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Souhaits d'anniversaire</em> est un poème-cadeau écrit pour marquer l'anniversaire d'un être cher, structuré en rimes suivies — un choix formel rare dans ce recueil. L'orchidée verte sert à la fois d'offrande et de métaphore : rare, exigeant des soins, s'épanouissant avec patience. Le poème exprime l'espoir non seulement pour la croissance de la plante mais pour l'approfondissement de ce lien intime au fil du temps, se terminant par le souhait de «&nbsp;maints d'autres&nbsp;» retours du jour.      </div>
+<em>Souhaits d'anniversaire</em> est un poème-cadeau écrit pour marquer l'anniversaire d'un être cher, structuré en rimes suivies — un choix formel rare dans ce recueil. L'orchidée verte sert à la fois d'offrande et de métaphore : rare, exigeant des soins, s'épanouissant avec patience. Le poème exprime l'espoir non seulement pour la croissance de la plante mais pour l'approfondissement de ce lien intime au fil du temps, se terminant par le souhait de «&nbsp;maints d'autres&nbsp;» retours du jour.
+      </div>
       <div id="reflection-en">
         <p>
-<em>Birthday Wishes</em> is a gift poem written to mark a loved one's birthday, structured in rhyming couplets—a rare formal choice in this collection. The green orchid serves as both offering and metaphor: rare, requiring care, blooming with patience. The poem expresses hope not only for the plant's growth but for the deepening of the intimate connection over time, closing with a wish for "many more" returns of the day.        </p>
+<em>Birthday Wishes</em> is a gift poem written to mark a loved one's birthday, structured in rhyming couplets—a rare formal choice in this collection. The green orchid serves as both offering and metaphor: rare, requiring care, blooming with patience. The poem expresses hope not only for the plant's growth but for the deepening of the intimate connection over time, closing with a wish for "many more" returns of the day.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -300,20 +300,20 @@ And a happy return of many more.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/birthday-wishes';
-      this.page.identifier = 'birthday-wishes';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

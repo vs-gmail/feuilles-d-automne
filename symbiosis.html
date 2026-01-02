@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -255,19 +255,19 @@ is all mine.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème capture l’intimité entre deux êtres vivant·es, où chaque geste, chaque regard porte signification au-delà du langage parlé. L’utilisation anaphorique du verbe  «&nbsp;anticiper&nbsp;» souligne une complicité profonde : chacun devine l’autre, sans mots, dans une observation attentive et subtile. Les images sensorielles – mouvements, pas, caresses, proximité choisie – donnent une dimension vivante et incarnée au lien. Le «&nbsp;nuage de symbiose&nbsp;» enveloppe la scène d’une douceur presque magique, tandis que la chute révèle avec tendresse que cette présence attentive est celle d’un animal. Le poème célèbre un équilibre harmonieux où chacun du dyad humain-animal devient lumière pour l’autre.        </p>
+Ce poème capture l’intimité entre deux êtres vivant·es, où chaque geste, chaque regard porte signification au-delà du langage parlé. L’utilisation anaphorique du verbe  «&nbsp;anticiper&nbsp;» souligne une complicité profonde : chacun devine l’autre, sans mots, dans une observation attentive et subtile. Les images sensorielles – mouvements, pas, caresses, proximité choisie – donnent une dimension vivante et incarnée au lien. Le «&nbsp;nuage de symbiose&nbsp;» enveloppe la scène d’une douceur presque magique, tandis que la chute révèle avec tendresse que cette présence attentive est celle d’un animal. Le poème célèbre un équilibre harmonieux où chacun du dyad humain-animal devient lumière pour l’autre.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-This poem portrays a subtle, intimate connection between two companions, where each gesture and glance carries meaning beyond the spoken word. The repeated anaphora, "anticipate," emphasizes the depth of their mutual understanding, as each perceives the other with silent attentiveness. Sensory imagery—movements, steps, touches, chosen closeness—brings the relationship vividly to life. The "cloud of symbiosis" conveys a gentle, almost magical atmosphere, and the final confirmation that this attentive presence belongs to a dog adds an element of surprise. The poem balances simplicity with profound emotion, celebrating a harmonious bond in which each of the human-animal pair becomes a light for the other.        </p>
+This poem portrays a subtle, intimate connection between two companions, where each gesture and glance carries meaning beyond the spoken word. The repeated anaphora, "anticipate," emphasizes the depth of their mutual understanding, as each perceives the other with silent attentiveness. Sensory imagery—movements, steps, touches, chosen closeness—brings the relationship vividly to life. The "cloud of symbiosis" conveys a gentle, almost magical atmosphere, and the final confirmation that this attentive presence belongs to a dog adds an element of surprise. The poem balances simplicity with profound emotion, celebrating a harmonious bond in which each of the human-animal pair becomes a light for the other.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -345,20 +345,20 @@ This poem portrays a subtle, intimate connection between two companions, where e
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-     this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/symbiosis';
-      this.page.identifier = 'symbiosis';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

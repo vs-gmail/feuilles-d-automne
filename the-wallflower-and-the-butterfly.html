@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -229,7 +229,8 @@ at the soirée delight.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>La marguerite et le papillon</em> explore la dualité intérieure que chacun porte en soi. La «&nbsp;marguerite intérieure&nbsp;», discrète et attentive, se révèle peu au cœur de la soirée, tandis que son alter ego, le "papillon mondain", se faufile avec aisance parmi la foule. Loin d'être opposées, ces deux figures sont les reflets inversés d'une même personne, chacune cachant une vulnérabilité profonde. Le papillon mondain, malgré son allure confiante, partage avec la marguerite le même cœur fragile. </div>
+<em>La marguerite et le papillon</em> explore la dualité intérieure que chacun porte en soi. La «&nbsp;marguerite intérieure&nbsp;», discrète et attentive, se révèle peu au cœur de la soirée, tandis que son alter ego, le "papillon mondain", se faufile avec aisance parmi la foule. Loin d'être opposées, ces deux figures sont les reflets inversés d'une même personne, chacune cachant une vulnérabilité profonde. Le papillon mondain, malgré son allure confiante, partage avec la marguerite le même cœur fragile. 
+</div>
       <div id="reflection-en">
         <p>
 <em>The Wallflower and the Butterfly</em> explores the internal duality we each carry within us. The "inner wallflower" stirs carefully when the crowd surges, silently observing, while its counterpart, the "social butterfly," navigates the same social space with charm and ease. Far from being opposites, they are obverse reflections of one another, both hiding a deeper vulnerability. The social butterfly may appear carefree, but beneath that exterior, it shares the same fragile heart as the wallflower.       <div id="reflection-en">
@@ -246,8 +247,6 @@ at the soirée delight.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -325,20 +324,20 @@ at the soirée delight.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-    this.page.url = 'https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/the-wallflower-and-the-butterfly';
-      this.page.identifier = 'the-wallflower-and-the-butterfly';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

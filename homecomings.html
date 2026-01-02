@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -261,19 +261,19 @@ I submit, fully unhomed.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème explore le paradoxe des retours : aucun retour chez soi ne peut reproduire le passé. Les vers d'ouverture — «&nbsp;Dans les mêmes eaux courantes / on ne se rebaigne jamais&nbsp;» — font écho à Héraclite, pour qui tout est flux et transformation. Quoique accueilli à bras ouverts, les tentatives du nomade de reprendre ses habitudes d'autrefois posent des défis, tous invisibles à la famille. L'image d'un «&nbsp;moi tout rond&nbsp;» tentant d'occuper un «&nbsp;espace bien carré&nbsp;» souligne la reconnaissance de cette impossibilité de réintégration. Le «&nbsp;miaulement feutré&nbsp;» dans la boîte de Schrödinger suggère une tension entre ces réalités simultanées face à une vie «&nbsp;réelle&nbsp;» vécue ailleurs qui devient progressivement invraisemblable. Le poème conclut avec la réalisation que le caractère fondamental de la condition nomade est l'expérience de désappartenance.        </p>
+Ce poème explore le paradoxe des retours : aucun retour chez soi ne peut reproduire le passé. Les vers d'ouverture — «&nbsp;Dans les mêmes eaux courantes / on ne se rebaigne jamais&nbsp;» — font écho à Héraclite, pour qui tout est flux et transformation. Quoique accueilli à bras ouverts, les tentatives du nomade de reprendre ses habitudes d'autrefois posent des défis, tous invisibles à la famille. L'image d'un «&nbsp;moi tout rond&nbsp;» tentant d'occuper un «&nbsp;espace bien carré&nbsp;» souligne la reconnaissance de cette impossibilité de réintégration. Le «&nbsp;miaulement feutré&nbsp;» dans la boîte de Schrödinger suggère une tension entre ces réalités simultanées face à une vie «&nbsp;réelle&nbsp;» vécue ailleurs qui devient progressivement invraisemblable. Le poème conclut avec la réalisation que le caractère fondamental de la condition nomade est l'expérience de désappartenance.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-This poem explores the paradox of return: no homecoming can replicate the past. The opening lines, "Into the flowing waters of the river / one never dips twice," echo Heraclitus' insight that everything exists in flux. Though welcomed with open arms, the nomad's attempts to slip back into old habits pose challenges, all invisible to the family. The image of a round self attempting to fit a square space of home underscores the recognition of this impossibility of reintegration. The muffled meow in Schrödinger's box captures the tension between these simultaneous realities even when "real" life lived elsewhere grows distant and "not-so-real." The poem concludes with the realization that the fundamental nature of the nomadic condition is the experience of unhoming.        </p>
+This poem explores the paradox of return: no homecoming can replicate the past. The opening lines, "Into the flowing waters of the river / one never dips twice," echo Heraclitus' insight that everything exists in flux. Though welcomed with open arms, the nomad's attempts to slip back into old habits pose challenges, all invisible to the family. The image of a round self attempting to fit a square space of home underscores the recognition of this impossibility of reintegration. The muffled meow in Schrödinger's box captures the tension between these simultaneous realities even when "real" life lived elsewhere grows distant and "not-so-real." The poem concludes with the realization that the fundamental nature of the nomadic condition is the experience of unhoming.
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -351,20 +351,20 @@ This poem explores the paradox of return: no homecoming can replicate the past. 
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/homecomings';
-      this.page.identifier = 'homecomings';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

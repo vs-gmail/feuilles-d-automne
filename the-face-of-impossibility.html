@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -211,7 +211,8 @@ I look to the next wall.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Le visage de l'impossible</em> affronte les attentes sociales inconnues qui accueillent ceux qui se transplantent, adultes, dans un terrain culturel nouveau. Tout comme le sentiment d'escalader un mur face à une correction constante, la bienséance oblige et rend la parole inadéquate, ne laissant que l'acquiescement. Quoique le corps-esprit anticipe avec appréhension, ce qui émerge quand on rencontre de tels moments n'est pas l'écroulement que l'on craint, mais le surgissement d'une force intérieure insolite&nbsp;—&nbsp;la capacité d'affronter le défi avec toute l'assurance que l'on peut rassembler. Aucun répit après avoir surmonté un mur : affronter le défilé implacable de murs exige de puiser dans ses réserves la grâce renouvelée.        </p>
+<em>Le visage de l'impossible</em> affronte les attentes sociales inconnues qui accueillent ceux qui se transplantent, adultes, dans un terrain culturel nouveau. Tout comme le sentiment d'escalader un mur face à une correction constante, la bienséance oblige et rend la parole inadéquate, ne laissant que l'acquiescement. Quoique le corps-esprit anticipe avec appréhension, ce qui émerge quand on rencontre de tels moments n'est pas l'écroulement que l'on craint, mais le surgissement d'une force intérieure insolite&nbsp;—&nbsp;la capacité d'affronter le défi avec toute l'assurance que l'on peut rassembler. Aucun répit après avoir surmonté un mur : affronter le défilé implacable de murs exige de puiser dans ses réserves la grâce renouvelée.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
@@ -223,8 +224,6 @@ I look to the next wall.
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -302,20 +301,20 @@ I look to the next wall.
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/the-face-of-impossibility';
-      this.page.identifier = 'the-face-of-impossibility';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

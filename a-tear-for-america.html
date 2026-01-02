@@ -98,7 +98,7 @@
       border-top: 1px solid #ccc;
     }
 
-    #disqus_thread {
+    .comments-wrapper {
       max-width: 700px;
       margin: 2rem auto;
       border-top: 1px solid #ccc;
@@ -268,19 +268,19 @@ with empathy and peace.
       <div id="reflection-fr">
         <p>
 
-Écrit au lendemain d’un assassinat public aux États-Unis, ce poème est une méditation solennelle sur la perte de vie et la trahison de la responsabilité collective. L’anaphore de «&nbsp;verser une larme&nbsp;» souligne le désespoir face à des vies brisées par la violence insensée et évoque la tragique récurrence de ces pertes. Au cœur du poème se trouve une critique incisive?: la liberté&nbsp;—&nbsp; présentée comme un droit fondamental&nbsp;—&nbsp; se trouve détournée par celleux qui détiennent le pouvoir, mettant en lumière la tension entre les principes légaux, fondements de l’Amérique constitutionnelle, et l’expérience vécue. Plutôt  que de se contenter de rester accablé face à cette violence, le poème suggère que tant que l’éveil moral et éthique ne prenne pas la place afin que monde soit rempli d’empathie et de paix, l’Amérique ne pourra pas prétendre être «&nbsp;la cité brillante sur la colline&nbsp».      </div>
+Écrit au lendemain d’un assassinat public aux États-Unis, ce poème est une méditation solennelle sur la perte de vie et la trahison de la responsabilité collective. L’anaphore de «&nbsp;verser une larme&nbsp;» souligne le désespoir face à des vies brisées par la violence insensée et évoque la tragique récurrence de ces pertes. Au cœur du poème se trouve une critique incisive?: la liberté&nbsp;—&nbsp; présentée comme un droit fondamental&nbsp;—&nbsp; se trouve détournée par celleux qui détiennent le pouvoir, mettant en lumière la tension entre les principes légaux, fondements de l’Amérique constitutionnelle, et l’expérience vécue. Plutôt  que de se contenter de rester accablé face à cette violence, le poème suggère que tant que l’éveil moral et éthique ne prenne pas la place afin que monde soit rempli d’empathie et de paix, l’Amérique ne pourra pas prétendre être «&nbsp;la cité brillante sur la colline&nbsp».
+      </div>
       <div id="reflection-en">
         <p>
 
-Written in the aftermath of a public assassination in the United States, this poem is a solemn meditation on the loss of life and the betrayal of collective responsibility. The anaphoric repetition of “shedding a tear” underscores despair over lives cut short by senseless violence and evokes the tragic recurrence of such losses. At the core of the poem is a sharp critique of how freedom&nbsp;—&nbsp;presented as a fundamental right&nbsp;—&nbsp;has been hijacked by those in power, highlighting the tension between the legal principles, foundations of constitutional America, and lived experience. Rather than remain overwhelmed by endless violence, it proposes that until moral and ethical awareness takes hold so that our world may be filled with empathy and peace, America cannot claim to be “the shining city on a hill.”        </p>
+Written in the aftermath of a public assassination in the United States, this poem is a solemn meditation on the loss of life and the betrayal of collective responsibility. The anaphoric repetition of “shedding a tear” underscores despair over lives cut short by senseless violence and evokes the tragic recurrence of such losses. At the core of the poem is a sharp critique of how freedom&nbsp;—&nbsp;presented as a fundamental right&nbsp;—&nbsp;has been hijacked by those in power, highlighting the tension between the legal principles, foundations of constitutional America, and lived experience. Rather than remain overwhelmed by endless violence, it proposes that until moral and ethical awareness takes hold so that our world may be filled with empathy and peace, America cannot claim to be “the shining city on a hill.”
+        </p>
       </div>
     </div>
 
   </div>
 
   <!-- Disqus -->
-  <div id="disqus_thread"></div>
-
   <script>
     let showingEnglish = true;
 
@@ -358,20 +358,20 @@ Written in the aftermath of a public assassination in the United States, this po
         document.getElementById("reflection-en").style.display = "none";
       }
     });
-
-    var disqus_config = function () {
-      this.page.url = 'https://sites.google.com/view/feuilles-d-automne/i-les-saisons-glissent-drifting-seasons/a-tear-for-america';
-      this.page.identifier = 'a-tear-for-america';
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://autumn-leaves.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
   </script>
 
-  <noscript>Please enable JavaScript to view comments powered by Disqus.</noscript>
-</body>
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
 </html>

@@ -108,28 +108,67 @@
     /* Mobile-only language toggle buttons */
     
     @media (max-width: 600px) {
-  body {
-    margin: 0.5rem;
-  }
-  
-  .content-wrapper {
-    padding: 0 0.5rem;
-  }
-  
-  .columns-wrapper {
-    margin-left: 0; /* remove nav offset */
-  }
-  
-  .columns-wrapper p {
-    letter-spacing: -0.05em;
-  }
+      body {
+        margin: 0.5rem;
+      }
+      
+      .content-wrapper {
+        padding: 0 0.5rem;
+      }
+      
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+      
+      .columns-wrapper p {
+        letter-spacing: -0.05em;
+      }
 
-  .lang-toggle { display: block; margin: 1.5rem auto; }
-  #poem-fr { display: none; }
-  #poem-en { display: block; }
-  #reflection { display: none; }
-  #reflection-fr, #reflection-en { display: none; }
-}
+      .lang-toggle { display: block; margin: 1.5rem auto; }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+      
+      .nav-buttons-row {
+        gap: 0.5rem;
+      }
+      
+      .nav-arrow {
+        min-width: 40px;
+        padding: 0.5rem 0.3rem;
+        font-size: 1rem;
+      }
+    }
+  
+    /* Navigation button row */
+    .nav-buttons-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      max-width: 700px;
+      margin: 1.5rem auto;
+    }
+
+    .nav-buttons-row button {
+      margin: 0;
+    }
+
+    .nav-buttons-row > button:nth-child(2) {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .nav-arrow {
+      min-width: 50px;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .nav-disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -145,25 +184,25 @@
       <div id="poem-fr">
         <p class="title">Souhaits d'anniversaire</p>
         <p>
-Dans l’innocence de leur éclosion
+Dans l'innocence de leur éclosion
 ces fleurs rares semblent se souvenir
 de ces tiges fines, blanches et mauves,
-qui m’ont charmé un matin de mai.
+qui m'ont charmé un matin de mai.
 
-Née d’un éclat de ce printemps
-cette orchidée verte t’est destinée —
-modeste offrande qui m’a tant touché,
-espérant aujourd’hui t’émouvoir aussi.
+Née d'un éclat de ce printemps
+cette orchidée verte t'est destinée —
+modeste offrande qui m'a tant touché,
+espérant aujourd'hui t'émouvoir aussi.
 
 Que la chaleur dont cette plante se nourrit
-t’apporte ce que l’on chérit et bénit,
+t'apporte ce que l'on chérit et bénit,
 et que dans cette douce lumière
 grandisse et mûrisse cet amour sincère.
 
-Je t’envoie ces vœux du fond du cœur,
+Je t'envoie ces vœux du fond du cœur,
 parsemés de baisers écrits en douceur,
-en priant qu’une année féconde t’attende
-et que d’autres beaux retours s’y étendent.
+en priant qu'une année féconde t'attende
+et que d'autres beaux retours s'y étendent.
         </p>
       </div>
 
@@ -178,14 +217,14 @@ That one May morning charmed me so.
 Inspired from that bright spring day
 This lush green orchid comes your way
 A simple gift that moved me so
-Now hopes you’ll watch it bloom and grow.
+Now hopes you'll watch it bloom and grow.
 
 May the warmth with which this plant is nourished
 Bring you all that is treasured and cherished
 And in that bright and tender glow
 May this true love deepen and grow
 
-With this I extend my hearti’st wishes 
+With this I extend my hearti'st wishes 
 And shower you with these written kisses
 While I pray for a fruitful year in store
 And a happy return of many more.
@@ -203,7 +242,13 @@ And a happy return of many more.
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <!-- Reflection toggle button -->
-    <button onclick="toggleReflection()">Réflexions / Reflections</button>
+    
+    <!-- Navigation Arrows -->
+    <div class="nav-buttons-row">
+      <button class="nav-arrow" onclick="window.parent.location.href='https://sites.google.com/view/feuilles-d-automne/ii-rituels-du-lien-rituals-of-connection/covid-blues'">←</button>
+      <button onclick="toggleReflection()">Réflexions / Reflection</button>
+      <button class="nav-arrow" onclick="window.parent.location.href='https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/dear-gerard'">→</button>
+    </div>
 
     <hr>
 

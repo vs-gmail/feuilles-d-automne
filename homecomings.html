@@ -131,47 +131,8 @@
       #reflection { display: none; } 
       #reflection-fr, #reflection-en { display: none; }
     }
-  
-    /* Navigation button row */
-    .nav-buttons-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      max-width: 700px;
-      margin: 1.5rem auto;
-    }
-
-    .nav-buttons-row button {
-      margin: 0;
-    }
-
-    .nav-buttons-row > button:nth-child(2) {
-      flex: 1;
-      max-width: 400px;
-    }
-
-    .nav-arrow {
-      min-width: 50px;
-      padding: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .nav-disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
 
     @media (max-width: 600px) {
-      .nav-buttons-row {
-        gap: 0.5rem;
-      }
-      
-      .nav-arrow {
-        min-width: 40px;
-        padding: 0.5rem 0.3rem;
-        font-size: 1rem;
-      }
     }
   </style>
 </head>
@@ -296,12 +257,7 @@ I submit, fully unhomed.
 
     <!-- Reflection toggle button -->
     
-    <!-- Navigation Arrows -->
-    <div class="nav-buttons-row">
-      <button class="nav-arrow" onclick="window.parent.location.href='https://sites.google.com/view/feuilles-d-automne/iii-fragments-dabsence-fragments-of-absence/mango-memories'">←</button>
-      <button onclick="toggleReflection()">Réflexions / Reflection</button>
-      <button class="nav-arrow" onclick="window.parent.location.href='https://sites.google.com/view/feuilles-d-automne/iv-vers-laprès-towards-an-after/solitude'">→</button>
-    </div>
+    <button onclick="toggleReflection()">Réflexions / Reflection</button>
 
     <hr>
 

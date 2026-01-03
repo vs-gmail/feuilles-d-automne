@@ -67,22 +67,6 @@
       margin: 2rem 0;
     }
 
-    button {
-      display: block;
-      margin: 1.5rem auto;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      background-color: #875626;
-      color: #ffffff;
-      border: none;
-      border-radius: 8px;
-    }
-
-    button:hover {
-      background-color: #a0613c;
-    }
-
     #reflection {
       display: none; /* hidden by default */
     }
@@ -106,18 +90,56 @@
     }
 
     /* Mobile-only language toggle buttons */
-    .lang-toggle {
-      display: none;
+
+  
+    button {
+      font-family: 'Alegreya', serif;
+      background: #875626;
+      color: #ffffff;
+      border: none;
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: block;
+      margin: 0.5rem auto;
+      box-shadow: 0 1px 3px rgba(135, 86, 38, 0.2);
     }
 
+    button:hover {
+      background: #a0613c;
+      transform: scale(1.05);
+      box-shadow: 0 2px 6px rgba(135, 86, 38, 0.3);
+    }
+
+    button:active {
+      transform: scale(1.02);
+    }
+
+    /* Language toggle buttons - slightly more compact */
+    .lang-toggle {
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
+    }
     @media (max-width: 600px) {
       .columns-wrapper {
-        margin-left: 0; /* remove nav offset */
+        margin-left: 0;
       }
 
       .lang-toggle {
         display: block;
         margin: 1.5rem auto;
+        padding: 0.35rem 1.1rem;
+        font-size: 0.85rem;
+        border-radius: 18px;
+      }
+
+      button {
+        padding: 0.4rem 1.3rem;
+        font-size: 0.9rem;
+        border-radius: 18px;
       }
 
       #poem-fr { display: none; }
@@ -128,11 +150,8 @@
 
     @media (min-width: 601px) {
       .lang-toggle { display: none; }
-      #reflection { display: none; } 
+      #reflection { display: none; }
       #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (max-width: 600px) {
     }
   </style>
 </head>
@@ -221,7 +240,7 @@ upon this new soil.
 
     <!-- Reflection toggle button -->
     
-    <button onclick="toggleReflection()">Réflexions / Reflection</button>
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
 
     <hr>
 
@@ -229,7 +248,7 @@ upon this new soil.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-<em>Cinquante-six</em> marque un seuil autobiographique où «&nbsp;l'été&nbsp;» de la vie ressent l'approche de l'automne. Cette métaphore saisonnière évoque moins un déclin qu'une maturation portée par l'expérience vécue. La répétition du vers qui ouvre le poème l'ancre dans un présent encore lumineux et suggère des états mouvants qui se recomposent sans cesse. La notion de «&nbsp;force&nbsp;» déclinée en quatre avatars, confère à la chaleur estivale une qualité dynamique : un élan qui traverse, attache, transforme et migre. La citation, «&nbsp;Season of mists and mellow fruitfulness&nbsp;», de Keats, poète romantique britannique, inscrit cette transition dans une lignée poétique ancienne. Finalement, chaque passage de saison offre la possibilité de se déraciner consciemment pour se replanter en sol nouveau.
+<em>Cinquante-six</em> marque un seuil autobiographique où «&nbsp;l'été&nbsp;» de la vie ressent l'approche de l'automne. Cette métaphore saisonnière évoque moins un déclin qu'une maturation portée par l'expérience vécue. La répétition du vers qui ouvre le poème ancre le poème dans un présent encore lumineux et suggère des états mouvants qui se recomposent sans cesse. La notion de «&nbsp;force&nbsp;» déclinée en quatre avatars, confère à la chaleur estivale une qualité dynamique : un élan qui traverse, attache, transforme et migre. La citation, «&nbsp;Season of mists and mellow fruitfulness&nbsp;», de Keats, poète romantique britannique, inscrit cette transition dans une lignée poétique ancienne. Finalement, chaque passage de saison offre la possibilité de se déraciner consciemment pour se replanter en sol nouveau.
       </div>
       <div id="reflection-en">
         <p>

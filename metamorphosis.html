@@ -67,22 +67,6 @@
       margin: 2rem 0;
     }
 
-    button {
-      display: block;
-      margin: 1.5rem auto;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      background-color: #875626;
-      color: #ffffff;
-      border: none;
-      border-radius: 8px;
-    }
-
-    button:hover {
-      background-color: #a0613c;
-    }
-
     #reflection {
       display: none; /* hidden by default */
     }
@@ -106,18 +90,56 @@
     }
 
     /* Mobile-only language toggle buttons */
-    .lang-toggle {
-      display: none;
+
+  
+    button {
+      font-family: 'Alegreya', serif;
+      background: #875626;
+      color: #ffffff;
+      border: none;
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: block;
+      margin: 0.5rem auto;
+      box-shadow: 0 1px 3px rgba(135, 86, 38, 0.2);
     }
 
+    button:hover {
+      background: #a0613c;
+      transform: scale(1.05);
+      box-shadow: 0 2px 6px rgba(135, 86, 38, 0.3);
+    }
+
+    button:active {
+      transform: scale(1.02);
+    }
+
+    /* Language toggle buttons - slightly more compact */
+    .lang-toggle {
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
+    }
     @media (max-width: 600px) {
       .columns-wrapper {
-        margin-left: 0; /* remove nav offset */
+        margin-left: 0;
       }
 
       .lang-toggle {
         display: block;
         margin: 1.5rem auto;
+        padding: 0.35rem 1.1rem;
+        font-size: 0.85rem;
+        border-radius: 18px;
+      }
+
+      button {
+        padding: 0.4rem 1.3rem;
+        font-size: 0.9rem;
+        border-radius: 18px;
       }
 
       #poem-fr { display: none; }
@@ -128,11 +150,8 @@
 
     @media (min-width: 601px) {
       .lang-toggle { display: none; }
-      #reflection { display: none; } 
+      #reflection { display: none; }
       #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (max-width: 600px) {
     }
   </style>
 </head>
@@ -299,7 +318,7 @@ homes of yesteryear.
 
     <!-- Reflection toggle button -->
     
-    <button onclick="toggleReflection()">Réflexions / Reflection</button>
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
 
     <hr>
 

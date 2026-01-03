@@ -68,19 +68,35 @@
     }
 
     button {
-      display: block;
-      margin: 1.5rem auto;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      background-color: #875626;
+      font-family: 'Alegreya', serif;
+      background: #875626;
       color: #ffffff;
       border: none;
-      border-radius: 8px;
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: block;
+      margin: 0.5rem auto;
+      box-shadow: 0 1px 3px rgba(135, 86, 38, 0.2);
     }
 
     button:hover {
-      background-color: #a0613c;
+      background: #a0613c;
+      transform: scale(1.05);
+      box-shadow: 0 2px 6px rgba(135, 86, 38, 0.3);
+    }
+
+    button:active {
+      transform: scale(1.02);
+    }
+
+    /* Language toggle buttons - slightly more compact */
+    .lang-toggle {
+      padding: 0.4rem 1.3rem;
+      font-size: 0.9rem;
     }
 
     #reflection {
@@ -118,6 +134,15 @@
       .lang-toggle {
         display: block;
         margin: 1.5rem auto;
+        padding: 0.35rem 1.1rem;
+        font-size: 0.85rem;
+        border-radius: 18px;
+      }
+
+      button {
+        padding: 0.4rem 1.3rem;
+        font-size: 0.9rem;
+        border-radius: 18px;
       }
 
       #poem-fr { display: none; }
@@ -130,9 +155,6 @@
       .lang-toggle { display: none; }
       #reflection { display: none; } 
       #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (max-width: 600px) {
     }
   </style>
 </head>
@@ -150,15 +172,15 @@
         <p>
 Attendre que la Vie commence
 à nouveau
-à l’heure du goûter
+à l'heure du goûter
 de mon existence
 demande une certaine allégresse
-de l’Être.
+de l'Être.
 
 Le temps suspendu —
 entre le Grand Midi
 de la Jeunesse
-et l’inévitable
+et l'inévitable
 crépuscule doux —
 brille toujours
 comme pour
@@ -170,7 +192,7 @@ Savourer le thé du temps
 avec pleine conscience
 révèle des arômes
 riches
-d’anticipation,
+d'anticipation,
 Et chaque gorgée
 me pousse
 plus loin
@@ -225,7 +247,7 @@ no more.
 
     <!-- Reflection toggle button -->
     
-    <button onclick="toggleReflection()">Réflexions / Reflection</button>
+    <button onclick="toggleReflection()">Réflexions / Reflections</button>
 
     <hr>
 
@@ -233,16 +255,16 @@ no more.
     <div id="reflection" class="reflection-columns">
       <div id="reflection-fr">
         <p>
-Ce poème met en lumière le moment où l’on réalise que l’on vit en suspension, attendant que la vie commence alors qu’elle se dévoile à tout moment. <em>Carpe Diem</em> ne parle pas de saisir le jour avec urgence ou bravade, mais d’apprendre à reconnaître l’instant présent dans sa douceur et à en faire l’expérience d’une manière non pressée. Le temps y est comparé à un thé que l’on savoure : ni brûlant, ni froid, mais à la température idéale pour en goûter pleinement chaque nuance. L’image de l’«&nbsp;heure du thé&nbsp;» évoque un moment de pause, situé entre le plein midi de la jeunesse et le crépuscule à venir.
+Ce poème met en lumière le moment où l'on réalise que l'on vit en suspension, attendant que la vie commence alors qu'elle se dévoile à tout moment. <em>Carpe Diem</em> ne parle pas de saisir le jour avec urgence ou bravade, mais d'apprendre à reconnaître l'instant présent dans sa douceur et à en faire l'expérience d'une manière non pressée. Le temps y est comparé à un thé que l'on savoure : ni brûlant, ni froid, mais à la température idéale pour en goûter pleinement chaque nuance. L'image de l'«&nbsp;heure du thé&nbsp;» évoque un moment de pause, situé entre le plein midi de la jeunesse et le crépuscule à venir.
 
-C’est dans les interstices de ce temps et de cet espace que l’attente peut se transformer doucement en renouvellement. En prêtant attention aux gestes simples et aux sensations, ce sentiment de suspension cesse d’être passif et devient un mouvement générateur, où «&nbsp;ne plus attendre&nbsp;» n’est pas une rupture, mais une prise de conscience tranquille et intime, pleinement ancrée dans le présent.
+C'est dans les interstices de ce temps et de cet espace que l'attente peut se transformer doucement en renouvellement. En prêtant attention aux gestes simples et aux sensations, ce sentiment de suspension cesse d'être passif et devient un mouvement générateur, où «&nbsp;ne plus attendre&nbsp;» n'est pas une rupture, mais une prise de conscience tranquille et intime, pleinement ancrée dans le présent.
         </p>
       </div>
       <div id="reflection-en">
         <p>
-This poem highlights the moment when we realize we have been living in suspension, waiting for life to begin, when it is unfolding at every moment. <em>Carpe Diem</em> does not urge us to seize the day with haste or bravado, but to recognize the present moment in its gentleness and to experience it in an unhurried manner. Time is compared to a cup of tea, neither too hot nor too cold, but at the perfect temperature to be fully savored. The image of “tea time” evokes a pause, a quiet moment set between the high noon of youth and the approaching dusk.
+This poem highlights the moment when we realize we have been living in suspension, waiting for life to begin, when it is unfolding at every moment. <em>Carpe Diem</em> does not urge us to seize the day with haste or bravado, but to recognize the present moment in its gentleness and to experience it in an unhurried manner. Time is compared to a cup of tea, neither too hot nor too cold, but at the perfect temperature to be fully savored. The image of "tea time" evokes a pause, a quiet moment set between the high noon of youth and the approaching dusk.
 
-It is within the interstices of this time and space that waiting can quietly transform into renewal. By paying attention to simple gestures and sensations, this feeling of suspension ceases to be passive and becomes a generative movement, where “to wait no more” is not a rupture, but a calm and intimate awakening to being fully present.
+It is within the interstices of this time and space that waiting can quietly transform into renewal. By paying attention to simple gestures and sensations, this feeling of suspension ceases to be passive and becomes a generative movement, where "to wait no more" is not a rupture, but a calm and intimate awakening to being fully present.
         </p>
       </div>
     </div>

@@ -1,0 +1,444 @@
+«&nbsp;<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>when-swallows-take-flight</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+      font-family: 'Alegreya', serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background: #e2d8b9;
+      color: #875626;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Poem columns wrapper (centered with nav offset) */
+    .columns-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 175px; /* adjust for Google Sites nav */
+    }
+
+    .columns-wrapper > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .columns-wrapper p {
+      white-space: pre-wrap;
+    }
+
+    /* Reflection wrapper: fully centered, no nav offset */
+    .reflection-columns {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-left: 0; 
+    }
+
+    .reflection-columns > div {
+      max-width: 400px;
+      flex: 1;
+    }
+
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    button {
+      display: block;
+      margin: 1.5rem auto;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #875626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #a0613c;
+    }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .comments-wrapper {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
+
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+      }
+
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
+
+    @media (max-width: 600px) {
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+
+    <!-- Mobile toggle button (top) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Poems -->
+<div class="columns-wrapper" id="poem-top">
+      <div id="poem-fr">
+        <p class="title">Quand les hirondelles s'envolent</p>
+        <p>
+Toques, Robes,
+pour les jeunes
+futur·es diplômé·es
+dans une petite heure,
+capuches élaborées
+pour leurs aîné·es,
+seniors à jamais,
+alors qu’iels avancent
+au son de la marche solennelle,
+souvenirs qui fanent
+des labeurs passés
+se transposent en sourires
+et brillent de mille feux.
+
+À chaque mois de mai
+qui passe,
+je me surprends
+à chérir
+ces instants
+sur le seuil —
+comme les regards
+en arrière et
+en avant
+cohabitent
+dans le royaume
+du possible.
+
+Pendant que
+les jeunes esprits
+contemplent
+le monde au-delà,
+pour ceux qui restent
+le poids protecteur
+de la robe
+aux bordures de velours 
+porte la promesse
+du renouveau d’un automne
+encore lointain.
+
+Une robe bien ajustée,
+une robe qui flotte
+en harmonie,
+une robe que nous devenons.
+
+Aujourd’hui, éloigné,
+sur le seuil de l’esprit,
+entre
+la forme familière
+d’un passé qui fond
+et un avenir,
+peu visible,
+qui prend à peine
+sa forme,
+je ne cherche plus
+le poids de la robe
+pour réconforter mes épaules.
+
+J’entends les acclamations
+de mes élèves
+lorsqu’iels lancent
+leurs toques
+bien haut —
+des éclats noirs d’apaisement,
+de joie et d’espoir
+qui s’envolent
+comme un essaim d’hirondelles,
+prêtes à partir
+vers des rivages lointains.
+
+Dans mon esprit,
+je me joins à la murmuration,
+je lance ma toque,
+et ma petite hirondelle
+commence à battre
+ses ailes migratoires,
+tandis qu’elle s’éloigne,
+pleine d’espoir,
+en compagnie
+des amis nouveaux.
+        </p>
+      </div>
+
+      <div id="poem-en">
+        <p class="title">When the Swallows take Flight</p>
+        <p>
+Caps, Gowns,
+on young seniors
+but for an hour more,
+elaborate hoods
+for their elders,
+seniors forevermore,
+as they file
+to pomp and circumstance,
+fading memories
+of hard work
+from years past,
+now transposed in smiles,
+shine bright.
+
+With each May
+gone by,
+I have come to
+cherish
+those moments
+on the threshold—
+as looking
+back and
+ahead
+cohabit
+in possibility
+for these young minds.
+
+As they contemplate
+the world beyond,
+for those who remain
+the protective weight
+of a gown
+with velvet trims
+carries over
+the promise 
+of renewal
+for a new fall,
+still afar.
+
+A gown that fits well,
+a gown that flows
+in harmony,
+a gown that we become.
+
+Today,
+standing far away,
+in the mind’s threshold
+between
+the familiar form
+of a now melting past
+and a barely visible future,
+yet to take shape,
+I seek no longer
+the weight of the gown
+to comfort
+my shoulders.
+
+I hear the cheer
+of my students
+as they toss
+their caps
+up high—
+black specks of relief,
+joy, and hope
+soaring
+as swallows swarm,
+ready to fly
+to distant shores.
+
+I join
+the murmuration
+in the mind’s eye,
+tossing my cap,
+and my little swallow
+begins to flap
+its migratory wings,
+as it glides away, hopeful,
+in the company
+of new friends.
+        </p>
+      </div>
+    </div>
+
+    <!-- Location / Date -->
+    <div class="lieu-date">
+      <p>Bengaluru</p>
+      <p>Le 26 mai 2025 | 26 May 2025 </p>
+    </div>
+
+    <!-- Mobile toggle button (after poem & location/date) -->
+    <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+    <!-- Reflection toggle button -->
+    
+    <button onclick="toggleReflection()">Réflexions / Reflection</button>
+
+    <hr>
+
+    <!-- Reflections -->
+    <div id="reflection" class="reflection-columns">
+      <div id="reflection-fr">
+        <p>
+Ce poème médite sur les seuils de transformation et la double nature des rites de passage. La cérémonie de remise des diplômes offre l’occasion de cette réflexion et un espace pour l’espoir : anticipation du monde à venir pour les étudiants, et renouveau du cycle éducatif pour leurs mentors. Pour ces derniers, la robe, symbole d’autorité, de professionnalisme et de tradition, porte le poids des attentes et ses plis cérémoniaux de velours exigent la retenue requise. Alors que les souvenirs de défis ardus se transforment en sourires et que les toques sont lancées, elles s’envolent ensemble comme des hirondelles, incarnant une liberté naissante, la possibilité et le mouvement vers de nouveaux horizons. Dans cette murmuration, à l’esprit du poète désormais éloigné, sa propre «&nbsp;petite hirondelle&nbsp;» se joint à la danse aérienne, et quitte le monde familier de l’université tout en emportant avec elle ses leçons.
+        </p>
+      </div>
+      <div id="reflection-en">
+        <p>
+This poem meditates on thresholds, transformation, and the dual nature of rites of passage. The rituals of graduation provide occasion for this reflection and space for hope: anticipation of the world beyond, for the students, and the renewal of the educational cycle for their mentors. For them, the gown, at once a symbol of authority, professionalism, and tradition, carries with it the weight of expectations—its ceremonial velvet folds demand the requisite restraint. As hard-earned memories transposed into smiles and caps are tossed, they take flight together like swallows, embodying release, possibility, and movement toward new horizons. With this murmuration, in the mind’s eye of the poet, now far away, a “little swallow” of his own joins the aerial dance, and leaves the familiar world of academia while carrying its lessons forward. 
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Disqus -->
+  <script>
+    let showingEnglish = true;
+
+    function toggleLanguage() {
+      if (window.innerWidth > 600) return; // desktop unaffected
+
+      const fr = document.getElementById("poem-fr");
+      const en = document.getElementById("poem-en");
+      const reflFr = document.getElementById("reflection-fr");
+      const reflEn = document.getElementById("reflection-en");
+      const buttons = document.querySelectorAll(".lang-toggle");
+
+      if (showingEnglish) {
+        en.style.display = "none";
+        fr.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflEn.style.display = "none";
+          reflFr.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Read in English");
+      } else {
+        fr.style.display = "none";
+        en.style.display = "block";
+        if (document.getElementById('reflection').style.display === 'flex') {
+          reflFr.style.display = "none";
+          reflEn.style.display = "block";
+        }
+        buttons.forEach(btn => btn.textContent = "Lire en français");
+      }
+
+      showingEnglish = !showingEnglish;
+    document.getElementById("poem-top").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+    function toggleReflection() {
+      const r = document.getElementById('reflection');
+
+      if (r.style.display === 'none' || r.style.display === '') {
+        r.style.display = 'flex';
+        if (window.innerWidth <= 600) {
+          if (showingEnglish) {
+            document.getElementById('reflection-fr').style.display = 'none';
+            document.getElementById('reflection-en').style.display = 'block';
+          } else {
+            document.getElementById('reflection-fr').style.display = 'block';
+            document.getElementById('reflection-en').style.display = 'none';
+          }
+        } else {
+          // desktop: show both
+          document.getElementById('reflection-fr').style.display = 'block';
+          document.getElementById('reflection-en').style.display = 'block';
+        }
+      } else {
+        r.style.display = 'none';
+      }
+    }
+
+    window.addEventListener("load", () => {
+      if (window.innerWidth <= 600) {
+        document.getElementById("poem-fr").style.display = "none";
+        document.getElementById("poem-en").style.display = "block";
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+        showingEnglish = true;
+        document.querySelectorAll(".lang-toggle").forEach(btn => {
+          btn.textContent = "Lire en français";
+        });
+      } else {
+        document.getElementById("reflection").style.display = "none";
+        document.getElementById("reflection-fr").style.display = "none";
+        document.getElementById("reflection-en").style.display = "none";
+      }
+    });
+  </script>
+
+  
+  <!-- Utterances Comments -->
+  <div class="comments-wrapper">
+    <script src="https://utteranc.es/client.js"
+            repo="vs-gmail/feuilles-d-automne"
+            issue-term="pathname"
+            label="comments"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+
+  </body>
+</html>

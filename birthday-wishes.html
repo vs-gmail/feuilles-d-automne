@@ -30,6 +30,8 @@
       gap: 4rem;
       flex-wrap: wrap;
       margin-left: 175px; /* adjust for Google Sites nav */
+  letter-spacing: -0.03em;  /* ← tighter letter spacing */
+
     }
 
     .columns-wrapper > div {
@@ -126,7 +128,8 @@
     @media (max-width: 600px) {
       .columns-wrapper {
         margin-left: 0;
-      }
+     letter-spacing: -0.05em;  /* Even tighter on mobile */
+    }
 
       .lang-toggle {
         display: block;

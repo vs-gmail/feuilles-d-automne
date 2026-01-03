@@ -31,12 +31,14 @@
       margin: 0 auto;
       align-items: start; /* align items at top */
       grid-auto-rows: minmax(1px, auto); /* flexible row height */
+      text-align: justify;  /* Add this */
+
     }
 
     .columns-wrapper > div {
       flex: 1 1 480px;
-      max-width: 520px;
-    }
+       max-width: 100%;  /* Override narrow column */
+}
 
     .title {
       font-family: 'Bree Serif', serif;
@@ -48,6 +50,7 @@
       text-align: justify;
       line-height: 1.7;
       margin: 0 0 1.2rem 0;
+      text-align: justify; 
       hyphens: auto;
     }
 
@@ -95,6 +98,7 @@
     @media (max-width: 600px) {
       .columns-wrapper {
         margin-left: 0;
+        max-width: 100%;  /* Full width */
       }
 
       .lang-toggle {

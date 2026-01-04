@@ -4,79 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notes-to-readersr</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Bree+Serif&display=swap" rel="stylesheet">
-    
+
   <style>
-body {
-  font-family: 'Alegreya', serif;
-  margin: 1rem;
-  line-height: 1.6;
-  background: #e2d8b9;
+
+  body {
+      font-family: 'Alegreya', serif;
+      margin: 0;
+      background: #e2d8b9;
       color: #875626;
-}
+    }
 
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
 
-/* Two-column layout using CSS Grid with French slightly wider */
-.columns-wrapper {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr; /* French slightly wider than English */
-  gap: 5rem; /* increase gutter from 2rem to 3rem */
-  justify-content: center;
-  margin: 0 auto;
-  align-items: start; /* align items at top */
-  grid-auto-rows: minmax(1px, auto); /* flexible row height */
-}
+    /* Desktop bilingual layout */
+    .columns-wrapper {
+      display: grid;
+      grid-template-columns: 1.11fr 1fr; /* French wider */
+      column-gap: 5rem;
+      align-items: start;
+    }
 
-/* Inner divs */
-.columns-wrapper > div {
-  display: flex;
-  flex-direction: column;
-}
+    #poem-fr,
+    #poem-en {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
 
-/* Paragraphs */
-#poem-fr p {
-  margin-bottom: 0.9em; /* 0.9 of default */
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  white-space: pre-wrap;
-}
+    .title {
+      font-family: 'Bree Serif', serif;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
+    }
 
-#poem-en p {
-  margin-bottom: 1em; /* default spacing */
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  white-space: pre-wrap;
-}
+    .columns-wrapper p {
+      margin: 0 0 1.2rem;
+      text-align: justify;
+      hyphens: auto;
+    }
 
-/* Title styling */
-.title {
-  font-family: 'Bree Serif', serif;
-  font-weight: normal;
-  margin-bottom: 0.5rem;
-}
+    .lieu-date {
+      text-align: center;
+      font-style: italic;
+      margin: 2.5rem 0 1.5rem;
+    }
 
-/* Location / Date */
-.lieu-date {
-  text-align: center;
-  font-style: italic;
-  margin: 2rem 0;
-}
-
-/* Toggle buttons */
-
-/* Responsive: single column on mobile */
-
-  
     button {
       font-family: 'Alegreya', serif;
       background: #875626;
@@ -87,88 +65,69 @@ body {
       border-radius: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 500;
       display: block;
-      margin: 0.5rem auto;
-      box-shadow: 0 1px 3px rgba(135, 86, 38, 0.2);
+      margin: 0.75rem auto;
     }
 
     button:hover {
       background: #a0613c;
       transform: scale(1.05);
-      box-shadow: 0 2px 6px rgba(135, 86, 38, 0.3);
     }
 
-    button:active {
-      transform: scale(1.02);
-    }
-
-    /* Language toggle buttons - slightly more compact */
     .lang-toggle {
-      padding: 0.4rem 1.3rem;
-      font-size: 0.9rem;
+      display: none;
     }
-    @media (max-width: 600px) {
+
+    /* Mobile */
+    @media (max-width: 700px) {
       .columns-wrapper {
-        margin-left: 0;
+        display: block;
+      }
+
+      #poem-fr {
+        display: none;
+      }
+
+      #poem-en {
+        display: block;
       }
 
       .lang-toggle {
         display: block;
-        margin: 1.5rem auto;
-        padding: 0.35rem 1.1rem;
-        font-size: 0.85rem;
-        border-radius: 18px;
       }
-
-      button {
-        padding: 0.4rem 1.3rem;
-        font-size: 0.9rem;
-        border-radius: 18px;
-      }
-
-      #poem-fr { display: none; }
-      #poem-en { display: block; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
-
-    @media (min-width: 601px) {
-      .lang-toggle { display: none; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
     }
   </style>
+  </head>
 
-</head>
 <body>
+
   <div class="content-wrapper">
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 <div class="columns-wrapper" id="poem-top">
       <div id="poem-fr">
         <p class="title"><em> Notes aux lecteur·ices</em></p>
-        <p>Afin de permettre la lecture des versions française et anglaise côte à côte, ce recueil est optimisé pour une consultation sur ordinateur de bureau ou portable.
+        <p>Afin de permettre la lecture des versions française et anglaise côte à côte, ce recueil est optimisé pour une consultation sur ordinateur de bureau ou portable.</p>
 
-Sur appareils mobiles, une seule langue s'affiche à la fois ; un bouton à cliquer sert pour passer du français à l'anglais. Pour maximiser l'espace d'affichage sur tout appareil, glissez l'en-tête vers le haut pour le masquer.
+   <p>Sur appareils mobiles, une seule langue s'affiche à la fois ; un bouton à cliquer sert pour passer du français à l'anglais. Pour maximiser l'espace d'affichage sur tout appareil, glissez l'en-tête vers le haut pour le masquer.</p>
 
-Lorsque le menu de navigation à gauche de l'écran est caché, l'icône à trois lignes en haut à gauche sert à naviguer entre les poèmes et les différentes sections. Cliquez sur l'une des deux flèches en bas de chaque page pour lire le poème suivant (ou précédent).
+   <p>Lorsque le menu de navigation à gauche de l'écran est caché, l'icône à trois lignes en haut à gauche sert à naviguer entre les poèmes et les différentes sections. Cliquez sur l'une des deux flèches en bas de chaque page pour lire le poème suivant (ou précédent).</p>
 
-Pour celleux qui le désirent, cliquer sur le bouton «&nbsp;réflexion&nbsp;» révèle de courtes notes pour accompagner chaque poème.  Sur appareils mobiles, ce texte apparaît dans la langue du poème affiché.
+   <p>Pour celleux qui le désirent, cliquer sur le bouton «&nbsp;réflexion&nbsp;» révèle de courtes notes pour accompagner chaque poème.  Sur appareils mobiles, ce texte apparaît dans la langue du poème affiché.</p>
 
-Enfin, si vous le souhaitez, vous pouvez partager vos réflexions sur un poème particulier dans la dernière section de chaque page. Cette fonctionnalité est optimisée pour le navigateur Safari. Aussi, à la fin de l'avant-propos se trouve un champ pour tout commentaire de nature globale ou générale. Pour commenter, connectez-vous à GitHub avec votre compte Google ou Apple, ou créez un compte avec n'importe quelle adresse courriel.
+   <p>Enfin, si vous le souhaitez, vous pouvez partager vos réflexions sur un poème particulier dans la dernière section de chaque page. Cette fonctionnalité est optimisée pour le navigateur Safari. Aussi, à la fin de l'avant-propos se trouve un champ pour tout commentaire de nature globale ou générale. Pour commenter, connectez-vous à GitHub avec votre compte Google ou Apple, ou créez un compte avec n'importe quelle adresse courriel.
 </p>
       </div>
       <div id="poem-en">
         <p class="title"><em>Notes to Readers</em></p>
-        <p>In order to allow for reading both the French and English versions side by side, this collection is optimized for desktop or laptop computers.
+        <p>In order to allow for reading both the French and English versions side by side, this collection is optimized for desktop or laptop computers.</p>
 
-On mobile devices, one language is displayed at a time, with a toggle button to switch between French and English. To display more text on screen, swipe up to hide the header.
+   <p>On mobile devices, one language is displayed at a time, with a toggle button to switch between French and English. To display more text on screen, swipe up to hide the header.</p>
 
-When the navigation menu is not visible on the left, the three-line menu icon on the top-left serves to navigate between the poems and different sections. Click on one of the  two arrows at the bottom of each page to read the next (or previous) poem.
+   <p>When the navigation menu is not visible on the left, the three-line menu icon on the top-left serves to navigate between the poems and different sections. Click on one of the  two arrows at the bottom of each page to read the next (or previous) poem.</p>
 
-For those who would like more context, clicking on the reflections button will reveal short notes to accompany each poem.  On mobile devices, this text will appear in the language of the poem on the screen.
+   <p>For those who would like more context, clicking on the reflections button will reveal short notes to accompany each poem.  On mobile devices, this text will appear in the language of the poem on the screen.</p>
 
-Finally, if you wish, you may share your thoughts on any particular poem in the last section of each page. This feature is optimized for the Safari browser. There is space for general comments at the end of the foreword as well. To comment, sign in to GitHub with your Google or Apple account or create an account with any email address.</p>
+   <p>Finally, if you wish, you may share your thoughts on any particular poem in the last section of each page. This feature is optimized for the Safari browser. There is space for general comments at the end of the foreword as well. To comment, sign in to GitHub with your Google or Apple account or create an account with any email address.</p>
       </div>
     </div>
 
@@ -179,62 +138,45 @@ Finally, if you wish, you may share your thoughts on any particular poem in the 
 Paris<br>
     le 01 janvier 2026 | 01 January 2026</p>
     </div>
-<button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
-  </div>
+ <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
+
+</div>
+
 <script>
-let showingEnglish = true;
+  let showingEnglish = true;
 
-function toggleLanguage() {
-  if (window.innerWidth > 600) return; // desktop unaffected
+  function toggleLanguage() {
+    if (window.innerWidth > 700) return;
 
-  const fr = document.getElementById("poem-fr");
-  const en = document.getElementById("poem-en");
-  const refl = document.getElementById("reflection");
-  const reflFr = document.getElementById("reflection-fr");
-  const reflEn = document.getElementById("reflection-en");
-  const buttons = document.querySelectorAll(".lang-toggle");
+    const fr = document.getElementById("poem-fr");
+    const en = document.getElementById("poem-en");
+    const buttons = document.querySelectorAll(".lang-toggle");
 
-  if (showingEnglish) {
-    en.style.display = "none";
-    fr.style.display = "block";
-
-    if (refl && refl.style.display === "flex") {
-      reflEn.style.display = "none";
-      reflFr.style.display = "block";
+    if (showingEnglish) {
+      en.style.display = "none";
+      fr.style.display = "block";
+      buttons.forEach(btn => btn.textContent = "Read in English");
+    } else {
+      fr.style.display = "none";
+      en.style.display = "block";
+      buttons.forEach(btn => btn.textContent = "Lire en français");
     }
 
-    buttons.forEach(btn => btn.textContent = "Read in English");
-  } else {
-    fr.style.display = "none";
-    en.style.display = "block";
+    showingEnglish = !showingEnglish;
 
-    if (refl && refl.style.display === "flex") {
-      reflFr.style.display = "none";
-      reflEn.style.display = "block";
-    }
-
-    buttons.forEach(btn => btn.textContent = "Lire en français");
+    document.getElementById("poem-top").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   }
 
-  showingEnglish = !showingEnglish;
-
-  document.getElementById("poem-top").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
+  window.addEventListener("load", () => {
+    if (window.innerWidth <= 700) {
+      document.getElementById("poem-fr").style.display = "none";
+      document.getElementById("poem-en").style.display = "block";
+      showingEnglish = true;
+    }
   });
-}
-
-// Initialize for mobile view
-if (window.innerWidth <= 600) {
-  const fr = document.getElementById("poem-fr");
-  const en = document.getElementById("poem-en");
-  fr.style.display = "none";
-  en.style.display = "block";
-  showingEnglish = true;
-  document.querySelectorAll(".lang-toggle").forEach(btn => {
-    btn.textContent = "Lire en français";
-  });
-}
 </script>
 
 </body>

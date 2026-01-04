@@ -28,7 +28,7 @@
     /* Desktop columns */
     .columns-wrapper {
       display: flex;
-      gap: 5rem; /* REQUIRED inter-column space */
+      gap: 5rem; /* required inter-column space */
       align-items: flex-start;
     }
 
@@ -47,8 +47,6 @@
       margin: 0 0 0.9rem;
       text-align: justify;
       hyphens: auto;
-      -webkit-hyphens: auto;
-      -moz-hyphens: auto;
     }
 
     button {
@@ -64,12 +62,19 @@
       margin: 0.75rem auto;
     }
 
+    /* Toggle buttons */
     .lang-toggle {
       display: none;
     }
 
     /* Mobile */
     @media (max-width: 600px) {
+
+      /* IMPORTANT: top toggle NEVER rendered */
+      .lang-toggle:first-of-type {
+        display: none !important;
+      }
+
       .columns-wrapper {
         display: block;
       }
@@ -92,6 +97,7 @@
 <body>
   <div class="content-wrapper">
 
+    <!-- Top button exists in DOM but NEVER shown on mobile -->
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
     <div class="columns-wrapper" id="poem-top">
@@ -114,6 +120,7 @@
       </div>
     </div>
 
+    <!-- Bottom button only -->
     <button class="lang-toggle" onclick="toggleLanguage()">Lire en français</button>
 
   </div>

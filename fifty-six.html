@@ -124,35 +124,43 @@
       font-size: 0.9rem;
     }
     @media (max-width: 600px) {
-      .columns-wrapper {
-        margin-left: 0;
-      }
+  .columns-wrapper {
+    margin-left: 0;
+  }
 
-      .lang-toggle {
-        display: block;
-        margin: 1.5rem auto;
-        padding: 0.35rem 1.1rem;
-        font-size: 0.85rem;
-        border-radius: 18px;
-      }
+  .reflection-columns {
+    gap: 0;  /* Remove gap on mobile */
+  }
 
-      button {
-        padding: 0.4rem 1.3rem;
-        font-size: 0.9rem;
-        border-radius: 18px;
-      }
+  .reflection-columns > div {
+    max-width: 100%;  /* Force full width */
+    padding: 0;
+  }
 
-      #poem-fr { display: none; }
-      #poem-en { display: block; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
+  #reflection p {
+    padding: 0 0.5rem;  /* Add some breathing room */
+  }
 
-    @media (min-width: 601px) {
-      .lang-toggle { display: none; }
-      #reflection { display: none; }
-      #reflection-fr, #reflection-en { display: none; }
-    }
+  .lang-toggle {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 0.35rem 1.1rem;
+    font-size: 0.85rem;
+    border-radius: 18px;
+  }
+
+  button {
+    padding: 0.4rem 1.3rem;
+    font-size: 0.9rem;
+    border-radius: 18px;
+  }
+
+  #poem-fr { display: none; }
+  #poem-en { display: block; }
+  #reflection { display: none; }
+  #reflection-fr, #reflection-en { display: none; }
+}
+
   </style>
 </head>
 
@@ -252,7 +260,7 @@ upon this new soil.
       </div>
       <div id="reflection-en">
         <p>
-<em>Fifty-Six</em> marks an autobiographical threshold where the "summer" of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation borne of lived experience. The repetition of the opening line anchors the poem in a still-luminous present and suggests shifting states that continually recompose themselves. The notion of “strength,” in four different avatars, grants summer's warmth a dynamic quality: it is a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats&nbsp;—&nbsp;"Season of mists and mellow fruitfulness"&nbsp;—&nbsp;inscribes this transition within a broader poetic lineage. Ultimately, any seasonal passage offers the opportunity for mindful uprooting and replanting in new soil.<em>
+<em>Fifty-Six</em> marks an autobiographical threshold where the "summer" of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation borne of lived experience. The repetition of the opening line anchors the poem in a still-luminous present and suggests shifting states that continually recompose themselves. The notion of “strength,” in four different avatars, grants summer's warmth a dynamic quality: it is a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats&nbsp;—&nbsp;"Season of mists and mellow fruitfulness"&nbsp;—&nbsp;inscribes this transition within a broader poetic lineage. Ultimately, any seasonal passage offers the opportunity for mindful uprooting and replanting in new soil.
 </p>
         </p>
       </div>

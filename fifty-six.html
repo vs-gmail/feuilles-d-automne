@@ -67,31 +67,6 @@
       margin: 2rem 0;
     }
 
-    #reflection {
-      display: none; /* hidden by default */
-    }
-
-    #reflection p {
-      text-align: justify;
-      white-space: pre-wrap;
-    }
-
-    hr {
-      margin: 2rem 0 1rem;
-      border: 0;
-      border-top: 1px solid #ccc;
-    }
-
-    .comments-wrapper {
-      max-width: 700px;
-      margin: 2rem auto;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
-    /* Mobile-only language toggle buttons */
-
-  
     button {
       font-family: 'Alegreya', serif;
       background: #875626;
@@ -123,44 +98,64 @@
       padding: 0.4rem 1.3rem;
       font-size: 0.9rem;
     }
+
+    #reflection {
+      display: none; /* hidden by default */
+    }
+
+    #reflection p {
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    hr {
+      margin: 2rem 0 1rem;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .comments-wrapper {
+      max-width: 700px;
+      margin: 2rem auto;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+    /* Mobile-only language toggle buttons */
+    .lang-toggle {
+      display: none;
+    }
+
     @media (max-width: 600px) {
-  .columns-wrapper {
-    margin-left: 0;
-  }
+      .columns-wrapper {
+        margin-left: 0; /* remove nav offset */
+      }
 
-  .reflection-columns {
-    gap: 0;  /* Remove gap on mobile */
-  }
+      .lang-toggle {
+        display: block;
+        margin: 1.5rem auto;
+        padding: 0.35rem 1.1rem;
+        font-size: 0.85rem;
+        border-radius: 18px;
+      }
 
-  .reflection-columns > div {
-    max-width: 100%;  /* Force full width */
-    padding: 0;
-  }
+      button {
+        padding: 0.4rem 1.3rem;
+        font-size: 0.9rem;
+        border-radius: 18px;
+      }
 
-  #reflection p {
-    padding: 0 0.5rem;  /* Add some breathing room */
-  }
+      #poem-fr { display: none; }
+      #poem-en { display: block; }
+      #reflection { display: none; }
+      #reflection-fr, #reflection-en { display: none; }
+    }
 
-  .lang-toggle {
-    display: block;
-    margin: 1.5rem auto;
-    padding: 0.35rem 1.1rem;
-    font-size: 0.85rem;
-    border-radius: 18px;
-  }
-
-  button {
-    padding: 0.4rem 1.3rem;
-    font-size: 0.9rem;
-    border-radius: 18px;
-  }
-
-  #poem-fr { display: none; }
-  #poem-en { display: block; }
-  #reflection { display: none; }
-  #reflection-fr, #reflection-en { display: none; }
-}
-
+    @media (min-width: 601px) {
+      .lang-toggle { display: none; }
+      #reflection { display: none; } 
+      #reflection-fr, #reflection-en { display: none; }
+    }
   </style>
 </head>
 
@@ -175,14 +170,14 @@
       <div id="poem-fr">
         <p class="title">Cinquante-six</p>
         <p>
-Dans l’été de ma vie, je sens l’automne
-s’approcher
-Dans l’été de ma vie, la solitude
+Dans l'été de ma vie, je sens l'automne
+s'approcher
+Dans l'été de ma vie, la solitude
 brille
-Dans l’été de ma vie, le bonheur
+Dans l'été de ma vie, le bonheur
 se reforme
 
-C’est l’approche de l’automne
+C'est l'approche de l'automne
 mais la chaleur estivale frôle encore
 force suffisante
 force attachante
@@ -196,8 +191,8 @@ me désaltérer
 me déraciner de nouveau
 des vieilles habitudes 
 
-Qu’un automne soutenu
-‘Saison des brumes et des fruits mûrs’,
+Qu'un automne soutenu
+'Saison des brumes et des fruits mûrs',
 porte ses fruits
 Sur ce sol nouveau.
 
@@ -215,8 +210,8 @@ In the summer of my life, happiness
 re-forms
 
 Autumn approaches
-but summer’s warmth still lingers —
-a strength that’s sufficient
+but summer's warmth still lingers —
+a strength that's sufficient
 a strength that endears
 a strength that transforms
 a strength that migrates
@@ -229,7 +224,7 @@ to uproot oneself yet again
 from old habits
 
 Let a robust autumn,
-“Season of mists and mellow fruitfulness,”
+"Season of mists and mellow fruitfulness,"
 bear its fruit
 upon this new soil.
 
@@ -257,11 +252,11 @@ upon this new soil.
       <div id="reflection-fr">
         <p>
 <em>Cinquante-six</em> marque un seuil autobiographique où «&nbsp;l'été&nbsp;» de la vie ressent l'approche de l'automne. Cette métaphore saisonnière évoque moins un déclin qu'une maturation portée par l'expérience vécue. La répétition du vers qui ouvre le poème ancre le poème dans un présent encore lumineux et suggère des états mouvants qui se recomposent sans cesse. La notion de «&nbsp;force&nbsp;» déclinée en quatre avatars, confère à la chaleur estivale une qualité dynamique : un élan qui traverse, attache, transforme et migre. La citation, «&nbsp;Season of mists and mellow fruitfulness&nbsp;», de Keats, poète romantique britannique, inscrit cette transition dans une lignée poétique ancienne. Finalement, chaque passage de saison offre la possibilité de se déraciner consciemment pour se replanter en sol nouveau.
+        </p>
       </div>
       <div id="reflection-en">
         <p>
-<em>Fifty-Six</em> marks an autobiographical threshold where the "summer" of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation borne of lived experience. The repetition of the opening line anchors the poem in a still-luminous present and suggests shifting states that continually recompose themselves. The notion of “strength,” in four different avatars, grants summer's warmth a dynamic quality: it is a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats&nbsp;—&nbsp;"Season of mists and mellow fruitfulness"&nbsp;—&nbsp;inscribes this transition within a broader poetic lineage. Ultimately, any seasonal passage offers the opportunity for mindful transplanting into new soil.
-</p>
+<em>Fifty-Six</em> marks an autobiographical threshold where the "summer" of life senses the approach of autumn. This seasonal metaphor evokes not decline but maturation borne of lived experience. The repetition of the opening line anchors the poem in a still-luminous present and suggests shifting states that continually recompose themselves. The notion of "strength," in four different avatars, grants summer's warmth a dynamic quality: it is a force that traverses, attaches, transforms, and migrates. The citation of the British Romantic poet Keats&nbsp;—&nbsp;"Season of mists and mellow fruitfulness"&nbsp;—&nbsp;inscribes this transition within a broader poetic lineage. Ultimately, any seasonal passage offers the opportunity for mindful transplanting into new soil.
         </p>
       </div>
     </div>
@@ -300,11 +295,10 @@ upon this new soil.
       }
 
       showingEnglish = !showingEnglish;
-
     document.getElementById("poem-top").scrollIntoView({
-  behavior: "smooth",
-  block: "start"
-});
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
     function toggleReflection() {
